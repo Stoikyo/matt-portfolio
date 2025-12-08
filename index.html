@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Product Design & Front-end · Portfolio</title>
+  <title>Matt Grant · Portfolio</title>
   <style>
     :root {
-      --bg: #0a0d11;
-      --panel: #0f141b;
-      --panel-strong: #141b24;
-      --text: #e7ecf2;
-      --muted: #9ba7b8;
-      --accent: #4fd1c5;
-      --accent-strong: #38b2ac;
-      --border: rgba(255, 255, 255, 0.08);
-      --glow: rgba(79, 209, 197, 0.18);
-      --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-      --radius-lg: 18px;
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --card-soft: #f8fafc;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --accent: #2563eb;
+      --accent-strong: #1d4ed8;
+      --accent-soft: rgba(37, 99, 235, 0.08);
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+      --radius-lg: 16px;
       --radius: 12px;
       --radius-sm: 9px;
       --max-width: 1100px;
@@ -28,8 +28,8 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      background: radial-gradient(circle at 12% 18%, rgba(79, 209, 197, 0.08), transparent 32%), radial-gradient(circle at 78% 8%, rgba(79, 209, 197, 0.06), transparent 28%), var(--bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 12% 18%, rgba(37, 99, 235, 0.05), transparent 32%), radial-gradient(circle at 80% 12%, rgba(37, 99, 235, 0.04), transparent 28%), var(--bg);
       color: var(--text);
       line-height: 1.7;
       min-height: 100vh;
@@ -37,15 +37,13 @@
 
     a { color: inherit; text-decoration: none; }
 
-    img { max-width: 100%; display: block; }
-
     .skip-link {
       position: absolute;
       left: -999px;
       top: -999px;
       padding: 12px 16px;
       border-radius: var(--radius-sm);
-      background: var(--panel);
+      background: var(--card);
       color: var(--text);
       border: 1px solid var(--accent);
       z-index: 1000;
@@ -60,15 +58,15 @@
       position: sticky;
       top: 0;
       z-index: 900;
-      backdrop-filter: blur(12px);
-      background: rgba(10, 13, 17, 0.88);
-      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+      background: rgba(246, 248, 251, 0.92);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 16px 20px;
+      padding: 14px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -81,13 +79,14 @@
       gap: 10px;
       font-weight: 800;
       letter-spacing: 0.01em;
+      color: var(--text);
     }
 
     .brand .badge {
       padding: 6px 12px;
       border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(79, 209, 197, 0.14);
+      border: 1px solid var(--line);
+      background: var(--card-soft);
       color: var(--accent);
       font-size: 13px;
       font-weight: 700;
@@ -106,24 +105,24 @@
     nav a:hover,
     nav a:focus-visible {
       color: var(--text);
-      background: rgba(255, 255, 255, 0.04);
-      border-color: var(--border);
+      background: var(--card-soft);
+      border-color: var(--line);
       outline: none;
     }
 
     main {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 48px 20px 92px;
+      padding: 42px 20px 96px;
       display: grid;
-      gap: 52px;
+      gap: 48px;
     }
 
     section {
-      background: linear-gradient(135deg, rgba(20, 27, 36, 0.92), rgba(15, 20, 27, 0.94));
-      border: 1px solid var(--border);
+      background: var(--card);
+      border: 1px solid var(--line);
       border-radius: var(--radius-lg);
-      padding: 30px;
+      padding: 28px;
       box-shadow: var(--shadow);
     }
 
@@ -134,10 +133,10 @@
       letter-spacing: -0.01em;
     }
 
-    h1 { font-size: clamp(32px, 4vw, 44px); }
-    h2 { font-size: clamp(26px, 3.3vw, 34px); }
-    h3 { font-size: 20px; }
-    h4 { font-size: 16px; text-transform: uppercase; letter-spacing: 0.08em; }
+    h1 { font-size: clamp(30px, 4vw, 42px); }
+    h2 { font-size: clamp(24px, 3vw, 32px); }
+    h3 { font-size: 19px; }
+    h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
 
     p { margin: 0 0 14px; color: var(--muted); }
 
@@ -154,24 +153,14 @@
 
     .muted { color: var(--muted); }
 
-    .grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .grid.two {
-      grid-template-columns: 1fr;
-    }
-
-    .grid.cards {
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
+    .grid { display: grid; gap: 18px; }
+    .grid.two { grid-template-columns: 1fr; }
 
     .surface {
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: var(--panel);
-      padding: 18px;
+      background: var(--card-soft);
+      padding: 16px;
     }
 
     .surface strong { color: var(--text); }
@@ -180,20 +169,16 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 11px 14px;
+      padding: 10px 12px;
       border-radius: 999px;
-      border: 1px dashed rgba(79, 209, 197, 0.3);
+      border: 1px dashed var(--line);
       color: var(--text);
-      background: rgba(79, 209, 197, 0.08);
-      margin: 6px 0 18px;
+      background: var(--card-soft);
+      margin: 6px 0 16px;
       font-weight: 600;
     }
 
-    ul {
-      margin: 0 0 16px;
-      padding-left: 20px;
-      color: var(--muted);
-    }
+    ul { margin: 0 0 16px; padding-left: 20px; color: var(--muted); }
 
     .list-plain {
       list-style: none;
@@ -203,17 +188,13 @@
       gap: 10px;
     }
 
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
 
     .chip {
-      padding: 7px 11px;
+      padding: 6px 10px;
       border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      background: #edf2f7;
       color: var(--muted);
       font-size: 13px;
       font-weight: 600;
@@ -224,60 +205,44 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 12px 16px;
+      padding: 11px 15px;
       border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       font-weight: 800;
       letter-spacing: 0.01em;
       transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
       color: var(--text);
-      background: rgba(255, 255, 255, 0.02);
+      background: var(--card);
     }
 
     .button.primary {
       background: var(--accent);
-      color: #082d29;
-      border-color: rgba(79, 209, 197, 0.9);
-      box-shadow: 0 10px 22px var(--glow);
+      color: #ffffff;
+      border-color: var(--accent);
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.18);
     }
 
     .button:hover,
     .button:focus-visible {
-      transform: translateY(-2px);
-      border-color: rgba(79, 209, 197, 0.5);
+      transform: translateY(-1px);
+      border-color: var(--accent);
       outline: none;
     }
 
     .button.primary:hover,
     .button.primary:focus-visible {
       background: var(--accent-strong);
-      color: #041b19;
+      border-color: var(--accent-strong);
     }
 
-    .hero {
-      display: grid;
-      gap: 22px;
-    }
+    .hero { display: grid; gap: 22px; }
 
-    .hero-layout {
-      display: grid;
-      gap: 20px;
-    }
+    .hero-layout { display: grid; gap: 20px; }
 
-    .hero .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
-    .summary-card .list-plain {
-      gap: 8px;
-    }
-
-    .summary-card .surface {
-      background: var(--panel-strong);
-    }
+    .summary-card .surface { background: #eef2f6; }
 
     .about-cards {
       display: grid;
@@ -287,17 +252,17 @@
 
     .projects-grid {
       display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 14px;
+      grid-template-columns: 1fr;
     }
 
     .project-card {
       display: grid;
       gap: 12px;
-      padding: 18px;
+      padding: 16px;
       border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: var(--panel);
+      border: 1px solid var(--line);
+      background: var(--card);
       box-shadow: var(--shadow);
     }
 
@@ -309,22 +274,17 @@
       flex-wrap: wrap;
     }
 
-    .project-body {
-      display: grid;
-      gap: 10px;
-    }
+    .project-body { display: grid; gap: 10px; }
 
-    .project-body h4 {
-      margin-bottom: 6px;
-    }
+    .project-body h4 { margin-bottom: 6px; }
 
     .placeholder {
-      border: 1px dashed rgba(255, 255, 255, 0.26);
+      border: 1px dashed var(--line);
       border-radius: var(--radius-sm);
-      padding: 14px;
+      padding: 12px;
       text-align: center;
       color: var(--muted);
-      background: rgba(255, 255, 255, 0.02);
+      background: var(--card-soft);
       font-size: 14px;
     }
 
@@ -332,7 +292,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 4px;
+      margin-top: 2px;
     }
 
     .contact-grid {
@@ -356,10 +316,11 @@
     footer a { color: var(--accent); }
 
     @media (min-width: 720px) {
-      .nav { padding: 18px 24px; }
-      main { padding: 56px 24px 110px; gap: 64px; }
+      .nav { padding: 16px 24px; }
+      main { padding: 54px 24px 110px; gap: 60px; }
       section { padding: 32px; }
       .hero-layout { grid-template-columns: 1.6fr 1fr; align-items: start; }
+      .projects-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
       .contact-grid { grid-template-columns: 1.3fr 1fr; }
     }
   </style>
@@ -370,7 +331,7 @@
   <header>
     <div class="nav">
       <div class="brand">
-        Product Design & Front-end
+        Matt Grant
         <span class="badge">Portfolio</span>
       </div>
       <nav aria-label="Primary">
@@ -385,7 +346,7 @@
   <main id="main">
     <section id="hero">
       <div class="hero">
-        <p class="eyebrow">Product design + front-end</p>
+        <p class="eyebrow">Matt Grant — design + front-end</p>
         <div class="hero-layout">
           <div class="grid">
             <h1>Fun, confident, experimental product builds.</h1>
@@ -407,10 +368,10 @@
               <h3>Quick context</h3>
               <p class="muted">Single HTML file, embedded styles, minimal JS. Built to mirror the scrappy, iterative approach I use when prototyping with teams.</p>
               <div class="list-plain">
-              <div class="surface">
-                <strong>Current snapshot</strong>
-                <p class="muted">Leading and shipping design+build prototypes for product teams.</p>
-              </div>
+                <div class="surface">
+                  <strong>Current snapshot</strong>
+                  <p class="muted">Leading and shipping design+build prototypes for product teams.</p>
+                </div>
                 <div class="surface">
                   <strong>How I like to work</strong>
                   <p class="muted">Short feedback loops, clarity on constraints, bias for pushing working artifacts.</p>
@@ -476,7 +437,7 @@
               <h3>[Project One Name]</h3>
               <div class="chip-row">
                 <span class="chip">Type</span>
-                <span class="chip">Product design + front-end</span>
+                <span class="chip">Design + front-end</span>
                 <span class="chip">2024</span>
                 <span class="chip">HTML/CSS/JS</span>
               </div>
@@ -512,7 +473,7 @@
               <h3>[Project Two Name]</h3>
               <div class="chip-row">
                 <span class="chip">Type</span>
-                <span class="chip">Product Design + Front-end</span>
+                <span class="chip">Design + front-end</span>
                 <span class="chip">2023</span>
                 <span class="chip">HTML/CSS/JS</span>
               </div>
