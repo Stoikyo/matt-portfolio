@@ -1,6 +1,6 @@
-# Designer Engineer Portfolio – Maincode
+# Designer Portfolio
 
-This repository contains a single-page portfolio for a Designer Engineer application to Maincode, built as a standalone HTML document.
+This repository contains a single-page portfolio for a Designer application, built as a standalone HTML document.
 
 ## Scope
 - Single `index.html` file.
