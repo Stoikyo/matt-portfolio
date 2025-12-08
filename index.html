@@ -3,12 +3,618 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Designer Engineer · Portfolio</title>
+  <title>Product Design & Front-end · Portfolio</title>
+  <style>
+    :root {
+      --bg: #0a0d11;
+      --panel: #0f141b;
+      --panel-strong: #141b24;
+      --text: #e7ecf2;
+      --muted: #9ba7b8;
+      --accent: #4fd1c5;
+      --accent-strong: #38b2ac;
+      --border: rgba(255, 255, 255, 0.08);
+      --glow: rgba(79, 209, 197, 0.18);
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      --radius-lg: 18px;
+      --radius: 12px;
+      --radius-sm: 9px;
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(circle at 12% 18%, rgba(79, 209, 197, 0.08), transparent 32%), radial-gradient(circle at 78% 8%, rgba(79, 209, 197, 0.06), transparent 28%), var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { max-width: 100%; display: block; }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: -999px;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      background: var(--panel);
+      color: var(--text);
+      border: 1px solid var(--accent);
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      left: 14px;
+      top: 14px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      backdrop-filter: blur(12px);
+      background: rgba(10, 13, 17, 0.88);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .brand .badge {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(79, 209, 197, 0.14);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    nav a {
+      padding: 9px 11px;
+      border-radius: var(--radius-sm);
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--border);
+      outline: none;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 48px 20px 92px;
+      display: grid;
+      gap: 52px;
+    }
+
+    section {
+      background: linear-gradient(135deg, rgba(20, 27, 36, 0.92), rgba(15, 20, 27, 0.94));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0 0 12px;
+      color: var(--text);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    h1 { font-size: clamp(32px, 4vw, 44px); }
+    h2 { font-size: clamp(26px, 3.3vw, 34px); }
+    h3 { font-size: 20px; }
+    h4 { font-size: 16px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    p { margin: 0 0 14px; color: var(--muted); }
+
+    .lede { font-size: 18px; color: var(--text); margin-bottom: 14px; }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    .muted { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid.two {
+      grid-template-columns: 1fr;
+    }
+
+    .grid.cards {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .surface {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--panel);
+      padding: 18px;
+    }
+
+    .surface strong { color: var(--text); }
+
+    .pill-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 999px;
+      border: 1px dashed rgba(79, 209, 197, 0.3);
+      color: var(--text);
+      background: rgba(79, 209, 197, 0.08);
+      margin: 6px 0 18px;
+      font-weight: 600;
+    }
+
+    ul {
+      margin: 0 0 16px;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .list-plain {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #082d29;
+      border-color: rgba(79, 209, 197, 0.9);
+      box-shadow: 0 10px 22px var(--glow);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(79, 209, 197, 0.5);
+      outline: none;
+    }
+
+    .button.primary:hover,
+    .button.primary:focus-visible {
+      background: var(--accent-strong);
+      color: #041b19;
+    }
+
+    .hero {
+      display: grid;
+      gap: 22px;
+    }
+
+    .hero-layout {
+      display: grid;
+      gap: 20px;
+    }
+
+    .hero .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .summary-card .list-plain {
+      gap: 8px;
+    }
+
+    .summary-card .surface {
+      background: var(--panel-strong);
+    }
+
+    .about-cards {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .projects-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .project-card {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .project-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .project-body {
+      display: grid;
+      gap: 10px;
+    }
+
+    .project-body h4 {
+      margin-bottom: 6px;
+    }
+
+    .placeholder {
+      border: 1px dashed rgba(255, 255, 255, 0.26);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      text-align: center;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.02);
+      font-size: 14px;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
+
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px 48px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    footer a { color: var(--accent); }
+
+    @media (min-width: 720px) {
+      .nav { padding: 18px 24px; }
+      main { padding: 56px 24px 110px; gap: 64px; }
+      section { padding: 32px; }
+      .hero-layout { grid-template-columns: 1.6fr 1fr; align-items: start; }
+      .contact-grid { grid-template-columns: 1.3fr 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <main>
-    <h1>Designer Engineer Portfolio – Maincode</h1>
-    <p>This is an initial stub. The full layout and content will be added in future updates.</p>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="nav">
+      <div class="brand">
+        Product Design & Front-end
+        <span class="badge">Portfolio</span>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#hero">Hero</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="hero">
+      <div class="hero">
+        <p class="eyebrow">Product design + front-end</p>
+        <div class="hero-layout">
+          <div class="grid">
+            <h1>Fun, confident, experimental product builds.</h1>
+            <p class="lede">This single-page portfolio is purposefully fast, lightweight, and easy to review in one place.</p>
+            <div class="pill-line">I wear three hats: startup founder, product designer, front-end engineer.</div>
+            <ul>
+              <li>Placeholder impact statement about shipping measurable outcomes.</li>
+              <li>Placeholder highlight about pairing design taste with engineering rigor.</li>
+              <li>Placeholder highlight about leading ambiguous 0→1 product work.</li>
+              <li>Placeholder impact statement about collaborating with cross-functional teams.</li>
+            </ul>
+            <div class="actions">
+              <a class="button primary" href="#projects">View projects</a>
+              <a class="button" href="#contact">Get in touch</a>
+            </div>
+          </div>
+          <div class="grid summary-card">
+            <div class="surface">
+              <h3>Quick context</h3>
+              <p class="muted">Single HTML file, embedded styles, minimal JS. Built to mirror the scrappy, iterative approach I use when prototyping with teams.</p>
+              <div class="list-plain">
+              <div class="surface">
+                <strong>Current snapshot</strong>
+                <p class="muted">Leading and shipping design+build prototypes for product teams.</p>
+              </div>
+                <div class="surface">
+                  <strong>How I like to work</strong>
+                  <p class="muted">Short feedback loops, clarity on constraints, bias for pushing working artifacts.</p>
+                </div>
+                <div class="surface">
+                  <strong>Where I’m useful</strong>
+                  <p class="muted">0→1 experiences, interaction polish, and design-engineering bridges.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="grid two">
+        <div class="grid">
+          <p class="eyebrow">About</p>
+          <h2>Startup founder, product designer, and front-end engineer.</h2>
+          <p class="lede">I move quickly from concept to clickable reality, pairing product thinking with design craft and pragmatic engineering. This page is intentionally simple so it can be skimmed, forked, and iterated without tooling overhead.</p>
+          <p>When collaborating, I aim for clarity in intent, thoughtful defaults, and honest timelines. I prefer pairing early and often, tightening the loop between idea, prototype, and shipped experience.</p>
+        </div>
+        <div class="about-cards">
+          <div class="surface">
+            <h3>Snapshot</h3>
+            <div class="list-plain">
+              <div class="surface">
+                <strong>Current snapshot</strong>
+                <p class="muted">Leading product prototyping cycles; partnering with design and eng.</p>
+              </div>
+              <div class="surface">
+                <strong>How I like to work</strong>
+                <p class="muted">Calm urgency, crisp communication, and clear success criteria.</p>
+              </div>
+              <div class="surface">
+                <strong>Where I’m useful</strong>
+                <p class="muted">Turning ambiguous briefs into tangible, testable experiences.</p>
+              </div>
+            </div>
+          </div>
+          <div class="surface">
+            <h3>What I bring to a build partnership</h3>
+            <ul class="list-plain">
+              <li class="surface">Ability to move between design exploration and production-ready UI.</li>
+              <li class="surface">Comfort with systems thinking—tokens, components, accessibility.</li>
+              <li class="surface">Bias for building proof-of-concept flows that unblock decisions.</li>
+              <li class="surface">Collaborative mindset with founders, PMs, designers, and engineers.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="grid">
+        <p class="eyebrow">Projects</p>
+        <h2>Selected work—built with a design-engineering lens.</h2>
+        <p class="muted">Each case study includes a quick snapshot of the problem, approach, outcome, and my role. Links point to placeholder demos and repos for now.</p>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-head">
+              <h3>[Project One Name]</h3>
+              <div class="chip-row">
+                <span class="chip">Type</span>
+                <span class="chip">Product design + front-end</span>
+                <span class="chip">2024</span>
+                <span class="chip">HTML/CSS/JS</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div>
+                <h4>Problem</h4>
+                <p>Placeholder description of the customer or product challenge that required a fast, design-led build.</p>
+              </div>
+              <div>
+                <h4>Approach</h4>
+                <p>Placeholder outline of the experiment, rapid prototyping loop, and how interaction polish was validated.</p>
+              </div>
+              <div>
+                <h4>Outcome</h4>
+                <p>Placeholder summary of measurable impact, adoption, or learnings that informed the next iteration.</p>
+              </div>
+              <div>
+                <h4>My role</h4>
+                <p>Placeholder summary of responsibilities across design, front-end build, and collaboration with stakeholders.</p>
+              </div>
+              <div class="project-actions">
+                <a class="button primary" href="#" aria-label="Live demo for Project One">Live demo</a>
+                <a class="button" href="#" aria-label="Code or repository for Project One">Code / repo</a>
+              </div>
+              <div class="placeholder">Screenshot placeholder</div>
+              <div class="placeholder">Embed placeholder (Figma / Loom / live app)</div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-head">
+              <h3>[Project Two Name]</h3>
+              <div class="chip-row">
+                <span class="chip">Type</span>
+                <span class="chip">Product Design + Front-end</span>
+                <span class="chip">2023</span>
+                <span class="chip">HTML/CSS/JS</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div>
+                <h4>Problem</h4>
+                <p>Placeholder description of the problem statement and constraints for this initiative.</p>
+              </div>
+              <div>
+                <h4>Approach</h4>
+                <p>Placeholder outline of the prototyping cadence, design system considerations, and validation steps.</p>
+              </div>
+              <div>
+                <h4>Outcome</h4>
+                <p>Placeholder summary of results, insights, or metrics that came from shipping the work.</p>
+              </div>
+              <div>
+                <h4>My role</h4>
+                <p>Placeholder summary of responsibilities and collaboration model used to deliver.</p>
+              </div>
+              <div class="project-actions">
+                <a class="button primary" href="#" aria-label="Live demo for Project Two">Live demo</a>
+                <a class="button" href="#" aria-label="Code or repository for Project Two">Code / repo</a>
+              </div>
+              <div class="placeholder">Screenshot placeholder</div>
+              <div class="placeholder">Embed placeholder (Figma / Loom / live app)</div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-head">
+              <h3>[Project Three Name]</h3>
+              <div class="chip-row">
+                <span class="chip">Type</span>
+                <span class="chip">Design Systems</span>
+                <span class="chip">2022</span>
+                <span class="chip">HTML/CSS/JS</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div>
+                <h4>Problem</h4>
+                <p>Placeholder description of the challenge to standardize or scale UI while shipping features.</p>
+              </div>
+              <div>
+                <h4>Approach</h4>
+                <p>Placeholder outline of the design systems strategy, documentation, and component implementation.</p>
+              </div>
+              <div>
+                <h4>Outcome</h4>
+                <p>Placeholder summary of improvements to delivery speed, quality, or consistency.</p>
+              </div>
+              <div>
+                <h4>My role</h4>
+                <p>Placeholder summary of leadership, hands-on build, and coordination with the broader team.</p>
+              </div>
+              <div class="project-actions">
+                <a class="button primary" href="#" aria-label="Live demo for Project Three">Live demo</a>
+                <a class="button" href="#" aria-label="Code or repository for Project Three">Code / repo</a>
+              </div>
+              <div class="placeholder">Screenshot placeholder</div>
+              <div class="placeholder">Embed placeholder (Figma / Loom / live app)</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-grid">
+        <div class="grid">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s talk about what you’re building.</h2>
+          <p class="lede">This is intentionally a single-file site—easy to read, fork, and edit. If you want to see specific interactions or deeper dives, I can share live prototypes.</p>
+          <a class="button primary" href="mailto:matt@matthewgrant.co?subject=Let%E2%80%99s%20build%20together">Email me</a>
+        </div>
+        <div class="grid">
+          <div class="surface">
+            <h3>Details</h3>
+            <ul class="list-plain">
+              <li class="surface"><strong>Email:</strong> matt@matthewgrant.co</li>
+              <li class="surface"><strong>LinkedIn:</strong> https://www.linkedin.com/in/placeholder</li>
+              <li class="surface"><strong>GitHub:</strong> https://github.com/placeholder</li>
+              <li class="surface"><strong>Availability:</strong> Open to new product design + front-end collaborations.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <span>© <span id="year"></span> [Your Name]</span>
+    <a href="#hero">Back to top</a>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+  </script>
 </body>
 </html>
