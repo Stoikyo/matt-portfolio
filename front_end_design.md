@@ -1,159 +1,107 @@
-# Front-end Design Guide (High Level)
+# front_end_design.md
 
-This document defines the visual direction for the `matt-portfolio` site.
+## Purpose
 
-The goal is a **clean, modern, and friendly portfolio** that can support different Designer Engineer / product design / front-end applications over time. Layouts may evolve, but the look and feel should stay consistent with these principles.
+This repo contains a **single-page portfolio** for Matt Grant, aimed at Designer Engineer / product design / front-end roles.
 
----
+The goal: a page that reads quickly, shows how I think, and feels like it was built by someone who cares about both design and engineering.
 
-## 1. Overall principles
-
-- **Fun, confident, experimental**, but calm and professional.
-- **Content-first** – copy and case studies matter more than decoration.
-- **Single-page story** – the page should read as one continuous narrative, top to bottom.
-- **Production-ready feel** – it should look like something you’d be happy to ship to real users.
-
-When in doubt: simpler, clearer, fewer things on screen.
+This document sets **design principles and foundations**. It should guide implementation, not prescribe exact layouts or components.
 
 ---
 
-## 2. Layout & spacing
+## Design principles
 
-- Design **mobile-first**, then enhance for larger screens.
-- Use a **centred content column** with a comfortable max-width (around 1040–1200px).
-- Maintain consistent vertical rhythm:
-  - Clear separation between sections (hero, about, projects, contact).
-  - Inside a section, group related content tightly; separate unrelated content with space.
-- Cards and components can change layout over time (e.g. one vs two columns), but:
-  - Padding should remain generous.
-  - Alignment should be clean (prefer left alignment for text).
-  - Elements within a section should feel like part of the same family.
+1. **Clarity over cleverness**  
+   - Everything should be easy to scan.  
+   - No decorative patterns that make reading harder.
 
----
+2. **Typography is the main design tool**  
+   - Headings do most of the visual heavy lifting.  
+   - Body copy should be comfortable to read (line length, line height).
 
-## 3. Typography
+3. **One simple mental model**  
+   - Sections are stacked vertically in a single main column.  
+   - Repeated patterns (cards, headings, buttons) should behave consistently.
 
-Current default:
+4. **Minimal, confident UI**  
+   - Few variants: one card style, one primary button, one secondary/ghost.  
+   - Avoid “UI for the sake of UI” (extra borders, panels, or badges).
 
-- **Headings**: Fredoka (via Google Fonts).
-- **Body & UI text**: Inter (via Google Fonts).
+5. **Mobile first**  
+   - Layout decisions start from small screens and scale up.  
+   - No layout should rely on large-screen tricks to make sense.
 
-If fonts are changed in the future, keep the same roles: a slightly more characterful display face for headings and a very readable sans for body.
-
-Guidelines:
-
-- Use a clear hierarchy:
-  - One `<h1>` for the main page title.
-  - `<h2>` for section titles (About, Selected work, Contact).
-  - `<h3>` or smaller for sub-headings inside sections (e.g. “Problem”, “Approach”).
-- Body text:
-  - Comfortable size (not tiny), with relaxed line-height (~1.5–1.7).
-  - Left-aligned for longer paragraphs.
-- Limit the number of font sizes and weights; avoid over-styling.
+6. **Accessible by default**  
+   - Respect sensible colour contrast.  
+   - Focus states must be visible.  
+   - Semantic HTML comes before visual polish.
 
 ---
 
-## 4. Colour & theme
+## Visual foundations
 
-- **Theme**:
-  - Light background (off-white / very light grey).
-  - Card surfaces with subtle borders or very soft shadows.
-- **Accent colour**:
-  - A single primary blue for:
-    - Primary buttons.
-    - Key links and highlights.
-  - Secondary elements (borders, labels) should use neutral greys.
+These are **constraints**, not finished designs.
 
-Guidelines:
+### Colour
 
-- Maintain strong contrast for text (body text should always be easy to read).
-- Avoid introducing multiple bright accent colours unless there is a clear, deliberate reason.
-- Keep backgrounds mostly flat; use gradients and textures sparingly, if at all.
+- Light theme with a soft, neutral background.  
+- Single primary accent: `#0d6efd` (blue).  
+- Greys are quiet and used for structure, not drama.  
+- Do not introduce extra brand colours without a clear reason.
 
----
+### Typography
 
-## 5. Components (patterns, not strict templates)
+- Headings use **Fredoka** (bold, friendly, confident).  
+- Body text uses **Inter** (or system sans fallback).  
+- Hierarchy should be obvious:
+  - Hero H1  
+  - Section H2  
+  - Card/Project H3  
+- Avoid micro text except where it really adds value (eyebrows, meta labels).
 
-These patterns describe intent, not fixed layouts. Components can be re-arranged as long as they keep their role and clarity.
+### Components (at a principle level)
 
-### Navigation bar
+- **Cards**  
+  - Soft radius, light border, subtle shadow.  
+  - Internal spacing feels generous but not wasteful.  
+  - Same card treatment across hero, about, projects, and contact.
 
-- Sticky bar at the top.
-- Left: name and role (e.g. “Matt Grant — Product Design & Front-end”).
-- Right: anchor links to main sections (About, Projects, Contact).
-- Background: light, with a subtle divider below.
-- Links should have clear hover and focus states.
-
-### Hero / intro
-
-- First section in the main content.
-- Contains:
-  - An eyebrow / label line (e.g. “Designer Engineer portfolio”).
-  - A large, confident heading.
-  - 1–2 concise paragraphs explaining what this page is and how you work.
-  - Optional “hats” line summarising your roles.
-  - 2–4 bullet points highlighting impact or strengths.
-  - Primary and secondary CTAs (e.g. view projects, email).
-
-### About
-
-- Section that explains how you work and what you bring.
-  - May use one or two columns on desktop; stacks to a single column on mobile.
-  - Should include:
-    - Short narrative copy (who you are, how you approach work).
-    - A concise summary block (e.g. current snapshot, how you like to work, where you’re useful).
-
-### Projects
-
-- Section listing 2–4 key projects.
-- Each project should be a clear, scannable card with:
-  - Title.
-  - Metadata (type, year, tech) as small labels or text.
-  - Short labelled lines for: Problem, Approach, Outcome, My role.
-  - Optional screenshot area or link.
-  - CTA buttons for “Live demo” and/or “Code / repo” if applicable.
-
-Projects can be laid out in a vertical stack or simple grid, but they should be easy to skim and visually consistent.
-
-### Contact
-
-- Section inviting the reader to get in touch.
-  - Should include:
-    - A short, direct CTA (e.g. “Let’s talk about what you’re building.”).
-    - A primary “Email me” button.
-    - A small details list (email, LinkedIn, GitHub, availability).
-
-### Footer
-
-- Simple line with © year and name, plus a “Back to top” link.
+- **Buttons**  
+  - Primary: solid blue, pill-shaped, readable label.  
+  - Secondary: outline/ghost with subtle hover fill.  
+  - No more than these two variants.
 
 ---
 
-## 6. Interaction & motion
+## Content & structure
 
-- Use smooth scrolling for in-page anchors where supported.
-- All interactive elements (nav links, buttons, etc.) must have:
-  - Hover states.
-  - Visible focus states (do not remove outlines).
-- Motion should be subtle and purposeful:
-  - Small colour or elevation changes on hover.
-  - No large continuous animations or parallax.
+These are **content responsibilities**, not final layouts.
+
+- **Hero**  
+  - Clearly states what I do and why this page exists.  
+  - Includes the “three hats” line (founder / product designer / front-end).  
+  - One or two clear CTAs (view projects, email).
+
+- **About**  
+  - Explains how I work, not my whole life story.  
+  - Includes a compact “snapshot” of where I’m most useful.
+
+- **Projects**  
+  - 2–3 mini case studies only.  
+  - Each uses: **Problem → Approach → Outcome → My role**.  
+  - Optional links for live demo / code where appropriate.
+
+- **Contact**  
+  - One clear CTA to email me.  
+  - Simple list of key links (email, LinkedIn, GitHub, availability).
 
 ---
 
-## 7. Accessibility & readability
+## What this document should NOT do
 
-- Maintain semantic HTML and logical heading levels.
-- Ensure keyboard navigation works.
-- Maintain sufficient colour contrast for text and UI elements.
-- Do not rely on colour alone to convey meaning.
+- It should **not** lock in exact padding, pixel values, or grid configurations.  
+- It should **not** describe component APIs, class names, or file structures in detail.  
+- It should **not** try to cover every CSS decision.
 
----
-
-## 8. Flexibility & evolution
-
-- Layouts, grouping, and component arrangements may change over time as the portfolio evolves.
-- New sections (e.g. skills, writing, experiments) can be added if needed, as long as:
-  - The core story (who you are, selected work, contact) stays clear.
-  - The visual language in this document is respected.
-- If major visual changes are required (new theme, new typography, etc.), update this guide first and then adjust `index.html` to match.
+The actual HTML/CSS implementation will evolve through `index.html` and code review, as long as it honours these principles and foundations.
