@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Matt Grant · Portfolio</title>
+  <title>Matt Grant · Designer Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f6f8fb;
+      --bg: #f7f9fc;
       --card: #ffffff;
-      --card-soft: #f8fafc;
       --text: #0f172a;
       --muted: #475569;
       --line: #e2e8f0;
-      --accent: #2563eb;
-      --accent-strong: #1d4ed8;
-      --accent-soft: rgba(37, 99, 235, 0.08);
-      --shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
-      --radius-lg: 16px;
+      --accent: #0d6efd;
+      --accent-strong: #0a58ca;
       --radius: 12px;
-      --radius-sm: 9px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       --max-width: 1100px;
     }
 
@@ -28,199 +27,141 @@
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at 12% 18%, rgba(37, 99, 235, 0.05), transparent 32%), radial-gradient(circle at 80% 12%, rgba(37, 99, 235, 0.04), transparent 28%), var(--bg);
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
       color: var(--text);
       line-height: 1.7;
-      min-height: 100vh;
     }
 
     a { color: inherit; text-decoration: none; }
 
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: -999px;
-      padding: 12px 16px;
-      border-radius: var(--radius-sm);
-      background: var(--card);
-      color: var(--text);
-      border: 1px solid var(--accent);
-      z-index: 1000;
-    }
-
-    .skip-link:focus {
-      left: 14px;
-      top: 14px;
-    }
-
     header {
       position: sticky;
       top: 0;
-      z-index: 900;
+      z-index: 10;
+      background: rgba(247, 249, 252, 0.96);
       backdrop-filter: blur(8px);
-      background: rgba(246, 248, 251, 0.92);
       border-bottom: 1px solid var(--line);
     }
 
     .nav {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 14px 20px;
+      padding: 12px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 12px;
+      font-size: 14px;
     }
 
     .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
+      font-family: 'Fredoka', system-ui, sans-serif;
+      font-weight: 700;
       letter-spacing: 0.01em;
+      font-size: 15px;
       color: var(--text);
     }
 
-    .brand .badge {
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--card-soft);
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
     nav a {
-      padding: 9px 11px;
-      border-radius: var(--radius-sm);
+      padding: 7px 10px;
+      border-radius: 8px;
       color: var(--muted);
       font-weight: 600;
-      letter-spacing: 0.01em;
-      transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-      border: 1px solid transparent;
+      transition: color 0.2s ease, background 0.2s ease;
     }
 
     nav a:hover,
     nav a:focus-visible {
       color: var(--text);
-      background: var(--card-soft);
-      border-color: var(--line);
-      outline: none;
+      background: #e9eef7;
+      outline: 2px solid transparent;
+      box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
     }
 
     main {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 42px 20px 96px;
+      padding: 48px 20px 96px;
       display: grid;
-      gap: 48px;
+      gap: 56px;
     }
 
     section {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      padding: 28px;
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
+      padding: 32px 28px;
     }
 
-    h1, h2, h3, h4 {
+    h1, h2, h3 {
       margin: 0 0 12px;
       color: var(--text);
       line-height: 1.2;
       letter-spacing: -0.01em;
+      font-family: 'Fredoka', system-ui, sans-serif;
     }
 
-    h1 { font-size: clamp(30px, 4vw, 42px); }
-    h2 { font-size: clamp(24px, 3vw, 32px); }
-    h3 { font-size: 19px; }
-    h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+    h1 { font-size: clamp(34px, 6vw, 48px); font-weight: 700; }
+    h2 { font-size: clamp(26px, 3.6vw, 34px); font-weight: 600; }
+    h3 { font-size: 20px; font-weight: 600; }
 
     p { margin: 0 0 14px; color: var(--muted); }
-
-    .lede { font-size: 18px; color: var(--text); margin-bottom: 14px; }
 
     .eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-size: 12px;
       color: var(--accent);
-      margin-bottom: 14px;
-      font-weight: 800;
+      margin-bottom: 12px;
+      font-weight: 700;
     }
 
-    .muted { color: var(--muted); }
+    .lead { font-size: 18px; color: var(--text); margin-bottom: 12px; }
 
-    .grid { display: grid; gap: 18px; }
-    .grid.two { grid-template-columns: 1fr; }
-
-    .surface {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--card-soft);
-      padding: 16px;
-    }
-
-    .surface strong { color: var(--text); }
-
-    .pill-line {
+    .pill {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 10px 12px;
+      gap: 8px;
+      padding: 10px 14px;
       border-radius: 999px;
       border: 1px dashed var(--line);
+      background: #eef2f6;
       color: var(--text);
-      background: var(--card-soft);
-      margin: 6px 0 16px;
       font-weight: 600;
+      margin: 6px 0 14px;
     }
 
-    ul { margin: 0 0 16px; padding-left: 20px; color: var(--muted); }
+    ul { padding-left: 20px; margin: 0 0 14px; color: var(--muted); }
+    li { margin-bottom: 8px; }
 
-    .list-plain {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 10px;
-    }
-
-    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
-
-    .chip {
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: #edf2f7;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 600;
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 11px 15px;
-      border-radius: var(--radius-sm);
+      padding: 11px 16px;
+      border-radius: 999px;
       border: 1px solid var(--line);
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 0.01em;
-      transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-      cursor: pointer;
       color: var(--text);
       background: var(--card);
+      transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
     }
 
     .button.primary {
       background: var(--accent);
       color: #ffffff;
       border-color: var(--accent);
-      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.18);
     }
 
     .button:hover,
@@ -228,6 +169,7 @@
       transform: translateY(-1px);
       border-color: var(--accent);
       outline: none;
+      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
     }
 
     .button.primary:hover,
@@ -236,69 +178,71 @@
       border-color: var(--accent-strong);
     }
 
-    .hero { display: grid; gap: 22px; }
+    .grid { display: grid; gap: 18px; }
 
-    .hero-layout { display: grid; gap: 20px; }
-
-    .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-
-    .summary-card .surface { background: #eef2f6; }
-
-    .about-cards {
+    .split {
       display: grid;
-      gap: 14px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      grid-template-columns: 1fr;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #e5edfb, #cbd9f6);
+      display: grid;
+      place-items: center;
+      color: #0a2e75;
+      font-family: 'Fredoka', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      border: 2px solid #d5e0f3;
+      margin-left: auto;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .meta {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 10px;
     }
 
     .projects-grid {
       display: grid;
-      gap: 14px;
+      gap: 16px;
       grid-template-columns: 1fr;
     }
 
     .project-card {
-      display: grid;
-      gap: 12px;
-      padding: 16px;
-      border-radius: var(--radius);
       border: 1px solid var(--line);
-      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px;
+      background: #ffffff;
       box-shadow: var(--shadow);
+      display: grid;
+      gap: 10px;
     }
-
-    .project-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .project-body { display: grid; gap: 10px; }
-
-    .project-body h4 { margin-bottom: 6px; }
 
     .placeholder {
       border: 1px dashed var(--line);
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius);
       padding: 12px;
       text-align: center;
       color: var(--muted);
-      background: var(--card-soft);
+      background: #f1f5f9;
       font-size: 14px;
-    }
-
-    .project-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 2px;
-    }
-
-    .contact-grid {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: 1fr;
     }
 
     footer {
@@ -315,27 +259,21 @@
 
     footer a { color: var(--accent); }
 
-    @media (min-width: 720px) {
-      .nav { padding: 16px 24px; }
-      main { padding: 54px 24px 110px; gap: 60px; }
-      section { padding: 32px; }
-      .hero-layout { grid-template-columns: 1.6fr 1fr; align-items: start; }
-      .projects-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-      .contact-grid { grid-template-columns: 1.3fr 1fr; }
+    @media (min-width: 820px) {
+      .nav { padding: 14px 24px; }
+      main { padding: 64px 24px 120px; gap: 64px; }
+      section { padding: 36px 32px; }
+      .split { grid-template-columns: 1.4fr 0.8fr; }
+      .projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .avatar { margin-left: auto; }
     }
   </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
-
   <header>
     <div class="nav">
-      <div class="brand">
-        Matt Grant
-        <span class="badge">Portfolio</span>
-      </div>
+      <div class="brand">Matt Grant — Product Design &amp; Front-end</div>
       <nav aria-label="Primary">
-        <a href="#hero">Hero</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -343,231 +281,129 @@
     </div>
   </header>
 
-  <main id="main">
+  <main>
     <section id="hero">
-      <div class="hero">
-        <p class="eyebrow">Matt Grant — design + front-end</p>
-        <div class="hero-layout">
-          <div class="grid">
-            <h1>Fun, confident, experimental product builds.</h1>
-            <p class="lede">This single-page portfolio is purposefully fast, lightweight, and easy to review in one place.</p>
-            <div class="pill-line">I wear three hats: startup founder, product designer, front-end engineer.</div>
-            <ul>
-              <li>Placeholder impact statement about shipping measurable outcomes.</li>
-              <li>Placeholder highlight about pairing design taste with engineering rigor.</li>
-              <li>Placeholder highlight about leading ambiguous 0→1 product work.</li>
-              <li>Placeholder impact statement about collaborating with cross-functional teams.</li>
-            </ul>
-            <div class="actions">
-              <a class="button primary" href="#projects">View projects</a>
-              <a class="button" href="#contact">Get in touch</a>
-            </div>
+      <div class="split">
+        <div class="grid">
+          <div>
+            <p class="eyebrow">Designer Engineer — Portfolio</p>
+            <h1>Hi, I’m Matt!</h1>
           </div>
-          <div class="grid summary-card">
-            <div class="surface">
-              <h3>Quick context</h3>
-              <p class="muted">Single HTML file, embedded styles, minimal JS. Built to mirror the scrappy, iterative approach I use when prototyping with teams.</p>
-              <div class="list-plain">
-                <div class="surface">
-                  <strong>Current snapshot</strong>
-                  <p class="muted">Leading and shipping design+build prototypes for product teams.</p>
-                </div>
-                <div class="surface">
-                  <strong>How I like to work</strong>
-                  <p class="muted">Short feedback loops, clarity on constraints, bias for pushing working artifacts.</p>
-                </div>
-                <div class="surface">
-                  <strong>Where I’m useful</strong>
-                  <p class="muted">0→1 experiences, interaction polish, and design-engineering bridges.</p>
-                </div>
-              </div>
-            </div>
+          <p class="lead">I design and build product experiences as a designer engineer.</p>
+          <p>I move fast from concept to clickable reality, pairing design taste with pragmatic front-end craft.</p>
+          <div class="pill">Three hats: founder · product designer · front-end engineer</div>
+          <ul>
+            <li>Placeholder highlight about shipping measurable outcomes.</li>
+            <li>Placeholder highlight about leading ambiguous 0→1 product work.</li>
+            <li>Placeholder highlight about collaboration and interaction polish.</li>
+          </ul>
+          <div class="actions">
+            <a class="button primary" href="#projects">View projects</a>
+            <a class="button" href="mailto:matt@matthewgrant.co">Email me</a>
           </div>
         </div>
+        <div class="avatar" aria-hidden="true">MG</div>
       </div>
     </section>
 
     <section id="about">
-      <div class="grid two">
+      <h2>About</h2>
+      <div class="card">
+        <p>I work in short, clear loops: define intent, prototype quickly, and ship usable artifacts the team can react to. I care about thoughtful defaults, honest timelines, and steady collaboration.</p>
         <div class="grid">
-          <p class="eyebrow">About</p>
-          <h2>Startup founder, product designer, and front-end engineer.</h2>
-          <p class="lede">I move quickly from concept to clickable reality, pairing product thinking with design craft and pragmatic engineering. This page is intentionally simple so it can be skimmed, forked, and iterated without tooling overhead.</p>
-          <p>When collaborating, I aim for clarity in intent, thoughtful defaults, and honest timelines. I prefer pairing early and often, tightening the loop between idea, prototype, and shipped experience.</p>
-        </div>
-        <div class="about-cards">
-          <div class="surface">
-            <h3>Snapshot</h3>
-            <div class="list-plain">
-              <div class="surface">
-                <strong>Current snapshot</strong>
-                <p class="muted">Leading product prototyping cycles; partnering with design and eng.</p>
-              </div>
-              <div class="surface">
-                <strong>How I like to work</strong>
-                <p class="muted">Calm urgency, crisp communication, and clear success criteria.</p>
-              </div>
-              <div class="surface">
-                <strong>Where I’m useful</strong>
-                <p class="muted">Turning ambiguous briefs into tangible, testable experiences.</p>
-              </div>
-            </div>
+          <div>
+            <strong>What I do</strong>
+            <p class="muted">Design, prototype, and build end-to-end product experiences.</p>
           </div>
-          <div class="surface">
-            <h3>What I bring to a build partnership</h3>
-            <ul class="list-plain">
-              <li class="surface">Ability to move between design exploration and production-ready UI.</li>
-              <li class="surface">Comfort with systems thinking—tokens, components, accessibility.</li>
-              <li class="surface">Bias for building proof-of-concept flows that unblock decisions.</li>
-              <li class="surface">Collaborative mindset with founders, PMs, designers, and engineers.</li>
-            </ul>
+          <div>
+            <strong>How I like to work</strong>
+            <p class="muted">Calm urgency, crisp communication, and clear success criteria.</p>
+          </div>
+          <div>
+            <strong>Where I’m most useful</strong>
+            <p class="muted">0→1 flows, interaction polish, and design-engineering bridges.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section id="projects">
-      <div class="grid">
-        <p class="eyebrow">Projects</p>
-        <h2>Selected work—built with a design-engineering lens.</h2>
-        <p class="muted">Each case study includes a quick snapshot of the problem, approach, outcome, and my role. Links point to placeholder demos and repos for now.</p>
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-head">
-              <h3>[Project One Name]</h3>
-              <div class="chip-row">
-                <span class="chip">Type</span>
-                <span class="chip">Design + front-end</span>
-                <span class="chip">2024</span>
-                <span class="chip">HTML/CSS/JS</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <div>
-                <h4>Problem</h4>
-                <p>Placeholder description of the customer or product challenge that required a fast, design-led build.</p>
-              </div>
-              <div>
-                <h4>Approach</h4>
-                <p>Placeholder outline of the experiment, rapid prototyping loop, and how interaction polish was validated.</p>
-              </div>
-              <div>
-                <h4>Outcome</h4>
-                <p>Placeholder summary of measurable impact, adoption, or learnings that informed the next iteration.</p>
-              </div>
-              <div>
-                <h4>My role</h4>
-                <p>Placeholder summary of responsibilities across design, front-end build, and collaboration with stakeholders.</p>
-              </div>
-              <div class="project-actions">
-                <a class="button primary" href="#" aria-label="Live demo for Project One">Live demo</a>
-                <a class="button" href="#" aria-label="Code or repository for Project One">Code / repo</a>
-              </div>
-              <div class="placeholder">Screenshot placeholder</div>
-              <div class="placeholder">Embed placeholder (Figma / Loom / live app)</div>
-            </div>
-          </article>
+      <h2>Projects</h2>
+      <p class="muted">Quick snapshots of problems, approaches, outcomes, and my role.</p>
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>[Project One Name]</h3>
+          <div class="meta">Type · 2024 · HTML/CSS/JS</div>
+          <p class="muted">One-line description of the product or feature.</p>
+          <div class="grid">
+            <p><strong>Problem:</strong> Placeholder description of the customer or product challenge.</p>
+            <p><strong>Approach:</strong> Placeholder outline of the experiment and prototyping loop.</p>
+            <p><strong>Outcome:</strong> Placeholder summary of measurable impact or learnings.</p>
+            <p><strong>My role:</strong> Placeholder summary across design, build, and collaboration.</p>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="#">Live demo</a>
+            <a class="button" href="#">Code</a>
+          </div>
+          <div class="placeholder">Screenshot placeholder</div>
+        </article>
 
-          <article class="project-card">
-            <div class="project-head">
-              <h3>[Project Two Name]</h3>
-              <div class="chip-row">
-                <span class="chip">Type</span>
-                <span class="chip">Design + front-end</span>
-                <span class="chip">2023</span>
-                <span class="chip">HTML/CSS/JS</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <div>
-                <h4>Problem</h4>
-                <p>Placeholder description of the problem statement and constraints for this initiative.</p>
-              </div>
-              <div>
-                <h4>Approach</h4>
-                <p>Placeholder outline of the prototyping cadence, design system considerations, and validation steps.</p>
-              </div>
-              <div>
-                <h4>Outcome</h4>
-                <p>Placeholder summary of results, insights, or metrics that came from shipping the work.</p>
-              </div>
-              <div>
-                <h4>My role</h4>
-                <p>Placeholder summary of responsibilities and collaboration model used to deliver.</p>
-              </div>
-              <div class="project-actions">
-                <a class="button primary" href="#" aria-label="Live demo for Project Two">Live demo</a>
-                <a class="button" href="#" aria-label="Code or repository for Project Two">Code / repo</a>
-              </div>
-              <div class="placeholder">Screenshot placeholder</div>
-              <div class="placeholder">Embed placeholder (Figma / Loom / live app)</div>
-            </div>
-          </article>
+        <article class="project-card">
+          <h3>[Project Two Name]</h3>
+          <div class="meta">Product Design + Front-end · 2023 · HTML/CSS/JS</div>
+          <p class="muted">One-line description of the product or feature.</p>
+          <div class="grid">
+            <p><strong>Problem:</strong> Placeholder description of the problem statement and constraints.</p>
+            <p><strong>Approach:</strong> Placeholder outline of prototyping cadence and validation steps.</p>
+            <p><strong>Outcome:</strong> Placeholder summary of results or insights from shipping.</p>
+            <p><strong>My role:</strong> Placeholder summary of responsibilities and collaboration model.</p>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="#">Live demo</a>
+            <a class="button" href="#">Code</a>
+          </div>
+          <div class="placeholder">Screenshot placeholder</div>
+        </article>
 
-          <article class="project-card">
-            <div class="project-head">
-              <h3>[Project Three Name]</h3>
-              <div class="chip-row">
-                <span class="chip">Type</span>
-                <span class="chip">Design Systems</span>
-                <span class="chip">2022</span>
-                <span class="chip">HTML/CSS/JS</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <div>
-                <h4>Problem</h4>
-                <p>Placeholder description of the challenge to standardize or scale UI while shipping features.</p>
-              </div>
-              <div>
-                <h4>Approach</h4>
-                <p>Placeholder outline of the design systems strategy, documentation, and component implementation.</p>
-              </div>
-              <div>
-                <h4>Outcome</h4>
-                <p>Placeholder summary of improvements to delivery speed, quality, or consistency.</p>
-              </div>
-              <div>
-                <h4>My role</h4>
-                <p>Placeholder summary of leadership, hands-on build, and coordination with the broader team.</p>
-              </div>
-              <div class="project-actions">
-                <a class="button primary" href="#" aria-label="Live demo for Project Three">Live demo</a>
-                <a class="button" href="#" aria-label="Code or repository for Project Three">Code / repo</a>
-              </div>
-              <div class="placeholder">Screenshot placeholder</div>
-              <div class="placeholder">Embed placeholder (Figma / Loom / live app)</div>
-            </div>
-          </article>
-        </div>
+        <article class="project-card">
+          <h3>[Project Three Name]</h3>
+          <div class="meta">Design Systems · 2022 · HTML/CSS/JS</div>
+          <p class="muted">One-line description of the product or feature.</p>
+          <div class="grid">
+            <p><strong>Problem:</strong> Placeholder description of the challenge to standardize or scale UI.</p>
+            <p><strong>Approach:</strong> Placeholder outline of design systems strategy and components.</p>
+            <p><strong>Outcome:</strong> Placeholder summary of delivery speed, quality, or consistency.</p>
+            <p><strong>My role:</strong> Placeholder summary of leadership, build, and coordination.</p>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="#">Live demo</a>
+            <a class="button" href="#">Code</a>
+          </div>
+          <div class="placeholder">Screenshot placeholder</div>
+        </article>
       </div>
     </section>
 
     <section id="contact">
-      <div class="contact-grid">
+      <h2>Contact</h2>
+      <p class="lead">Let’s talk about what you’re building.</p>
+      <p class="muted">Simple, single-page portfolio. If you want deeper dives or specific interactions, I can share live prototypes.</p>
+      <div class="actions">
+        <a class="button primary" href="mailto:matt@matthewgrant.co">Email me</a>
+      </div>
+      <div class="card" style="margin-top:16px;">
         <div class="grid">
-          <p class="eyebrow">Contact</p>
-          <h2>Let’s talk about what you’re building.</h2>
-          <p class="lede">This is intentionally a single-file site—easy to read, fork, and edit. If you want to see specific interactions or deeper dives, I can share live prototypes.</p>
-          <a class="button primary" href="mailto:matt@matthewgrant.co?subject=Let%E2%80%99s%20build%20together">Email me</a>
-        </div>
-        <div class="grid">
-          <div class="surface">
-            <h3>Details</h3>
-            <ul class="list-plain">
-              <li class="surface"><strong>Email:</strong> matt@matthewgrant.co</li>
-              <li class="surface"><strong>LinkedIn:</strong> https://www.linkedin.com/in/placeholder</li>
-              <li class="surface"><strong>GitHub:</strong> https://github.com/placeholder</li>
-              <li class="surface"><strong>Availability:</strong> Open to new product design + front-end collaborations.</li>
-            </ul>
-          </div>
+          <p><strong>Email:</strong> matt@matthewgrant.co</p>
+          <p><strong>LinkedIn:</strong> https://www.linkedin.com/in/placeholder</p>
+          <p><strong>GitHub:</strong> https://github.com/placeholder</p>
+          <p><strong>Availability:</strong> Open to new product design + front-end collaborations.</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <span>© <span id="year"></span> [Your Name]</span>
+    <span>© <span id="year"></span> Matt Grant</span>
     <a href="#hero">Back to top</a>
   </footer>
 
