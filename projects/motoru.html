@@ -280,28 +280,12 @@
 
   <main>
     <section>
-      <h1>Motoru — EV Discovery Experience</h1>
-      <p class="meta">Product design + lightweight engineering · 2023–2025 · WordPress prototype with custom quiz logic, Google Apps Script, Airtable</p>
-      <p class="lead">A guided EV quiz that turns lifestyle questions into three clear car recommendations.</p>
-    </section>
-
-    <section>
-      <div class="key-facts">
-        <div class="fact">
-          <strong>Type</strong>
-          <p>Product design + lightweight engineering</p>
-        </div>
-        <div class="fact">
-          <strong>Stack</strong>
-          <p>WordPress, custom quiz logic, Google Apps Script, Airtable</p>
-        </div>
-        <div class="fact">
-          <strong>Timeline</strong>
-          <p>2023–2025</p>
-        </div>
-        <div class="fact">
-          <strong>Status</strong>
-          <p>Live prototype</p>
+      <div class="project-header">
+        <div class="project-hero-avatar">IMG</div>
+        <div>
+          <h1>Motoru — EV Discovery Experience</h1>
+          <p class="meta">Product design, lightweight engineering &amp; venture building · 2025 · WordPress · Google Apps Script · Google Sheets</p>
+          <p class="lead">A guided EV quiz that turns lifestyle questions into three clear recommendations to see if we could make choosing an EV feel simple for everyday drivers.</p>
         </div>
       </div>
     </section>
@@ -309,41 +293,48 @@
     <section class="content">
       <section>
         <h2>Problem</h2>
-        <p>We started with a hypothesis: people aren’t avoiding EVs because they don’t want them, they’re stuck because choosing one feels confusing and high-risk.</p>
-        <p>From user conversations, EV events and online communities we kept hearing the same issues: too many models, unclear charging and running costs, and comparison sites that expect you to know which car you want before you even understand the basics.</p>
-        <p>The challenge was to test that hypothesis and design a way for everyday drivers to move from “this is overwhelming” to “these are a few EVs that clearly fit my life”.</p>
+        <p>We started with a simple hypothesis: people aren’t avoiding EVs because they don’t want them — they’re stuck because choosing one feels confusing, risky and full of jargon.</p>
+        <p>From user conversations, EV events and online communities we kept hearing the same things:</p>
+        <ul>
+          <li>Too many models and acronyms</li>
+          <li>Unclear running and charging costs</li>
+          <li>Comparison sites that expect you to know which car you want before you even understand the basics</li>
+        </ul>
+        <p>The challenge was to find out whether a different kind of “first step” could help: one that ignored model names and specs at the start, and focused on how people actually live.</p>
       </section>
 
       <section>
         <h2>Approach</h2>
-        <p>I treated Motoru as a design-engineering experiment:</p>
+        <p>I treated Motoru as an experiment to see if we could identify, validate and solve a real problem for EV buyers with a scrappy product.</p>
         <ul>
-          <li><strong>Research &amp; validation</strong> – Talked to people at EV events and in local/online groups about how they were trying to choose an EV and where they got stuck.</li>
-          <li><strong>Reframe</strong> – Noticed people froze when asked “Which car are you looking at?” but had plenty to say about their lifestyle: commute, family, trips, parking, budget. We flipped the flow to ask lifestyle questions first and let the system work out the cars.</li>
-          <li><strong>Design</strong> – Mapped the journey from “curious about EVs” to “ready to test drive”. Designed a quiz that focused on needs and constraints instead of specs, plus a results view that explained why each car was recommended.</li>
-          <li><strong>Build</strong> – Implemented a working prototype in WordPress. Used Google Apps Script and Airtable to handle the matching logic, store responses and route enquiries, so we could ship quickly without a heavy backend.</li>
-          <li><strong>Iteration</strong> – Ran live sessions with real drivers and watched where they hesitated or dropped off. Refined question wording, order and scoring across multiple loops, and simplified the results page to three clear options with next steps.</li>
+          <li><strong>Research &amp; hypothesis</strong> – Talked to people at EV events and in Facebook/Reddit groups, asking how they were trying to get into an EV. Most people froze when asked “Which car are you looking at?” but were comfortable talking about their life: commute, kids, trips, parking, budget.</li>
+          <li><strong>Reframe the problem</strong> – Instead of asking “What car do you want?”, we flipped it to “Tell us how you live, and we’ll work out which cars fit.”</li>
+          <li><strong>Design the flow</strong> – Mapped the journey from “curious about EVs” to “I’m ready to talk to someone”. Designed a short quiz that focused on lifestyle and constraints, plus a results view that explained why each recommendation matched.</li>
+          <li><strong>Build the prototype</strong> – Built the quiz in WordPress, with custom logic in Google Apps Script. Rolled our own EV database from scratch in Google Sheets, based on manufacturer data, dealer info and community feedback, then wired it into the scoring and matching logic.</li>
+          <li><strong>Test and iterate</strong> – Put the prototype in front of real people, watched where they hesitated, and tweaked question wording, order and scoring. Shared it in EV Facebook groups and on Reddit to get a wider range of users and feedback.</li>
         </ul>
       </section>
 
       <section>
         <h2>Outcome</h2>
+        <p>The prototype solved a small but meaningful part of the problem — helping people move from vague interest to a concrete shortlist:</p>
         <ul>
-          <li>Real visitors completed the quiz and used the three-car shortlist as a starting point for their EV search.</li>
-          <li>We received genuine email signups and novated lease enquiries through the flow, showing intent rather than casual browsing.</li>
-          <li>Feedback from users and EV communities confirmed that the guided, lifestyle-first approach felt less intimidating and more trustworthy than static comparison pages.</li>
-          <li>The prototype proved we could deliver a believable “digital car broker” experience with a low-code stack and minimal engineering time.</li>
+          <li>Over 90% of people who started the quiz finished it.</li>
+          <li>Reddit and EV Facebook groups became a strong source of traffic, feedback and ideas for improving the questions and recommendations.</li>
+          <li>Multiple novated leasing companies approached us and competed to handle the leads coming through the tool.</li>
+          <li>Sustainable growth and marketing were harder. With limited time, my co-founder’s family commitments, and no simple path to scale without burning out, we chose to wrap the project up amicably rather than drag it out.</li>
         </ul>
+        <p>Motoru proved the core insight — that a lifestyle-first path into EVs resonates — but also surfaced the reality: discovery alone isn’t enough without a sustainable way to grow and operate the business.</p>
       </section>
 
       <section>
         <h2>My role</h2>
-        <p>I led the product from idea to live prototype:</p>
+        <p>I led Motoru end to end:</p>
         <ul>
-          <li><strong>Research</strong> – Defined the initial hypothesis, ran informal interviews and captured insights from EV events and online communities.</li>
-          <li><strong>Design</strong> – Created flows, interaction patterns, content and visual design for the quiz and results.</li>
-          <li><strong>Build</strong> – Implemented the front-end in WordPress and built the matching, data capture and lead-routing logic in Google Apps Script + Airtable.</li>
-          <li><strong>Collaboration</strong> – Checked architectural decisions with a backend developer but owned the user experience and experiment loop end to end.</li>
+          <li><strong>Founder</strong> – Set up and ran the business, from strategy and positioning through to partnerships with novated leasing providers.</li>
+          <li><strong>Product &amp; UX</strong> – Defined the hypothesis, mapped the decision journey, designed the quiz and results experience, and iterated based on live feedback.</li>
+          <li><strong>Engineering</strong> – Built the front-end in WordPress, implemented the quiz logic in Google Apps Script, and created the EV database in Google Sheets.</li>
+          <li><strong>Outreach</strong> – Attended EV events, talked to drivers and suppliers, posted in online communities and acted as the face of the company throughout.</li>
         </ul>
       </section>
 
