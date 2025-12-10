@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Photo Fit Checker · Case Study</title>
+  <title>Experiments — AI, automation &amp; tools · Case Study</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
-  <link rel="icon" href="../mg_favicon.png" type="image/png">
+  <link rel="icon" href="../../mg_favicon.png" type="image/png">
   <style>
     :root {
       --bg: #f7f9fc;
@@ -229,22 +229,6 @@
       display: block;
     }
 
-    .key-facts {
-      display: grid;
-      gap: 12px;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    }
-    .fact {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--card);
-      padding: 14px;
-      box-shadow: var(--shadow);
-      display: grid;
-      gap: 6px;
-    }
-    .fact strong { color: var(--text); }
-
     .content {
       display: grid;
       gap: 24px;
@@ -279,6 +263,19 @@
       padding: 10px 12px;
       font-size: 14px;
       color: var(--muted);
+    }
+
+    .placeholder {
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      background: #f8fafc;
+      color: var(--muted);
+      display: grid;
+      place-items: center;
+      height: 220px;
+      font-weight: 700;
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.02);
+      margin-top: 8px;
     }
 
     /* Snapshots */
@@ -440,11 +437,11 @@
 <body>
   <header>
     <div class="nav">
-      <a class="brand" href="../index.html" aria-label="Matt Grant home">
-        <img class="brand-mark" src="../mg_favicon.png" alt="MG logo">
+      <a class="brand" href="../../index.html" aria-label="Matt Grant home">
+        <img class="brand-mark" src="../../mg_favicon.png" alt="MG logo">
       </a>
       <div class="nav-links" aria-label="Primary">
-        <a href="../index.html#projects">
+        <a href="../../index.html#projects">
           <span aria-hidden="true" style="margin-right:8px;">←</span>
           Back
         </a>
@@ -455,47 +452,75 @@
   <main>
     <section>
       <div class="project-header">
-        <div class="project-hero-avatar"><img src="../mg_favicon.png" alt="AI Photo Fit Checker mark"></div>
+        <div class="project-hero-avatar"><img src="../../mg_favicon.png" alt="Experiments logo"></div>
         <div>
-          <h1>Autobarn / Tinkeru — AI Photo Fit Checker</h1>
-          <p class="meta">AI-powered prototype · 2025 · Solo</p>
-          <p class="lead">An image-led prototype that lets customers snap a product and instantly see whether it fits their vehicle, built to collapse a guess-heavy retail workflow.</p>
+          <h1>Experiments — AI, automation &amp; tools</h1>
+          <p class="meta">Prototypes &amp; utilities · 2023–2025</p>
+          <p class="lead">A small lab of prototypes exploring how AI, automation and simple tools can remove friction and make decisions easier.</p>
+          <div class="tags">
+            <span class="tag">AI</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Prototyping</span>
+          </div>
+          <div class="actions">
+            <a class="button" href="#" aria-disabled="true">Live demo</a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="content">
       <section>
-        <h2>Problem</h2>
-        <p>Retail staff and customers often guess whether accessories fit specific models. The process is slow, error-prone and relies on tribal knowledge. We wanted to test whether AI-assisted recognition could collapse that workflow into a single image.</p>
+        <h2>Why experiments</h2>
+        <p>I use experiments to test ideas cheaply, learn new tools and see what’s worth turning into a full product. Most of these live in the overlap between AI, automation and simple utilities that make decisions easier or workflows lighter.</p>
       </section>
 
       <section>
-        <h2>Approach</h2>
+        <h2>AI Photo Fit Checker</h2>
         <ul>
-          <li>Centred the interaction on photo input to replace manual search and reduce customer friction.</li>
-          <li>Built an upload → analyse → respond loop with rapid prompt iteration using real product images.</li>
-          <li>Optimised for usefulness over perfect accuracy, focusing on compatibility hints and confidence.</li>
-          <li>Kept the flow lean so it could sit on a retail counter or embed in an online store.</li>
+          <li>Prototype: snap an automotive accessory and get a quick fit read for your vehicle.</li>
+          <li>Built an upload → analyse → respond flow with image recognition plus prompt logic.</li>
+          <li>Goal was behavioural signal, not perfect accuracy: does “take a photo to check fit” feel natural?</li>
+          <li>Outcome: people preferred the photo-first flow over manual search, pointing to a “scan-to-check” pattern.</li>
         </ul>
+        <div class="placeholder" role="img" aria-label="Placeholder for AI Photo Fit Checker image">Placeholder image</div>
       </section>
 
       <section>
-        <h2>Outcome</h2>
+        <h2>Novated lease tools in Firebase</h2>
         <ul>
-          <li>Customers preferred image-based input over manual lookups, reducing decision friction immediately.</li>
-          <li>Proved that a “scan-to-check” flow can speed up retail conversations and reduce fitting errors.</li>
-          <li>Created a foundation for a fuller retail-facing product with clearer data capture.</li>
+          <li>Modelled simple novated lease scenarios: repayments, pre-/post-tax, and comparisons.</li>
+          <li>Built in Firebase to keep experiments fast, interactive and low-friction.</li>
+          <li>Focused on clarity over complexity so the numbers felt understandable.</li>
+          <li>Learnings fed into how I explain EV costs and decision flows elsewhere.</li>
         </ul>
+        <div class="placeholder" role="img" aria-label="Placeholder for novated lease tools image">Placeholder image</div>
       </section>
 
       <section>
-        <h2>My role</h2>
+        <h2>Motoru &amp; EVPicker automations</h2>
         <ul>
-          <li>Interaction design and experience shaping for an image-first flow.</li>
-          <li>Prompt design and tuning to handle noisy real-world photos.</li>
-          <li>Proof-of-concept build and hands-on testing with genuine retail use cases.</li>
+          <li>Used Google Apps Script to glue forms, sheets and email: matching quiz answers to EVs, routing leads, sending structured emails.</li>
+          <li>Logged results for analysis to tune matching logic without heavy backend work.</li>
+          <li>Turned basic forms/spreadsheets into product-like behaviour while iterating fast.</li>
         </ul>
+        <div class="placeholder" role="img" aria-label="Placeholder for Motoru and EVPicker automations image">Placeholder image</div>
+      </section>
+
+      <section>
+        <h2>Jaan — Small business workflow setup</h2>
+        <ul>
+          <li>Helped a carpenter start his business by untangling quoting/admin stuck in notebooks and basic accounting tools.</li>
+          <li>Moved to a simple, repeatable Xero workflow with quote/invoice templates and material tracking.</li>
+          <li>Mapped the journey from first enquiry to final invoice, comparing quoted vs actual work.</li>
+          <li>Focused on “boring done well”: clear steps, fewer surprises, and a system that supports the work.</li>
+        </ul>
+        <div class="placeholder" role="img" aria-label="Placeholder for small business workflow image">Placeholder image</div>
+      </section>
+
+      <section>
+        <h2>Closing note</h2>
+        <p>Together, these experiments are where I try new ideas, kill weak ones quickly and sharpen how I think about systems. They’re not polished products, but they’ve had a big influence on the tools and experiences I’ve gone on to build — and there’s more to come. I’m always tinkering, learning new tools and looking for the next thing worth turning into something real.</p>
       </section>
 
       <section class="snapshots" id="snapshots">
@@ -598,6 +623,13 @@
         snapshotGrid.appendChild(card);
       });
     }
+
+    // Hide placeholder demo links until a real URL is set.
+    document.querySelectorAll('.actions a.button').forEach((btn) => {
+      if (btn.getAttribute('href') === '#') {
+        btn.style.display = 'none';
+      }
+    });
   </script>
 </body>
 </html>
