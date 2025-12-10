@@ -252,6 +252,132 @@
       color: var(--muted);
     }
 
+    /* Snapshots */
+    .snapshots {
+      display: none;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px 20px;
+      margin-top: 8px;
+    }
+
+    .snapshots h2 { margin-bottom: 6px; }
+    .snapshots .intro { margin-bottom: 14px; }
+
+    .snapshot-grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 1fr;
+    }
+
+    .snapshot-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: grid;
+      gap: 10px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    .snapshot-card:hover,
+    .snapshot-card:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+      outline: none;
+    }
+
+    .snapshot-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .snapshot-meta {
+      padding: 0 12px 12px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .snapshot-meta strong { color: var(--text); }
+    .snapshot-meta p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 100;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox-content {
+      background: var(--card);
+      border-radius: var(--radius);
+      max-width: 900px;
+      width: 100%;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: grid;
+      gap: 8px;
+    }
+
+    .lightbox img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .lightbox-body {
+      padding: 12px 14px 16px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .lightbox-title { font-weight: 700; color: var(--text); }
+    .lightbox-caption { color: var(--muted); font-size: 14px; margin: 0; }
+
+    .lightbox-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 0 14px 12px;
+    }
+
+    .lightbox-actions button {
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .lightbox-actions button:hover,
+    .lightbox-actions button:focus-visible {
+      border-color: var(--accent);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
+    }
+
+    @media (min-width: 720px) {
+      .snapshots { padding: 28px 24px; }
+      .snapshot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
     .breadcrumb {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -356,18 +482,10 @@
         <p>I designed the interaction model, built the proof-of-concept, tuned prompts and logic and tested the workflow with real products and images.</p>
       </section>
 
-      <section>
+      <section class="snapshots" id="snapshots">
         <h2>Solution snapshots</h2>
-        <div class="gallery">
-          <figure>
-            <img src="https://via.placeholder.com/1200x700.png?text=AI+Fit+Checker+1" alt="Placeholder screenshot">
-            <figcaption>Upload → analyse → respond loop for fit checking.</figcaption>
-          </figure>
-          <figure>
-            <img src="https://via.placeholder.com/1200x700.png?text=AI+Fit+Checker+2" alt="Placeholder screenshot">
-            <figcaption>Feedback emphasising compatibility hints and clarity.</figcaption>
-          </figure>
-        </div>
+        <p class="intro muted">A few screens from the live prototype and experiments.</p>
+        <div id="snapshot-grid" class="snapshot-grid"></div>
       </section>
     </section>
 
@@ -380,5 +498,90 @@
     </section>
   </main>
 
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <img src="" alt="">
+      <div class="lightbox-body">
+        <div class="lightbox-title"></div>
+        <p class="lightbox-caption"></p>
+      </div>
+      <div class="lightbox-actions">
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</button>
+        <button type="button" class="close-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const snapshots = window.snapshots || [];
+    const snapshotsSection = document.querySelector('.snapshots');
+    const snapshotGrid = document.getElementById('snapshot-grid');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const lightboxTitle = lightbox.querySelector('.lightbox-title');
+    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+    const prevBtn = lightbox.querySelector('.prev-btn');
+    const nextBtn = lightbox.querySelector('.next-btn');
+    const closeBtn = lightbox.querySelector('.close-btn');
+
+    let currentIndex = 0;
+
+    const openLightbox = (index) => {
+      currentIndex = index;
+      const item = snapshots[currentIndex];
+      lightboxImg.src = item.src;
+      lightboxImg.alt = item.alt || '';
+      lightboxTitle.textContent = item.title || '';
+      lightboxCaption.textContent = item.caption || '';
+      lightbox.classList.add('open');
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('open');
+    };
+
+    const showPrev = () => {
+      currentIndex = (currentIndex - 1 + snapshots.length) % snapshots.length;
+      openLightbox(currentIndex);
+    };
+
+    const showNext = () => {
+      currentIndex = (currentIndex + 1) % snapshots.length;
+      openLightbox(currentIndex);
+    };
+
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+    closeBtn.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    if (snapshots.length && snapshotsSection && snapshotGrid) {
+      snapshotsSection.style.display = 'block';
+      snapshots.forEach((item, index) => {
+        const card = document.createElement('article');
+        card.className = 'snapshot-card';
+        card.innerHTML = `
+          <img src="${item.src}" alt="${item.alt || ''}">
+          <div class="snapshot-meta">
+            <strong>${item.title || ''}</strong>
+            <p>${item.caption || ''}</p>
+          </div>
+        `;
+        card.addEventListener('click', () => openLightbox(index));
+        snapshotGrid.appendChild(card);
+      });
+    }
+  </script>
 </body>
 </html>
