@@ -2,7 +2,7 @@
 
 These notes describe how AI agents and humans should work in this repo.
 
-The goal of this project is a **single-page portfolio** for product design / front-end / “Designer Engineer” roles. It should be easy to read, fork, and edit. The code should stay simple and production-ready.
+The goal of this project is a **portfolio** for product design / front-end / “Designer Engineer” roles. The main experience lives on `index.html`, and a small set of **project case study pages** are allowed. Everything should stay simple, readable, and production-ready.
 
 ---
 
@@ -10,7 +10,8 @@ The goal of this project is a **single-page portfolio** for product design / fro
 
 Core files:
 
-- `index.html` – the actual site (HTML + CSS + minimal JS in a single file).
+- `index.html` – the main site (HTML + CSS + minimal JS in a single file).
+- `projects/` – optional standalone project case study pages (e.g., `projects/motoru.html`), each self-contained (HTML + CSS + minimal JS in a single file).
 - `README.md` – public-facing repo info.
 - `AGENT_NOTES.md` – these rules.
 - `front_end_design.md` – visual design and UX principles.
@@ -33,11 +34,11 @@ Core files:
 
 When editing this repo:
 
-1. **Always read** `AGENT_NOTES.md` and `front_end_design.md` before changing `index.html`.
+1. **Always read** `AGENT_NOTES.md` and `front_end_design.md` before changing pages.
 2. Assume that:
-   - `index.html` is the single source of truth for the site.
-   - All styling lives inside a single `<style>` block in `index.html`.
-   - Any JavaScript lives inside a single `<script>` block at the bottom of `index.html`.
+   - `index.html` is the main entry point.
+   - Case studies may live in `projects/` as standalone HTML files.
+   - Each HTML file should be self-contained: a single `<style>` block and a single `<script>` block (minimal JS) within that file.
 
 3. You MAY:
    - Refactor HTML structure for better semantics and accessibility.
@@ -48,9 +49,9 @@ When editing this repo:
 4. You MUST NOT:
    - Add build tooling (no Webpack, Vite, parcel, etc.).
    - Introduce frameworks (no React, Vue, Tailwind, Bootstrap, etc.).
-   - Create additional HTML entry points (keep it single-page).
    - Add heavy or unnecessary JavaScript.
-   - Remove core sections of the page (navigation, hero/intro, about, projects, contact, footer) unless explicitly requested.
+   - Remove core sections of the main page (navigation, hero/intro, about, projects, contact, footer) unless explicitly requested.
+   - Break design consistency between `index.html` and case study pages (reuse tokens, typography, card style).
 
 5. Keep changes **minimal and reversible**:
    - Avoid large CSS rewrites unless explicitly asked.
@@ -67,7 +68,7 @@ When editing this repo:
   - Accessible anchor links for navigation; ensure IDs exist for in-page links.
 
 - **CSS**
-  - Keep all CSS in a single `<style>` block in `index.html`.
+  - Keep all CSS in a single `<style>` block within each HTML file.
   - Favour readability over clever hacks.
   - Avoid deeply nested selectors; keep specificity manageable.
   - Prefer CSS for smooth scrolling and simple states where possible.
@@ -75,7 +76,7 @@ When editing this repo:
 - **JavaScript**
   - Only use JS for very small enhancements (e.g. current year in footer, smooth-scroll polyfill if needed).
   - Do not depend on external JS libraries.
-  - Put all JS in one `<script>` block at the end of the `<body>`.
+  - Put all JS in one `<script>` block at the end of the `<body>` of each HTML file.
 
 ---
 
