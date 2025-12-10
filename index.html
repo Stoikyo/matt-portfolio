@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="mg_favicon.png" type="image/png">
   <style>
     :root {
       --bg: #f7f9fc;
@@ -57,11 +58,21 @@
     }
 
     .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-family: 'Fredoka', system-ui, sans-serif;
       font-weight: 700;
       letter-spacing: 0.01em;
       font-size: 15px;
       color: var(--text);
+    }
+
+    .brand-mark {
+      height: 40px;
+      width: 40px;
+      border-radius: 8px;
+      display: block;
     }
 
     .nav-links {
@@ -445,7 +456,9 @@
 <body>
   <header>
     <div class="nav">
-      <a class="brand" href="index.html">Matt Grant - Tinkerer</a>
+      <a class="brand" href="index.html" aria-label="Matt Grant home">
+        <img class="brand-mark" src="mg_favicon.png" alt="MG logo">
+      </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <nav class="nav-links" aria-label="Primary">
         <a href="#about">About</a>
