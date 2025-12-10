@@ -246,7 +246,40 @@
       background: #ffffff;
       box-shadow: var(--shadow);
       display: grid;
+      gap: 12px;
+    }
+
+    .project-meta {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .project-points {
+      display: grid;
+      gap: 6px;
+    }
+
+    .project-points p {
+      margin: 0;
+      color: var(--text);
+    }
+
+    .project-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
       gap: 10px;
+    }
+
+    .text-link {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: underline;
+    }
+
+    .text-link:hover,
+    .text-link:focus-visible {
+      color: var(--text);
     }
 
     .contact-chips {
@@ -342,7 +375,7 @@
         column-gap: 16px;
       }
       .about-grid { grid-template-columns: 1fr 1fr; }
-      .projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
   </style>
 </head>
@@ -403,57 +436,70 @@
 
     <section id="projects">
       <h2>Projects</h2>
-      <p class="muted">Quick snapshots of problems, approaches, outcomes, and my role.</p>
+      <p class="muted">Four quick snapshots — ready to link to full case studies.</p>
       <div class="projects-grid">
         <article class="project-card">
-          <h3>[Project One Name]</h3>
-          <div class="meta">Type · 2024 · HTML/CSS/JS</div>
-          <p class="muted">One-line description of the product or feature.</p>
-          <div class="grid">
-            <p><strong>Problem:</strong> Placeholder description of the customer or product challenge.</p>
-            <p><strong>Approach:</strong> Placeholder outline of the experiment and prototyping loop.</p>
-            <p><strong>Outcome:</strong> Placeholder summary of measurable impact or learnings.</p>
-            <p><strong>My role:</strong> Placeholder summary across design, build, and collaboration.</p>
+          <h3>Project One</h3>
+          <p class="project-meta">Product design · 2024</p>
+          <p class="muted">Short description of what this product is and who it serves.</p>
+          <div class="project-points">
+            <p><strong>Problem:</strong> Placeholder for the customer or product challenge.</p>
+            <p><strong>My role:</strong> Placeholder for how I contributed across design/build.</p>
+            <p><strong>Outcome:</strong> Placeholder for the measurable result or learning.</p>
           </div>
-          <div class="actions">
-            <a class="button primary" href="#">Live demo</a>
-            <a class="button" href="#">Code</a>
+          <div class="project-actions">
+            <a class="button primary" href="#">View case study</a>
+            <a class="text-link" href="#">Live demo</a>
+            <a class="text-link" href="#">Code</a>
           </div>
-          <div class="placeholder">Screenshot placeholder</div>
         </article>
 
         <article class="project-card">
-          <h3>[Project Two Name]</h3>
-          <div class="meta">Product Design + Front-end · 2023 · HTML/CSS/JS</div>
-          <p class="muted">One-line description of the product or feature.</p>
-          <div class="grid">
-            <p><strong>Problem:</strong> Placeholder description of the problem statement and constraints.</p>
-            <p><strong>Approach:</strong> Placeholder outline of prototyping cadence and validation steps.</p>
-            <p><strong>Outcome:</strong> Placeholder summary of results or insights from shipping.</p>
-            <p><strong>My role:</strong> Placeholder summary of responsibilities and collaboration model.</p>
+          <h3>Project Two</h3>
+          <p class="project-meta">Product design + front-end · 2023</p>
+          <p class="muted">Short description of what this product is and who it serves.</p>
+          <div class="project-points">
+            <p><strong>Problem:</strong> Placeholder for the customer or product challenge.</p>
+            <p><strong>My role:</strong> Placeholder for how I contributed across design/build.</p>
+            <p><strong>Outcome:</strong> Placeholder for the measurable result or learning.</p>
           </div>
-          <div class="actions">
-            <a class="button primary" href="#">Live demo</a>
-            <a class="button" href="#">Code</a>
+          <div class="project-actions">
+            <a class="button primary" href="#">View case study</a>
+            <a class="text-link" href="#">Live demo</a>
+            <a class="text-link" href="#">Code</a>
           </div>
-          <div class="placeholder">Screenshot placeholder</div>
         </article>
 
         <article class="project-card">
-          <h3>[Project Three Name]</h3>
-          <div class="meta">Design Systems · 2022 · HTML/CSS/JS</div>
-          <p class="muted">One-line description of the product or feature.</p>
-          <div class="grid">
-            <p><strong>Problem:</strong> Placeholder description of the challenge to standardize or scale UI.</p>
-            <p><strong>Approach:</strong> Placeholder outline of design systems strategy and components.</p>
-            <p><strong>Outcome:</strong> Placeholder summary of delivery speed, quality, or consistency.</p>
-            <p><strong>My role:</strong> Placeholder summary of leadership, build, and coordination.</p>
+          <h3>Project Three</h3>
+          <p class="project-meta">Design systems · 2022</p>
+          <p class="muted">Short description of what this product is and who it serves.</p>
+          <div class="project-points">
+            <p><strong>Problem:</strong> Placeholder for the customer or product challenge.</p>
+            <p><strong>My role:</strong> Placeholder for how I contributed across design/build.</p>
+            <p><strong>Outcome:</strong> Placeholder for the measurable result or learning.</p>
           </div>
-          <div class="actions">
-            <a class="button primary" href="#">Live demo</a>
-            <a class="button" href="#">Code</a>
+          <div class="project-actions">
+            <a class="button primary" href="#">View case study</a>
+            <a class="text-link" href="#">Live demo</a>
+            <a class="text-link" href="#">Code</a>
           </div>
-          <div class="placeholder">Screenshot placeholder</div>
+        </article>
+
+        <article class="project-card">
+          <h3>Project Four</h3>
+          <p class="project-meta">Prototype + research · 2022</p>
+          <p class="muted">Short description of what this product is and who it serves.</p>
+          <div class="project-points">
+            <p><strong>Problem:</strong> Placeholder for the customer or product challenge.</p>
+            <p><strong>My role:</strong> Placeholder for how I contributed across design/build.</p>
+            <p><strong>Outcome:</strong> Placeholder for the measurable result or learning.</p>
+          </div>
+          <div class="project-actions">
+            <a class="button primary" href="#">View case study</a>
+            <a class="text-link" href="#">Live demo</a>
+            <a class="text-link" href="#">Code</a>
+          </div>
         </article>
       </div>
     </section>
