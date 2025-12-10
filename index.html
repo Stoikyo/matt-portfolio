@@ -239,6 +239,22 @@
       line-height: 1.6;
     }
 
+    .about-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .about-link:hover,
+    .about-link:focus-visible {
+      text-decoration: underline;
+      outline: none;
+    }
+
     .project-card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -247,6 +263,15 @@
       box-shadow: var(--shadow);
       display: grid;
       gap: 10px;
+    }
+
+    .contact-list {
+      gap: 10px;
+    }
+
+    .contact-list p {
+      margin: 0;
+      line-height: 1.6;
     }
 
     .placeholder {
@@ -303,6 +328,7 @@
       <div class="hero-grid">
         <div class="grid">
           <h1>HI, I’M MATT!</h1>
+          <p class="lead"><strong>Designer–engineer. Dad. Always building something.</strong></p>
           <div class="actions">
             <a class="button primary" href="#projects">View projects</a>
           </div>
@@ -316,7 +342,6 @@
     <section id="about">
       <h2>About</h2>
       <div class="card">
-        <h3>Designer–engineer. Dad. Always building something.</h3>
         <p>I’m Matt. I design and build digital products, and I’m happiest when I can take a rough idea and turn it into something you can actually click and try. Most days that means working with a team to sketch, test and ship small pieces quickly. The rest of the time I’m chasing kids, drawing, or riding one of too many bikes. I use AI as another tool in the kit – there to make things clearer and simpler for people, not more complicated.</p>
         <div class="grid about-grid">
           <div class="about-panel">
@@ -400,17 +425,18 @@
 
     <section id="contact">
       <h2>Contact</h2>
-      <p class="lead">Let’s talk about what you’re building.</p>
-      <p class="muted">Simple, single-page portfolio. If you want deeper dives or specific interactions, I can share live prototypes.</p>
+      <p class="lead">Let’s talk about what you’re building next.</p>
+      <p class="muted">Best way to reach me is email, but LinkedIn or a quick call works too. If you’d like to see more detail or specific prototypes, I’m happy to walk through things live.</p>
       <div class="actions">
         <a class="button primary" href="mailto:matt@matthewgrant.co">Email me</a>
       </div>
       <div class="card" style="margin-top:16px;">
-        <div class="grid">
+        <div class="grid contact-list">
           <p><strong>Email:</strong> matt@matthewgrant.co</p>
-          <p><strong>LinkedIn:</strong> https://www.linkedin.com/in/placeholder</p>
-          <p><strong>GitHub:</strong> https://github.com/placeholder</p>
-          <p><strong>Availability:</strong> Open to new product design + front-end collaborations.</p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tnargttam/" target="_blank" rel="noreferrer noopener">linkedin.com/in/tnargttam</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/Stoikyo" target="_blank" rel="noreferrer noopener">github.com/Stoikyo</a></p>
+          <p><strong>Phone:</strong> 0405 387 557</p>
+          <p><strong>Availability:</strong> Currently open to design–engineer roles and interesting product / front-end collaborations.</p>
         </div>
       </div>
     </section>
