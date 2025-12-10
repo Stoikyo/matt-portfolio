@@ -233,6 +233,14 @@
       color: var(--muted);
     }
 
+    .project-hero-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      display: block;
+    }
+
     .project-hero-avatar {
       width: 96px;
       height: 96px;
@@ -295,7 +303,7 @@
   <main>
     <section>
       <div class="project-header">
-        <div class="project-hero-avatar">IMG</div>
+        <div class="project-hero-avatar"><img src="../motoru-favicon.png" alt="Motoru logo"></div>
         <div>
           <h1>Motoru — EV Discovery Experience</h1>
           <p class="meta">Product design, lightweight engineering &amp; venture building · 2025 · WordPress · Google Apps Script · Google Sheets · AI-powered matching</p>
@@ -319,12 +327,12 @@
 
       <section>
         <h2>Approach</h2>
-        <p>I treated Motoru as an experiment to see if we could identify, validate and solve a real problem for EV buyers with a scrappy product.</p>
+        <p>I treated Motoru as a product experiment to see if we could identify, validate and solve a real problem for EV buyers.</p>
         <ul>
           <li><strong>Research &amp; hypothesis</strong> – Talked to people at EV events and in Facebook/Reddit groups, asking how they were trying to get into an EV. Most people froze when asked “Which car are you looking at?” but were comfortable talking about their life: commute, kids, trips, parking, budget.</li>
           <li><strong>Reframe the problem</strong> – Instead of asking “What car do you want?”, we flipped it to “Tell us how you live, and we’ll work out which cars fit.”</li>
           <li><strong>Design the flow</strong> – Mapped the journey from “curious about EVs” to “I’m ready to talk to someone”. Designed a short quiz that focused on lifestyle and constraints, plus a results view that explained why each recommendation matched.</li>
-          <li><strong>Build the system</strong> – Built the quiz in WordPress with custom logic in Google Apps Script. Rolled our own EV database in Google Sheets from manufacturer data, dealer input and community feedback. On top of that, we used AI to:
+          <li><strong>Build the system</strong> – Used WordPress for the marketing site and initial UI shell because I could move fastest there. The quiz, recommendation logic and AI integration were built by my technical cofounder in React, Rails and OpenAI, based on my specs. We rolled our own EV database in Google Sheets from manufacturer data, dealer input and community feedback. On top of that, we used AI to:
             <ul>
               <li>turn quiz answers into weighted needs (range, charging pattern, budget, body type and so on),</li>
               <li>score each car with a “Motoru Match” rating out of 10, and</li>
@@ -352,10 +360,10 @@
         <h2>My role</h2>
         <p>I led Motoru end to end:</p>
         <ul>
-          <li><strong>Founder</strong> – Set up and ran the business, from strategy and positioning through to partnerships with novated leasing providers.</li>
+          <li><strong>Founder</strong> – Ran the business and was the face of the company: strategy, positioning, and relationships with novated leasing partners; talking to users at EV events and in communities.</li>
           <li><strong>Product &amp; UX</strong> – Defined the hypothesis, mapped the decision journey, designed the quiz and results experience, and iterated based on live feedback.</li>
-          <li><strong>Engineering</strong> – Built the front-end in WordPress, implemented the quiz logic in Google Apps Script, and created the EV database in Google Sheets.</li>
-          <li><strong>Outreach</strong> – Attended EV events, talked to drivers and suppliers, posted in online communities and acted as the face of the company throughout.</li>
+          <li><strong>Engineering</strong> – Built and maintained the WordPress marketing site and initial quiz/results UI, and turned the UX into detailed specs, rules and edge cases for my cofounder to implement in React/Rails/OpenAI. Created and maintained the EV database in Google Sheets.</li>
+          <li><strong>Marketing &amp; growth</strong> – Led all marketing experiments (content, social, community outreach on Reddit and EV Facebook groups). First time running marketing; learned how critical it is to product success.</li>
         </ul>
       </section>
 
@@ -363,12 +371,8 @@
         <h2>Solution snapshots</h2>
         <div class="gallery">
           <figure>
-            <img src="https://via.placeholder.com/1200x700.png?text=Motoru+Screenshot+1" alt="Placeholder screenshot">
-            <figcaption>Guided quiz flow surfacing needs over specs.</figcaption>
-          </figure>
-          <figure>
-            <img src="https://via.placeholder.com/1200x700.png?text=Motoru+Screenshot+2" alt="Placeholder screenshot">
-            <figcaption>Results view matching drivers to EV options.</figcaption>
+            <img src="../motoru-logo.png" alt="Motoru logo">
+            <figcaption>Motoru branding mark.</figcaption>
           </figure>
         </div>
       </section>
