@@ -233,6 +233,20 @@
       color: var(--muted);
     }
 
+    .project-hero-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: #f1f5f9;
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
     .breadcrumb {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -284,7 +298,7 @@
         <div class="project-hero-avatar">IMG</div>
         <div>
           <h1>Motoru — EV Discovery Experience</h1>
-          <p class="meta">Product design, lightweight engineering &amp; venture building · 2025 · WordPress · Google Apps Script · Google Sheets</p>
+          <p class="meta">Product design, lightweight engineering &amp; venture building · 2025 · WordPress · Google Apps Script · Google Sheets · AI-powered matching</p>
           <p class="lead">A guided EV quiz that turns lifestyle questions into three clear recommendations to see if we could make choosing an EV feel simple for everyday drivers.</p>
         </div>
       </div>
@@ -293,7 +307,7 @@
     <section class="content">
       <section>
         <h2>Problem</h2>
-        <p>We started with a simple hypothesis: people aren’t avoiding EVs because they don’t want them — they’re stuck because choosing one feels confusing, risky and full of jargon.</p>
+        <p>We started with a simple hypothesis: people aren’t avoiding EVs because they don’t want them — they’re stuck because choosing one feels confusing, risky and full of technical noise.</p>
         <p>From user conversations, EV events and online communities we kept hearing the same things:</p>
         <ul>
           <li>Too many models and acronyms</li>
@@ -310,21 +324,28 @@
           <li><strong>Research &amp; hypothesis</strong> – Talked to people at EV events and in Facebook/Reddit groups, asking how they were trying to get into an EV. Most people froze when asked “Which car are you looking at?” but were comfortable talking about their life: commute, kids, trips, parking, budget.</li>
           <li><strong>Reframe the problem</strong> – Instead of asking “What car do you want?”, we flipped it to “Tell us how you live, and we’ll work out which cars fit.”</li>
           <li><strong>Design the flow</strong> – Mapped the journey from “curious about EVs” to “I’m ready to talk to someone”. Designed a short quiz that focused on lifestyle and constraints, plus a results view that explained why each recommendation matched.</li>
-          <li><strong>Build the prototype</strong> – Built the quiz in WordPress, with custom logic in Google Apps Script. Rolled our own EV database from scratch in Google Sheets, based on manufacturer data, dealer info and community feedback, then wired it into the scoring and matching logic.</li>
-          <li><strong>Test and iterate</strong> – Put the prototype in front of real people, watched where they hesitated, and tweaked question wording, order and scoring. Shared it in EV Facebook groups and on Reddit to get a wider range of users and feedback.</li>
+          <li><strong>Build the system</strong> – Built the quiz in WordPress with custom logic in Google Apps Script. Rolled our own EV database in Google Sheets from manufacturer data, dealer input and community feedback. On top of that, we used AI to:
+            <ul>
+              <li>turn quiz answers into weighted needs (range, charging pattern, budget, body type and so on),</li>
+              <li>score each car with a “Motoru Match” rating out of 10, and</li>
+              <li>generate short, plain-language explanations of why a car was a good fit.</li>
+            </ul>
+          </li>
+          <li><strong>Test and iterate</strong> – Put the prototype in front of real people, watched where they hesitated, and tweaked question wording, order, scoring and the way we presented the Motoru Match scores. Shared it in EV Facebook groups and on Reddit to get a wider range of users and feedback.</li>
         </ul>
       </section>
 
       <section>
         <h2>Outcome</h2>
-        <p>The prototype solved a small but meaningful part of the problem — helping people move from vague interest to a concrete shortlist:</p>
+        <p>The prototype solved a small but meaningful part of the problem — helping people move from vague interest to a concrete shortlist with a clear score attached:</p>
         <ul>
           <li>Over 90% of people who started the quiz finished it.</li>
-          <li>Reddit and EV Facebook groups became a strong source of traffic, feedback and ideas for improving the questions and recommendations.</li>
+          <li>The Motoru Match score out of 10 gave people a quick, intuitive sense of which cars were strongest for their needs, and the AI-generated explanations helped them understand why.</li>
+          <li>Reddit and EV Facebook groups became a strong source of traffic, feedback and ideas for improving the questions, scoring and recommendations.</li>
           <li>Multiple novated leasing companies approached us and competed to handle the leads coming through the tool.</li>
           <li>Sustainable growth and marketing were harder. With limited time, my co-founder’s family commitments, and no simple path to scale without burning out, we chose to wrap the project up amicably rather than drag it out.</li>
         </ul>
-        <p>Motoru proved the core insight — that a lifestyle-first path into EVs resonates — but also surfaced the reality: discovery alone isn’t enough without a sustainable way to grow and operate the business.</p>
+        <p>Motoru proved the core insight — that a lifestyle-first, scored path into EVs resonates — but also surfaced the reality: discovery alone isn’t enough without a sustainable way to grow and operate the business.</p>
       </section>
 
       <section>
