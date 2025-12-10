@@ -83,7 +83,7 @@
       color: var(--muted);
       font-weight: 600;
       transition: color 0.2s ease, background 0.2s ease;
-      width: 100%;
+      width: auto;
     }
     .nav-links a:hover,
     .nav-links a:focus-visible {
@@ -204,6 +204,11 @@
         display: flex;
       }
 
+      .nav-links a {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
       .nav-toggle {
         display: inline-flex;
         align-items: center;
@@ -278,6 +283,22 @@
       color: var(--muted);
     }
 
+    .breadcrumb {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+      color: var(--muted);
+      display: flex;
+      gap: 6px;
+      font-size: 14px;
+      align-items: center;
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+
     .bottom-nav {
       display: flex;
       flex-wrap: wrap;
@@ -307,6 +328,14 @@
   </header>
 
   <main>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>/</span>
+      <a href="../#projects">Projects</a>
+      <span>/</span>
+      <span>Motoru</span>
+    </div>
+
     <section>
       <h1>Motoru — EV Discovery Experience</h1>
       <p class="meta">Product design + lightweight engineering · 2025</p>
