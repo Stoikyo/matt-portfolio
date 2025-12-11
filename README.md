@@ -1,16 +1,16 @@
 # Designer Portfolio
 
-This repository contains a single-page portfolio for a Designer application, built as a standalone HTML document.
+Static portfolio site for Matt Grant. Pure HTML/CSS with light JS, no build step required.
 
-## Scope
-- Single `index.html` file.
-- Pure HTML + CSS, minimal JS.
-- No frameworks, no external fonts, no build tools.
+## Structure
+- `index.html` – main landing page.
+- `projects/` – individual project case studies.
+- `assets/img/` – site imagery (headshots, logos, snapshots).
+- `assets/favicons/` – favicon and mark assets.
+- `docs/` – supporting notes (`AGENT_NOTES.md`, `front_end_design.md`).
 
-## How to run
-- Open `index.html` in a browser locally.
-- Or view it via GitHub Pages once enabled.
+## View locally
+- Clone and open `index.html` in your browser; no build or install needed.
 
-## Conventions
-- Keep commits small and descriptive.
-- Prefer incremental changes instead of big rewrites.
+## Live site
+- GitHub Pages: https://stoikyo.github.io/matt-portfolio/
