@@ -330,6 +330,64 @@
       line-height: 1.6;
     }
 
+    .process-grid {
+      display: flex;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+      align-items: stretch;
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+
+    .process-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      padding: var(--space-3);
+      display: grid;
+      gap: 8px;
+      height: 100%;
+      min-width: 170px;
+      flex: 1 0 180px;
+    }
+
+    .process-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 18px;
+      padding: 0 var(--space-1);
+      flex: 0 0 auto;
+    }
+
+    @media (min-width: 1024px) {
+      .process-grid {
+        overflow-x: visible;
+        gap: var(--space-2);
+      }
+      .process-card {
+        flex: 1 1 0;
+      }
+    }
+
+    .process-card h4 {
+      margin: 0;
+      font-size: 18px;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .process-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
     .project-card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -523,11 +581,11 @@
       <div class="about-content">
         <p>I’m Matt. I like making things, mostly digital products, and I’m happiest when I can take a rough idea and turn it into something real you can click and play with. I’m not tied to one way of doing it: I enjoy learning new tools, trying different approaches and figuring it out as I go. </p>
         <p>Most days that means sketching, testing and shipping small pieces with a team. The rest of the time I’m chasing kids, drawing, or riding one of too many bikes. AI is just another tool in the mix for me – useful when it makes things clearer and simpler for people.</p>
-        <div class="grid about-grid">
-          <div class="about-panel">
-            <h3>What I do</h3>
-            <ul>
-              <li>Take fuzzy briefs and turn them into a simple plan and a first version.</li>
+      <div class="grid about-grid">
+        <div class="about-panel">
+          <h3>What I do</h3>
+          <ul>
+            <li>Take fuzzy briefs and turn them into a simple plan and a first version.</li>
               <li>Design the flow and interface, then get things far enough in code to feel real.</li>
               <li>Build things like Motoru, an EV comparison site, plus other small tools and experiments.</li>
               <li>Work best in teams that care about real users and are willing to keep improving the product.</li>
@@ -543,6 +601,36 @@
             </ul>
           </div>
         </div>
+      </div>
+      <div style="margin-top: var(--space-4); display:grid; gap: var(--space-3);">
+        <h3 style="margin:0; font-family:'Fredoka', system-ui, sans-serif; font-size:22px; letter-spacing:-0.01em;">How I like to work</h3>
+        <div class="process-grid">
+          <div class="process-card">
+            <h4>Design</h4>
+            <p>Understand the problem and pick a clear starting point.</p>
+          </div>
+          <div class="process-arrow" aria-hidden="true">→</div>
+          <div class="process-card">
+            <h4>Build</h4>
+            <p>Make a small slice that’s real enough to click and poke at.</p>
+          </div>
+          <div class="process-arrow" aria-hidden="true">→</div>
+          <div class="process-card">
+            <h4>Test</h4>
+            <p>Put it in front of actual humans and watch what happens.</p>
+          </div>
+          <div class="process-arrow" aria-hidden="true">→</div>
+          <div class="process-card">
+            <h4>Learn</h4>
+            <p>Keep what worked, change what didn’t, drop what doesn’t matter.</p>
+          </div>
+          <div class="process-arrow" aria-hidden="true">→</div>
+          <div class="process-card">
+            <h4>Ship</h4>
+            <p>Get the next version out of Figma/Git and into someone’s hands.</p>
+          </div>
+        </div>
+        <div style="font-family:'Inter', system-ui, sans-serif; font-size:16px; font-style:italic; color:var(--muted);">Usually from first chat to a clickable prototype in a few days, not weeks.</div>
       </div>
     </section>
 
