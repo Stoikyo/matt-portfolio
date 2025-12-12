@@ -553,20 +553,6 @@
               <p>Opens inline; you can also download it if your browser blocks inline PDFs.</p>
             </div>
           </article>
-          <article class="snapshot-card">
-            <img src="../../assets/img/ev-picker-jotform-embed.jpg" alt="EVPicker Jotform intake and payment embed" style="object-fit: contain; background:#f8fafc;">
-            <div class="snapshot-meta">
-              <strong>Jotform intake + Stripe payment</strong>
-              <p>Fast intake and checkout flow used to validate willingness to pay.</p>
-            </div>
-          </article>
-          <article class="snapshot-card">
-            <img src="../../assets/img/ev-picker-landing-page.png" alt="EVPicker landing page" style="object-fit: contain; background:#f8fafc;">
-            <div class="snapshot-meta">
-              <strong>Landing page</strong>
-              <p>Homepage with AI chat bot entry point and clear 48-hour promise.</p>
-            </div>
-          </article>
         </div>
       </section>
     </section>
@@ -596,7 +582,20 @@
   </div>
 
   <script>
-    const snapshots = window.snapshots || [];
+    const snapshots = window.snapshots || [
+      {
+        src: "../../assets/img/ev-picker-jotform-embed.jpg",
+        alt: "EVPicker Jotform intake and Stripe payment embed",
+        title: "Jotform intake + Stripe payment",
+        caption: "Fast intake and checkout flow used to validate willingness to pay."
+      },
+      {
+        src: "../../assets/img/ev-picker-landing-page.png",
+        alt: "EVPicker landing page",
+        title: "Landing page",
+        caption: "Homepage with AI chat bot entry point and clear 48-hour promise."
+      }
+    ];
     const snapshotsSection = document.querySelector('.snapshots');
     const snapshotGrid = document.getElementById('snapshot-grid');
     const lightbox = document.getElementById('lightbox');
