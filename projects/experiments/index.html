@@ -320,6 +320,10 @@
       gap: 10px;
       cursor: pointer;
       transition: transform 0.15s ease, box-shadow 0.2s ease;
+      text-align: left;
+      width: 100%;
+      appearance: none;
+      font: inherit;
     }
 
     .snapshot-card:hover,
@@ -452,19 +456,19 @@
       <a class="brand" href="../../index.html" aria-label="Matt Grant home">
         <img class="brand-mark" src="../../assets/favicons/mg_favicon.png" alt="MG logo">
       </a>
-      <div class="nav-links" aria-label="Primary">
+      <nav class="nav-links" aria-label="Primary">
         <a href="../../index.html#projects">
           <span aria-hidden="true" style="margin-right:8px;">←</span>
           Back
         </a>
-      </div>
+      </nav>
     </div>
   </header>
 
   <main>
     <section>
       <div class="project-header">
-        <div class="project-hero-avatar"><img src="../../assets/img/experiments-icon.png" alt="Experiments logo"></div>
+        <div class="project-hero-avatar"><img src="../../assets/img/experiments-icon.png" alt="Experiments logo" loading="lazy"></div>
         <div>
           <h1>Experiments - AI, automation &amp; tools</h1>
           <p class="meta">Prototypes &amp; utilities · 2023–2025</p>
@@ -543,12 +547,12 @@
     </section>
   </main>
 
-  <div class="lightbox" id="lightbox">
-    <div class="lightbox-content">
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-content" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-describedby="lightbox-caption">
       <img src="" alt="">
       <div class="lightbox-body">
-        <div class="lightbox-title"></div>
-        <p class="lightbox-caption"></p>
+        <div class="lightbox-title" id="lightbox-title"></div>
+        <p class="lightbox-caption" id="lightbox-caption"></p>
       </div>
       <div class="lightbox-actions">
         <button type="button" class="prev-btn">Previous</button>
@@ -563,69 +567,111 @@
     const snapshotsSection = document.querySelector('.snapshots');
     const snapshotGrid = document.getElementById('snapshot-grid');
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('img');
-    const lightboxTitle = lightbox.querySelector('.lightbox-title');
-    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
-    const prevBtn = lightbox.querySelector('.prev-btn');
-    const nextBtn = lightbox.querySelector('.next-btn');
-    const closeBtn = lightbox.querySelector('.close-btn');
+    const lightboxImg = lightbox?.querySelector('img');
+    const lightboxTitle = lightbox?.querySelector('.lightbox-title');
+    const lightboxCaption = lightbox?.querySelector('.lightbox-caption');
+    const prevBtn = lightbox?.querySelector('.prev-btn');
+    const nextBtn = lightbox?.querySelector('.next-btn');
+    const closeBtn = lightbox?.querySelector('.close-btn');
 
     let currentIndex = 0;
+    let previousFocus = null;
+    const focusableSelectors = 'a[href], area[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+    const setLightboxState = (isOpen) => {
+      if (!lightbox) return;
+      lightbox.classList.toggle('open', isOpen);
+      lightbox.setAttribute('aria-hidden', String(!isOpen));
+      if (isOpen) {
+        previousFocus = document.activeElement;
+        closeBtn?.focus();
+      } else if (previousFocus instanceof HTMLElement) {
+        previousFocus.focus();
+      }
+    };
 
     const openLightbox = (index) => {
+      if (!snapshots.length || !lightboxImg || !lightboxTitle || !lightboxCaption) return;
       currentIndex = index;
       const item = snapshots[currentIndex];
       lightboxImg.src = item.src;
       lightboxImg.alt = item.alt || '';
       lightboxTitle.textContent = item.title || '';
       lightboxCaption.textContent = item.caption || '';
-      lightbox.classList.add('open');
+      setLightboxState(true);
     };
 
     const closeLightbox = () => {
-      lightbox.classList.remove('open');
+      if (lightboxImg) {
+        lightboxImg.removeAttribute('src');
+      }
+      setLightboxState(false);
     };
 
     const showPrev = () => {
+      if (!snapshots.length) return;
       currentIndex = (currentIndex - 1 + snapshots.length) % snapshots.length;
       openLightbox(currentIndex);
     };
 
     const showNext = () => {
+      if (!snapshots.length) return;
       currentIndex = (currentIndex + 1) % snapshots.length;
       openLightbox(currentIndex);
     };
 
-    prevBtn.addEventListener('click', showPrev);
-    nextBtn.addEventListener('click', showNext);
-    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn?.addEventListener('click', showPrev);
+    nextBtn?.addEventListener('click', showNext);
+    closeBtn?.addEventListener('click', closeLightbox);
 
     document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('open')) return;
+      if (!lightbox?.classList.contains('open')) return;
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') showPrev();
       if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'Tab') {
+        const focusable = lightbox.querySelectorAll(focusableSelectors);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     });
 
-    lightbox.addEventListener('click', (e) => {
+    lightbox?.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightbox();
     });
 
     if (snapshots.length && snapshotsSection && snapshotGrid) {
       snapshotsSection.style.display = 'block';
       snapshots.forEach((item, index) => {
-        const card = document.createElement('article');
+        const card = document.createElement('button');
+        card.type = 'button';
         card.className = 'snapshot-card';
         card.innerHTML = `
-          <img src="${item.src}" alt="${item.alt || ''}">
+          <img src="${item.src}" alt="${item.alt || ''}" loading="lazy">
           <div class="snapshot-meta">
             <strong>${item.title || ''}</strong>
             <p>${item.caption || ''}</p>
           </div>
         `;
         card.addEventListener('click', () => openLightbox(index));
+        card.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openLightbox(index);
+          }
+        });
         snapshotGrid.appendChild(card);
       });
+    } else if (lightbox) {
+      lightbox.setAttribute('aria-hidden', 'true');
     }
 
     // Hide placeholder demo links until a real URL is set.

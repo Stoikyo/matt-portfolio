@@ -573,8 +573,8 @@
       <a class="brand" href="index.html" aria-label="Matt Grant home">
         <img class="brand-mark" src="assets/favicons/mg_favicon.png" alt="MG logo">
       </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-      <nav class="nav-links" aria-label="Primary">
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+      <nav class="nav-links" aria-label="Primary" id="primary-navigation">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -604,7 +604,7 @@
       <div class="projects-grid">
         <article class="project-card">
           <div class="project-header">
-            <div class="project-image"><img src="assets/favicons/motoru-favicon.png" alt="Motoru logo" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div class="project-image"><img src="assets/favicons/motoru-favicon.png" alt="Motoru logo" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy"></div>
             <div>
               <h3><a href="projects/motoru.html" style="color: inherit; text-decoration: none;">Motoru - EV Discovery Experience</a></h3>
               <p class="project-meta">Product design, lightweight engineering &amp; venture building · 2025</p>
@@ -618,7 +618,7 @@
 
         <article class="project-card">
           <div class="project-header">
-            <div class="project-image"><img src="assets/img/ev-picker-square-logo.png" alt="EVPicker logo" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div class="project-image"><img src="assets/img/ev-picker-square-logo.png" alt="EVPicker logo" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy"></div>
             <div>
               <h3><a href="projects/evpicker/index.html" style="color: inherit; text-decoration: none;">EVPicker - 48-Hour EV Shortlist</a></h3>
               <p class="project-meta">Rapid prototype · Built in a day · 2024</p>
@@ -632,7 +632,7 @@
 
         <article class="project-card">
           <div class="project-header">
-            <div class="project-image"><img src="assets/img/experiments-icon.png" alt="Experiments logo" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div class="project-image"><img src="assets/img/experiments-icon.png" alt="Experiments logo" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy"></div>
             <div>
               <h3><a href="projects/experiments/index.html" style="color: inherit; text-decoration: none;">Experiments - AI, automation &amp; tools</a></h3>
               <p class="project-meta">Prototypes &amp; utilities · 2023–2025</p>
@@ -713,25 +713,25 @@
         <h3 style="margin:0; font-family:'Fredoka', system-ui, sans-serif; font-size:18px; letter-spacing:-0.01em;">How to reach me</h3>
         <div class="contact-pills">
           <a class="contact-pill" href="mailto:matt@matthewgrant.co">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
               <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.26l8 4.8 8-4.8V6H4Zm16 2.74-7.47 4.48a1 1 0 0 1-1.06 0L4 8.74V18h16V8.74Z"/>
             </svg>
             <span class="contact-label">Email</span>
           </a>
           <a class="contact-pill" href="https://www.linkedin.com/in/tnargttam/" target="_blank" rel="noopener noreferrer">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
               <path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.08 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.98h4.52V24H.24V8.98zM8.89 8.98h4.33v2.05h.06c.6-1.14 2.07-2.35 4.26-2.35 4.56 0 5.4 3 5.4 6.9V24h-4.52v-7.02c0-1.67-.03-3.82-2.33-3.82-2.33 0-2.69 1.82-2.69 3.7V24H8.89V8.98z"/>
             </svg>
             <span class="contact-label">LinkedIn</span>
           </a>
           <a class="contact-pill" href="https://github.com/Stoikyo" target="_blank" rel="noopener noreferrer">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
               <path d="M12 .5C5.73.5.7 5.52.7 11.77c0 5 3.24 9.23 7.73 10.72.57.1.77-.25.77-.54 0-.27-.01-1.16-.02-2.1-3.15.69-3.81-1.34-3.81-1.34-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.21 1.79 1.21 1.03 1.77 2.71 1.26 3.37.97.1-.75.4-1.26.72-1.55-2.52-.29-5.17-1.26-5.17-5.6 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.47.11-3.07 0 0 .95-.3 3.1 1.16a10.8 10.8 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.62 1.6.23 2.78.11 3.07.73.79 1.17 1.8 1.17 3.04 0 4.35-2.65 5.3-5.18 5.58.41.36.78 1.08.78 2.18 0 1.58-.02 2.86-.02 3.25 0 .3.2.65.78.54a11.32 11.32 0 0 0 7.7-10.72C23.3 5.52 18.27.5 12 .5Z"/>
             </svg>
             <span class="contact-label">GitHub</span>
           </a>
           <a class="contact-pill" href="tel:+61405387557">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
               <path d="M17.707 13.293a1 1 0 0 0-1.32-.083l-2.043 1.53a1 1 0 0 1-1.063.08c-.96-.48-1.97-1.19-3.038-2.258-1.067-1.068-1.778-2.078-2.257-3.038a1 1 0 0 1 .08-1.063l1.53-2.043a1 1 0 0 0-.083-1.32l-2.5-2.5a1 1 0 0 0-1.42.004L3.3 4.46c-.88.884-1.083 2.202-.516 3.29 1.02 1.988 2.57 4.238 4.758 6.426 2.188 2.188 4.438 3.738 6.426 4.758 1.088.567 2.406.364 3.29-.516l2.319-2.319a1 1 0 0 0 .004-1.42l-2.5-2.5Z"/>
             </svg>
             <span class="contact-label">Call</span>
@@ -781,6 +781,12 @@
 
       document.addEventListener('click', (e) => {
         if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('open')) {
           closeMenu();
         }
       });
