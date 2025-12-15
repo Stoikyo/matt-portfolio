@@ -265,7 +265,7 @@
         <div class="project-hero-avatar"><img src="../../assets/favicons/mg_favicon.png" alt="AI Auto Parts Fit Checker mark" loading="lazy"></div>
         <div>
           <h1>AI Auto Parts Fit Checker</h1>
-          <p class="meta">AI-powered prototype · Built in a day · 2024</p>
+          <p class="meta">AI-powered prototype · Built in a day, rebuilt in an afternoon · 2024–2025</p>
           <p class="lead">A quick experiment to see if AI could answer “will this part fit my car?” from a photo and a few details, then send back a useful, human-readable answer in under a minute.</p>
           <div class="actions">
             <a class="button secondary" href="https://github.com/Stoikyo/car-fitment-ollama" target="_blank" rel="noopener noreferrer">View repository</a>
@@ -291,14 +291,15 @@
           <li>Suggest recommended products with links to a retailer.</li>
           <li>Add safety notes, extra tips and relevant YouTube videos.</li>
         </ul>
-        <p>It then wrapped everything into a single email and fired it back to the user, usually in under a minute. At the time, Apps Script + email was just the fastest way to get the idea out of my head and into a working prototype. If I rebuilt it now, I’d do it inline so the user sees everything in front of them, no inbox required.</p>
+        <p>It then wrapped everything into a single email and fired it back to the user, usually in under a minute. At the time, Apps Script + email was just the fastest way to get the idea out of my head and into a working prototype.</p>
+        <p>Later, I rebuilt the core logic using Docker and Ollama. Same idea, different stack: a local model, a small service, and a cleaner path to running everything in front of the user instead of in their inbox. The second build only took a couple of hours, mostly because the thinking and structure were already there.</p>
       </section>
 
       <section>
         <h2>Outcome / What I learned</h2>
         <p>The thing actually worked. I took it into auto parts stores and tested it in the wild: a customer could snap a part on the shelf, enter their car, and get a fit check plus install guidance almost instantly, without needing to hunt down the one staff member who “knows that stuff”.</p>
-        <p>For me, it was also a good reality check: building the prototype was the easy bit. The harder part was finding people, getting them to try it, and understanding whether it solved the problem in a way they cared about. It gave me a lot more respect for the marketing and growth side of product work.</p>
-        <p>It proved that AI can genuinely reduce friction in this kind of decision, that boring glue tools (forms, Sheets, Apps Script, an API) are more than enough for a meaningful prototype, and that you don’t need the “right” stack to learn something useful. Constraint and speed mattered more than elegance.</p>
+        <p>For me, it was also a good reality check: building the prototype was the easy bit. The harder part was finding people, getting them to try it, and understanding whether it solved the problem in a way they cared about. It made it very clear that marketing and growth aren’t “somebody else’s job” — they’re core skills if you want your work to actually touch real users.</p>
+        <p>It proved that AI can genuinely reduce friction in this kind of decision, that boring glue tools (forms, Sheets, Apps Script, an API) are more than enough for a meaningful prototype, and that you don’t need the “right” stack to learn something useful. Constraint and speed mattered more than elegance; once the idea was proven, switching to a Docker + Ollama setup was just another iteration.</p>
       </section>
 
       <section>
