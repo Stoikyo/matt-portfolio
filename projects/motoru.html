@@ -380,7 +380,7 @@
 
     @media (min-width: 720px) {
       .snapshots { padding: 28px 24px; }
-      .snapshot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .snapshot-grid { grid-template-columns: 1fr; }
     }
 
     .project-hero-avatar img {
@@ -458,9 +458,6 @@
           <h1>Motoru - EV Discovery Experience</h1>
           <p class="meta">Product design, lightweight engineering &amp; venture building · 2025</p>
           <p class="lead">A guided EV quiz that turns lifestyle questions into three clear recommendations to see if we could make choosing an EV feel simple for everyday drivers.</p>
-          <div class="actions">
-            <a class="button primary" href="../index.html#projects">Back to projects</a>
-          </div>
         </div>
       </div>
     </section>
@@ -538,28 +535,29 @@
   <script>
     window.snapshots = [
       {
-        src: "../assets/img/motoru-logo.png",
-        alt: "Motoru logomark",
-        title: "Brand mark",
-        caption: "Simple Motoru mark used across the quiz and marketing site."
+        src: "../assets/img/motoru-recommendations.mp4",
+        type: "video",
+        poster: "../assets/img/homepage-final-motoru.png",
+        title: "Recommendations walk-through",
+        caption: "Short clip of the Motoru recommendations experience."
       },
       {
-        src: "../assets/img/motoru-logo.png",
-        alt: "Motoru logomark",
-        title: "Quiz identity",
-        caption: "The mark appearing alongside the lifestyle-first quiz flow."
+        src: "../assets/img/homepage-final-motoru.png",
+        alt: "Motoru final homepage",
+        title: "Final homepage",
+        caption: "Updated landing page focused on lifestyle-first discovery."
       },
       {
-        src: "../assets/img/motoru-logo.png",
-        alt: "Motoru logomark",
-        title: "Results page badge",
-        caption: "Badge treatment on the Motoru Match results screen."
+        src: "../assets/img/lfiestyle-quiz-motoru.png",
+        alt: "Motoru lifestyle quiz flow",
+        title: "Lifestyle-first quiz",
+        caption: "Question flow that leads to a scored shortlist."
       },
       {
-        src: "../assets/img/motoru-logo.png",
-        alt: "Motoru logomark",
-        title: "Prototype snapshot",
-        caption: "Used across prototype screens for a consistent visual anchor."
+        src: "../assets/img/original-homepage-design-motoru.png",
+        alt: "Original Motoru homepage design",
+        title: "Original homepage",
+        caption: "Early homepage design before the lifestyle-first focus."
       }
     ];
   </script>
@@ -668,23 +666,42 @@
     if (snapshots.length && snapshotsSection && snapshotGrid) {
       snapshotsSection.style.display = 'block';
       snapshots.forEach((item, index) => {
-        const card = document.createElement('button');
-        card.type = 'button';
+        const isVideo = item.type === 'video';
+        const card = document.createElement(isVideo ? 'div' : 'button');
+        if (!isVideo) {
+          card.type = 'button';
+        }
         card.className = 'snapshot-card';
-        card.innerHTML = `
-          <img src="${item.src}" alt="${item.alt || ''}" loading="lazy">
-          <div class="snapshot-meta">
-            <strong>${item.title || ''}</strong>
-            <p>${item.caption || ''}</p>
-          </div>
-        `;
-        card.addEventListener('click', () => openLightbox(index));
-        card.addEventListener('keydown', (event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            openLightbox(index);
-          }
-        });
+        if (isVideo) {
+          const metaTop = document.createElement('div');
+          metaTop.className = 'snapshot-meta';
+          metaTop.innerHTML = `<strong>${item.title || ''}</strong><p>${item.caption || ''}</p>`;
+          card.appendChild(metaTop);
+          const video = document.createElement('video');
+          video.controls = true;
+          video.preload = 'metadata';
+          if (item.poster) video.setAttribute('poster', item.poster);
+          const source = document.createElement('source');
+          source.src = item.src;
+          source.type = 'video/mp4';
+          video.appendChild(source);
+          card.appendChild(video);
+        } else {
+          card.innerHTML = `
+            <div class="snapshot-meta">
+              <strong>${item.title || ''}</strong>
+              <p>${item.caption || ''}</p>
+            </div>
+            <img src="${item.src}" alt="${item.alt || ''}" loading="lazy">
+          `;
+          card.addEventListener('click', () => openLightbox(index));
+          card.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              openLightbox(index);
+            }
+          });
+        }
         snapshotGrid.appendChild(card);
       });
     } else if (lightbox) {

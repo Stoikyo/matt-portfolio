@@ -441,7 +441,7 @@
 
     @media (min-width: 720px) {
       .snapshots { padding: 28px 24px; }
-      .snapshot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .snapshot-grid { grid-template-columns: 1fr; }
     }
 
     .breadcrumb {
@@ -562,39 +562,39 @@
         <p class="intro muted">An example of the personalised shortlist delivered to customers.</p>
         <div class="snapshot-grid" id="snapshot-grid">
           <article class="snapshot-card">
-            <object data="../../assets/img/your-personal-ev-picker-report.pdf" type="application/pdf" aria-label="EVPicker sample report PDF">
-              <p class="muted" style="padding:12px;">PDF preview unavailable. <a href="../../assets/img/your-personal-ev-picker-report.pdf" target="_blank" rel="noopener noreferrer">Download the sample report</a>.</p>
-            </object>
             <div class="snapshot-meta">
               <strong>Personal EV shortlist report (PDF)</strong>
               <p>Opens inline; you can also download it if your browser blocks inline PDFs.</p>
             </div>
+            <object data="../../assets/img/your-personal-ev-picker-report.pdf" type="application/pdf" aria-label="EVPicker sample report PDF">
+              <p class="muted" style="padding:12px;">PDF preview unavailable. <a href="../../assets/img/your-personal-ev-picker-report.pdf" target="_blank" rel="noopener noreferrer">Download the sample report</a>.</p>
+            </object>
           </article>
           <article class="snapshot-card">
+            <div class="snapshot-meta">
+              <strong>Jotform intake + Stripe payment <span class="new-tab-icon" aria-hidden="true">↗</span></strong>
+              <p>Fast intake and checkout flow used to validate willingness to pay.</p>
+            </div>
             <a href="../../assets/img/ev-picker-jotform-embed.jpg" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit; display:block;">
               <img src="../../assets/img/ev-picker-jotform-embed.jpg" alt="EVPicker Jotform intake and payment embed" style="object-fit: contain; background:#f8fafc;" loading="lazy">
-              <div class="snapshot-meta">
-                <strong>Jotform intake + Stripe payment <span class="new-tab-icon" aria-hidden="true">↗</span></strong>
-                <p>Fast intake and checkout flow used to validate willingness to pay.</p>
-              </div>
             </a>
           </article>
           <article class="snapshot-card">
+            <div class="snapshot-meta">
+              <strong>Landing page <span class="new-tab-icon" aria-hidden="true">↗</span></strong>
+              <p>Homepage with AI chat bot entry point and clear 48-hour promise.</p>
+            </div>
             <a href="../../assets/img/ev-picker-landing-page.png" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit; display:block;">
               <img src="../../assets/img/ev-picker-landing-page.png" alt="EVPicker landing page" style="object-fit: contain; background:#f8fafc;" loading="lazy">
-              <div class="snapshot-meta">
-                <strong>Landing page <span class="new-tab-icon" aria-hidden="true">↗</span></strong>
-                <p>Homepage with AI chat bot entry point and clear 48-hour promise.</p>
-              </div>
             </a>
           </article>
           <article class="snapshot-card">
+            <div class="snapshot-meta">
+              <strong>AI chat bot <span class="new-tab-icon" aria-hidden="true">↗</span></strong>
+              <p>Homepage bot used to field questions and guide people into the 48-hour service.</p>
+            </div>
             <a href="../../assets/img/ev-picker-ai-chatbot.png" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit; display:block;">
               <img src="../../assets/img/ev-picker-ai-chatbot.png" alt="EVPicker AI chat bot example" style="object-fit: contain; background:#f8fafc;" loading="lazy">
-              <div class="snapshot-meta">
-                <strong>AI chat bot <span class="new-tab-icon" aria-hidden="true">↗</span></strong>
-                <p>Homepage bot used to field questions and guide people into the 48-hour service.</p>
-              </div>
             </a>
           </article>
         </div>

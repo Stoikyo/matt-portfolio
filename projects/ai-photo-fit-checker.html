@@ -421,7 +421,7 @@
 
     @media (min-width: 720px) {
       .snapshots { padding: 28px 24px; }
-      .snapshot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .snapshot-grid { grid-template-columns: 1fr; }
     }
 
     .breadcrumb {
@@ -639,11 +639,11 @@
         card.type = 'button';
         card.className = 'snapshot-card';
         card.innerHTML = `
-          <img src="${item.src}" alt="${item.alt || ''}" loading="lazy">
           <div class="snapshot-meta">
             <strong>${item.title || ''}</strong>
             <p>${item.caption || ''}</p>
           </div>
+          <img src="${item.src}" alt="${item.alt || ''}" loading="lazy">
         `;
         card.addEventListener('click', () => openLightbox(index));
         card.addEventListener('keydown', (event) => {
