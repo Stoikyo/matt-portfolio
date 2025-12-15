@@ -470,45 +470,58 @@
       <div class="project-header">
         <div class="project-hero-avatar"><img src="../../assets/img/experiments-icon.png" alt="Experiments logo" loading="lazy"></div>
         <div>
-          <h1>Experiments - AI, automation &amp; tools</h1>
-          <p class="meta">Prototypes &amp; utilities · 2023–2025</p>
-          <p class="lead">A small lab of prototypes exploring how AI, automation and simple tools can remove friction and make decisions easier.</p>
+          <h1>EVPicker – Smart EV &amp; Novated Lease Tools</h1>
+          <p class="meta">Firebase AI toolkit · 2024–2025</p>
+          <p class="lead">A small suite of AI tools to help people choose an EV and make sense of novated leasing, all built as a single Firebase project so I could ship fast and learn cheaply.</p>
         </div>
       </div>
     </section>
 
     <section class="content">
       <section>
-        <h2>Why experiments</h2>
-        <p>I use experiments to test ideas cheaply, learn new tools and see what’s worth turning into a full product. Most of these live in the overlap between AI, automation and simple utilities that make decisions easier or workflows lighter.</p>
+        <h2>Background / Problem</h2>
+        <p>Motoru and EVPicker both showed me the same thing: people don’t just need “more info”, they need help thinking through car and finance decisions. EVs, tax rules and novated leases are full of jargon, edge cases and scary fine print. I wanted a space where I could experiment with different ways of helping people reason about those decisions without burning a big budget or building a full product.</p>
       </section>
 
       <section>
-        <h2>Novated lease tools in Firebase</h2>
+        <h2>What I built</h2>
+        <p>I set up a single Firebase project as a sandbox and built a handful of tools inside it:</p>
         <ul>
-          <li>Modelled simple novated lease scenarios: repayments, pre-/post-tax, and comparisons.</li>
-          <li>Built in Firebase to keep experiments fast, interactive and low-friction.</li>
-          <li>Focused on clarity over complexity so the numbers felt understandable.</li>
-          <li>Learnings fed into how I explain EV costs and decision flows elsewhere.</li>
+          <li><strong>I know my car</strong> – you enter a specific car and get an AI-generated report on running costs, features and suitability.</li>
+          <li><strong>Find me a car to lease</strong> – you answer a few lifestyle questions and get a shortlist of cars (any fuel type) that actually match how you live.</li>
+          <li><strong>EV novated lease calculator – simple</strong> – a quick, high-level estimate of tax savings and weekly costs for an FBT-exempt EV.</li>
+          <li><strong>EV novated lease calculator – detailed</strong> – a more serious calculator that models pre-tax/post-tax, on-road costs and out-of-pocket impact.</li>
+          <li><strong>AI EV Research Assistant</strong> – an AI-powered research tool that produces consistent, well-cited EV insight reports: key specs, ownership costs, public sentiment from real drivers, and summaries of pro reviews, all in one place.</li>
         </ul>
-        <div class="placeholder" role="img" aria-label="Placeholder for novated lease tools image">Placeholder image</div>
+        <p>Everything sits on Firebase, with AI APIs doing the heavy lifting for narrative explanations, comparisons and recommendations.</p>
+        <p>I built it alongside a novated lease consultant, using their feedback to keep the numbers sane and the language accurate enough to be useful but still human.</p>
       </section>
 
       <section>
-        <h2>More coming soon</h2>
-        <p>Additional experiments are in flight. I’ll add them here once they’re shaped enough to share.</p>
-        <div class="placeholder" role="img" aria-label="Placeholder for upcoming experiments image">More experiments coming soon</div>
+        <h2>Approach</h2>
+        <p>This was deliberately scrappy. Firebase gave me free hosting, auth and a simple way to keep all the tools in one place. I focused on:</p>
+        <ul>
+          <li>Short, clear inputs – no giant forms.</li>
+          <li>Deterministic maths for the actual calculations.</li>
+          <li>AI layered on top to explain, compare and suggest, rather than “magic” everything.</li>
+        </ul>
+        <p>Each tool started as a rough UI and a hand-rolled prompt. I’d walk through real scenarios with the consultant, adjust the flows and prompts, and rerun until the outputs felt trustworthy and understandable.</p>
+      </section>
+
+      <section>
+        <h2>Outcome / What I learned</h2>
+        <p>The tools all work, and they became a live lab for questions like: How much can you safely offload to AI? Where do you need hard rules? How do you explain gnarly tax logic in plain English?</p>
+        <p>It also reinforced a pattern I keep bumping into: building is the easy part. Getting real people to use the tools, trust them, and come back is the harder, longer game. Working on this set forced me to think more about growth, onboarding and expectation-setting, not just “can I wire this up in Firebase?”</p>
+      </section>
+
+      <section>
+        <h2>My role</h2>
+        <p>I handled everything: product thinking, UX, interaction design, data and calculation logic, Firebase setup, AI integration and prompts, plus the ongoing tweaks with the novated lease consultant. The whole thing is still a working playground, and a base I can grow new EV and finance experiments from.</p>
       </section>
 
       <section>
         <h2>Closing note</h2>
         <p>Together, these experiments are where I try new ideas, kill weak ones quickly and sharpen how I think about systems. They’re not polished products, but they’ve had a big influence on the tools and experiences I’ve gone on to build, and there’s more to come. I’m always tinkering, learning new tools and looking for the next thing worth turning into something real.</p>
-      </section>
-
-      <section class="snapshots" id="snapshots">
-        <h2>Solution snapshots</h2>
-        <p class="intro muted">A few screens from the live prototype and experiments.</p>
-        <div id="snapshot-grid" class="snapshot-grid"></div>
       </section>
     </section>
 
