@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none';">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <title>Supplie - AI Decision Support Exploration · Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="icon" href="../assets/favicons/mg_favicon.png" type="image/png">
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --accent: #e90067;
+      --accent-strong: #cc005a;
+      --radius: 12px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 249, 252, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 14px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Fredoka', system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      font-size: 15px;
+      color: var(--text);
+    }
+    .brand-mark {
+      height: 40px;
+      width: 40px;
+      border-radius: 8px;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-weight: 600;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
+      background: #e9eef7;
+      outline: 2px solid transparent;
+      box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 48px 20px 96px;
+      display: grid;
+      gap: 32px;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 24px;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      color: var(--text);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      font-family: 'Fredoka', system-ui, sans-serif;
+    }
+    h1 { font-size: clamp(32px, 5.5vw, 44px); font-weight: 700; }
+    h2 { font-size: clamp(24px, 3.6vw, 32px); font-weight: 600; }
+
+    p { margin: 0 0 14px; color: var(--muted); }
+    .lead { font-size: 17px; color: var(--text); margin-bottom: 14px; }
+    .meta {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .project-header {
+      display: grid;
+      gap: 14px;
+      align-items: start;
+      grid-template-columns: auto 1fr;
+    }
+    .project-hero-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+    }
+    .project-hero-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 8px;
+    }
+
+    .content {
+      display: grid;
+      gap: 24px;
+    }
+    .content section {
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+    }
+    .content h2 { margin-bottom: 8px; }
+    .content p { margin-bottom: 12px; }
+
+    ul {
+      margin: 0 0 12px 20px;
+      padding: 0;
+      color: var(--muted);
+    }
+    li { margin: 0 0 8px; }
+
+    .text-link {
+      font-size: 14px;
+      color: var(--accent);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    .text-link:hover,
+    .text-link:focus-visible { color: var(--accent-strong); }
+
+    .bottom-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .spacer { flex: 1 1 auto; }
+
+    @media (min-width: 820px) {
+      main { padding: 64px 24px 120px; gap: 40px; }
+      section { padding: 32px 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="../index.html" aria-label="Matt Grant home">
+        <img class="brand-mark" src="../assets/favicons/mg_favicon.png" alt="MG logo">
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../index.html#projects">
+          <span aria-hidden="true" style="margin-right:8px;">←</span>
+          Back
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="project-header">
+        <div class="project-hero-avatar"><img src="../assets/img/supplie-logo-icon.png" alt="Supplie project icon" loading="lazy"></div>
+        <div>
+          <h1>Supplie - AI Decision Support Exploration</h1>
+          <p class="meta">Concept prototype · 2026</p>
+          <p class="lead">Exploring how AI could help operational teams make better decisions when dealing with messy supply chain and logistics data.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <section>
+        <h2>Background / Problem</h2>
+        <p>Operational teams often rely on dashboards and spreadsheets to track what has already happened. These tools are useful, but they rarely help teams explore what might happen next.</p>
+        <p>The idea behind Supplie was to explore whether AI models could help surface useful signals from messy operational data and support planning decisions rather than just reporting.</p>
+        <p>The focus is not automation. The focus is helping humans understand complex systems faster.</p>
+      </section>
+
+      <section>
+        <h2>Approach</h2>
+        <p>I started by looking at how operational teams actually make decisions. A lot of the work happens in spreadsheets, Slack threads and meetings where people are trying to interpret partial information.</p>
+        <p>From there I explored a few directions:</p>
+        <ul>
+          <li>identifying signals that matter in supply chains and logistics</li>
+          <li>experimenting with ways AI models could surface patterns or anomalies</li>
+          <li>prototyping interfaces where teams could explore scenarios rather than just viewing reports</li>
+          <li>exploring simulation-style approaches to planning</li>
+        </ul>
+        <p>Most of the work so far has been early exploration and prototyping rather than a production system.</p>
+      </section>
+
+      <section>
+        <h2>Outcome / What I learned</h2>
+        <p>A few interesting themes came out of the exploration.</p>
+        <ul>
+          <li>Operational data is messy. Real-world systems rarely have clean inputs.</li>
+          <li>AI is most useful when it helps people reason about decisions rather than when it tries to replace the decision entirely.</li>
+          <li>The most interesting opportunity may be helping teams explore scenarios rather than generating answers.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>My role</h2>
+        <ul>
+          <li>Concept exploration</li>
+          <li>Product design</li>
+          <li>AI experimentation and prototyping</li>
+          <li>Research into operational decision workflows</li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <div class="bottom-nav">
+        <span class="spacer"></span>
+        <a class="text-link" href="motoru.html">Next: Motoru - EV Discovery Experience</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

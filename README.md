@@ -16,4 +16,4 @@ Static portfolio site for Matt Grant. Pure HTML/CSS with light JS, no build step
 - Clone and open `index.html` in your browser; no build or install needed.
 
 ## Live site
-- GitHub Pages: https://stoikyo.github.io/matt-portfolio/
+- Vercel: https://matthewgrant.co/
