@@ -127,6 +127,36 @@
       margin-bottom: 10px;
     }
 
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      background: var(--card);
+      transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+    .button.primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+    .button:hover { transform: translateY(-1px); background: #f8fafc; }
+    .button:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18); }
+    .button.primary:hover,
+    .button.primary:focus-visible { background: var(--accent-strong); }
+
     .project-header {
       display: grid;
       gap: 14px;
@@ -218,6 +248,12 @@
           <h1>Supplie - AI Decision Support Exploration</h1>
           <p class="meta">Concept prototype · 2026</p>
           <p class="lead">Exploring how AI could help operational teams make better decisions when dealing with messy supply chain and logistics data.</p>
+          <div class="actions">
+            <a class="button" href="https://supplie.ai" target="_blank" rel="noopener noreferrer">
+              View site
+              <span aria-hidden="true" style="margin-left:6px;">↗</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
