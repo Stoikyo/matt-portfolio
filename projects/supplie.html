@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none';">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <title>Supplie - AI Decision Support Exploration · Case Study</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,6 +11,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <link rel="icon" href="../assets/favicons/mg_favicon.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/case-study-base.css">
   <style>
     :root {
       --bg: #f7f9fc;
@@ -126,90 +127,6 @@
       color: var(--muted);
       margin-bottom: 10px;
     }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 8px;
-    }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      color: var(--text);
-      background: var(--card);
-      transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-      cursor: pointer;
-    }
-    .button.primary {
-      background: var(--accent);
-      color: #ffffff;
-      border-color: var(--accent);
-    }
-    .button:hover { transform: translateY(-1px); background: #f8fafc; }
-    .button:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18); }
-    .button.primary:hover,
-    .button.primary:focus-visible { background: var(--accent-strong); }
-
-    .project-header {
-      display: grid;
-      gap: 14px;
-      align-items: start;
-      grid-template-columns: auto 1fr;
-    }
-    .project-hero-avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: #fff;
-      box-shadow: var(--shadow);
-      display: grid;
-      place-items: center;
-    }
-    .project-hero-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-      padding: 8px;
-    }
-
-    .content {
-      display: grid;
-      gap: 24px;
-    }
-    .content section {
-      padding: 0;
-      border: none;
-      box-shadow: none;
-      background: transparent;
-    }
-    .content h2 { margin-bottom: 8px; }
-    .content p { margin-bottom: 12px; }
-
-    ul {
-      margin: 0 0 12px 20px;
-      padding: 0;
-      color: var(--muted);
-    }
-    li { margin: 0 0 8px; }
-
-    .text-link {
-      font-size: 14px;
-      color: var(--accent);
-      text-decoration: underline;
-      font-weight: 600;
-    }
-    .text-link:hover,
-    .text-link:focus-visible { color: var(--accent-strong); }
 
     .bottom-nav {
       display: flex;
