@@ -520,8 +520,72 @@
       <div class="project-tabs__panel" role="tabpanel" id="evpicker-technical-panel" aria-labelledby="evpicker-technical-tab" hidden>
         <div class="content">
           <section>
-            <h2>How it was built</h2>
-            <p class="project-tabs__placeholder">Technical breakdown coming soon.</p>
+            <h2>Stack</h2>
+            <ul>
+              <li>Web frontend (simple UI for user inputs)</li>
+              <li>EV vehicle data dataset (structured comparison data)</li>
+              <li>AI-assisted recommendation logic</li>
+              <li>Prompt-based analysis for insights and explanations</li>
+            </ul>
+            <p>Supporting tools used during development included lightweight scripting and AI models to test recommendation logic and generate insights.</p>
+          </section>
+
+          <section>
+            <h2>Architecture</h2>
+            <p>EV Picker was built as a lightweight decision-support system rather than a traditional search tool.</p>
+            <p>Instead of asking users to filter through dozens of specifications, the system collects a small number of meaningful inputs about how the car will actually be used.</p>
+            <p>Typical inputs include:</p>
+            <ul>
+              <li>driving distance</li>
+              <li>charging access</li>
+              <li>budget range</li>
+              <li>household needs (space, seats, etc.)</li>
+              <li>preferences such as performance or technology</li>
+            </ul>
+            <p>These inputs are processed by a recommendation layer that compares the user's requirements against a structured EV dataset.</p>
+            <p>The system then ranks vehicles based on suitability and returns a shortlist of recommended cars.</p>
+          </section>
+
+          <section>
+            <h2>Recommendation Logic</h2>
+            <p>The core of EV Picker is a simple scoring approach.</p>
+            <p>Each vehicle in the dataset is evaluated against the user’s inputs across several dimensions such as:</p>
+            <ul>
+              <li>range suitability</li>
+              <li>charging compatibility</li>
+              <li>budget alignment</li>
+              <li>practical fit for household needs</li>
+            </ul>
+            <p>Each dimension contributes to an overall suitability score.</p>
+            <p>Vehicles with the strongest overall match are returned as recommendations.</p>
+            <p>This approach allows the system to stay transparent and explainable rather than relying on a black-box recommendation model.</p>
+          </section>
+
+          <section>
+            <h2>Role of AI</h2>
+            <p>AI is used primarily to assist with interpretation and insight rather than to make the core recommendation decision.</p>
+            <p>Examples include:</p>
+            <ul>
+              <li>generating explanations for why a vehicle is recommended</li>
+              <li>surfacing relevant EV considerations for the user’s situation</li>
+              <li>helping interpret EV specifications and real-world trade-offs</li>
+            </ul>
+            <p>This keeps the decision logic predictable while still allowing AI to add helpful context.</p>
+          </section>
+
+          <section>
+            <h2>Implementation Notes</h2>
+            <p>A key design goal for EV Picker was simplicity.</p>
+            <p>Many car comparison sites rely on complex filtering systems that overwhelm buyers with specifications.</p>
+            <p>EV Picker instead focuses on capturing a small number of meaningful lifestyle inputs and translating those into practical recommendations.</p>
+            <p>During development I experimented with several ways of structuring the recommendation logic and refining the EV dataset to ensure results remained practical and understandable.</p>
+          </section>
+
+          <section>
+            <h2>Reflection</h2>
+            <p>The project highlighted how confusing EV research can be for most buyers.</p>
+            <p>Rather than needing more information, many people simply need a clearer way to translate their lifestyle into suitable vehicle options.</p>
+            <p>EV Picker attempts to bridge that gap by combining structured vehicle data with simple decision logic and AI-assisted explanations.</p>
           </section>
         </div>
       </div>
