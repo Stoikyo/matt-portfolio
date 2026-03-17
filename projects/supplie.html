@@ -242,8 +242,89 @@
       <div class="project-tabs__panel" role="tabpanel" id="supplie-technical-panel" aria-labelledby="supplie-technical-tab" hidden>
         <div class="content">
           <section>
-            <h2>How it was built</h2>
-            <p class="project-tabs__placeholder">Technical breakdown coming soon.</p>
+            <h2>Stack / Tools</h2>
+            <p>Current work on Supplie focuses primarily on system design and experimentation rather than a full production system.</p>
+            <p>Tools used during exploration and prototyping include:</p>
+            <ul>
+              <li>AI models for analysis and reasoning</li>
+              <li>Lightweight scripting and data experiments</li>
+              <li>Various prototype environments for testing decision workflows</li>
+            </ul>
+            <p>The goal so far has been to explore the architecture of a decision-support system rather than build a large production platform.</p>
+          </section>
+
+          <section>
+            <h2>System Concept</h2>
+            <p>Supplie explores how AI could help organisations make better operational decisions by combining multiple signals and translating them into actionable insights.</p>
+            <p>The idea is to move beyond simple dashboards or forecasts and instead build a reasoning layer that helps interpret complex data.</p>
+            <p>Conceptually the system works in three stages:</p>
+            <p>Signals → Reasoning → Decisions</p>
+          </section>
+
+          <section>
+            <h2>Signals Layer</h2>
+            <p>The first layer aggregates operational signals that influence decisions.</p>
+            <p>Examples include:</p>
+            <ul>
+              <li>demand signals</li>
+              <li>inventory levels</li>
+              <li>lead times</li>
+              <li>supply disruptions</li>
+              <li>external events such as weather or logistics constraints</li>
+            </ul>
+            <p>These signals form the raw inputs for the system.</p>
+          </section>
+
+          <section>
+            <h2>Reasoning Layer</h2>
+            <p>The reasoning layer uses AI to interpret how these signals interact.</p>
+            <p>Instead of simply forecasting demand, the goal is to identify patterns such as:</p>
+            <ul>
+              <li>emerging supply risks</li>
+              <li>unexpected demand spikes</li>
+              <li>regional imbalances</li>
+              <li>downstream operational impacts</li>
+            </ul>
+            <p>The reasoning layer attempts to connect signals across time and location to highlight meaningful changes in the system.</p>
+          </section>
+
+          <section>
+            <h2>Decision Layer</h2>
+            <p>The final layer translates those insights into potential actions.</p>
+            <p>Examples might include:</p>
+            <ul>
+              <li>adjusting supply allocations</li>
+              <li>flagging emerging shortages</li>
+              <li>suggesting logistics adjustments</li>
+              <li>identifying where intervention may be required</li>
+            </ul>
+            <p>Rather than replacing planners or operators, the system is intended to act as a decision-support tool.</p>
+          </section>
+
+          <section>
+            <h2>Prototypes &amp; Experiments</h2>
+            <p>Early work on Supplie has focused on exploring how AI could interpret complex operational signals.</p>
+            <p>Experiments have included:</p>
+            <ul>
+              <li>testing signal aggregation models</li>
+              <li>exploring how AI could reason about changing supply conditions</li>
+              <li>prototyping decision-support workflows</li>
+            </ul>
+            <p>These experiments have helped shape the architecture and identify where AI may provide meaningful assistance.</p>
+          </section>
+
+          <section>
+            <h2>Next Technical Steps</h2>
+            <p>Future development would focus on building a more complete system architecture.</p>
+            <p>This would likely include:</p>
+            <ul>
+              <li>a structured signal ingestion pipeline</li>
+              <li>graph-based data models for representing supply networks</li>
+              <li>AI reasoning systems capable of analysing signal interactions</li>
+              <li>simulation and forecasting models</li>
+              <li>interfaces for operational teams to explore recommendations</li>
+            </ul>
+            <p>The long-term goal is to move from passive reporting systems to AI-assisted operational decision making.</p>
           </section>
         </div>
       </div>
@@ -253,7 +334,7 @@
       <div class="bottom-nav">
         <a class="text-link" href="firebase-ev-tools/">Previous: Firebase EV Tools</a>
         <span class="spacer"></span>
-        <a class="text-link" href="motoru.html">Next: Motoru - EV Discovery Experience</a>
+        <a class="text-link" href="evpicker/">Next: EVPicker - Fast EV Shortlists & Buying Tools</a>
       </div>
     </section>
   </main>
