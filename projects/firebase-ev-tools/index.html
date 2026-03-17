@@ -12,6 +12,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <link rel="icon" href="../../assets/favicons/mg_favicon.png" type="image/png">
   <link rel="stylesheet" href="../../assets/css/case-study-base.css">
+  <link rel="stylesheet" href="../../assets/css/project-tabs.css">
   <style>
     :root {
       --bg: #f7f9fc;
@@ -375,71 +376,126 @@
       </div>
     </section>
 
-    <section class="content">
-      <section>
-        <h2>Background / Problem</h2>
-        <p>Motoru and EVPicker both showed me the same thing: people don’t just need “more info”, they need help thinking through car and finance decisions. EVs, tax rules and novated leases are full of jargon, edge cases and scary fine print. I wanted a space where I could experiment with different ways of helping people reason about those decisions without burning a big budget or building a full product.</p>
-      </section>
+    <section class="project-tabs" data-project-tabs>
+      <div class="project-tabs__list" role="tablist" aria-label="Case study sections">
+        <button class="project-tabs__tab" type="button" role="tab" aria-selected="true" aria-controls="firebase-overview-panel" id="firebase-overview-tab">Overview</button>
+        <button class="project-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="firebase-technical-panel" id="firebase-technical-tab" tabindex="-1">How it was built</button>
+      </div>
 
-      <section>
-        <h2>Approach</h2>
-        <p><strong>What I built</strong></p>
-        <p>I set up a single Firebase project as a sandbox and built a handful of tools inside it:</p>
-        <ul>
-          <li><strong>I know my car</strong> – you enter a specific car and get an AI-generated report on running costs, features and suitability.</li>
-          <li><strong>Find me a car to lease</strong> – you answer a few lifestyle questions and get a shortlist of cars (any fuel type) that actually match how you live.</li>
-          <li><strong>EV novated lease calculator – simple</strong> – a quick, high-level estimate of tax savings and weekly costs for an FBT-exempt EV.</li>
-          <li><strong>EV novated lease calculator – detailed</strong> – a more serious calculator that models pre-tax/post-tax, on-road costs and out-of-pocket impact.</li>
-          <li><strong>AI EV Research Assistant</strong> – an AI-powered research tool that produces consistent, well-cited EV insight reports: key specs, ownership costs, public sentiment from real drivers, and summaries of pro reviews, all in one place.</li>
-        </ul>
-        <p>Everything sits on Firebase, with AI APIs doing the heavy lifting for narrative explanations, comparisons and recommendations.</p>
-        <p>I built it alongside a novated lease consultant, using their feedback to keep the numbers sane and the language accurate enough to be useful but still human.</p>
-        <p>This was deliberately scrappy. Firebase gave me free hosting, auth and an easy way to keep everything in one place. There was a lot of vibe coding: wire something up quickly, see what comes out the other end, then tighten it once the shape is clear.</p>
-        <p>I focused on:</p>
-        <ul>
-          <li>Short, clear inputs – no giant forms.</li>
-          <li>Solid, explicit calculations for the money side.</li>
-          <li>AI used to explain, compare and suggest rather than “magic” everything.</li>
-        </ul>
-        <p>Each tool started as a basic UI and a rough prompt. I walked through real scenarios with a novated lease consultant, then tightened the flows and prompts until the outputs felt both trustworthy and understandable.</p>
-      </section>
+      <div class="project-tabs__panel" role="tabpanel" id="firebase-overview-panel" aria-labelledby="firebase-overview-tab">
+        <div class="content">
+          <section>
+            <h2>Background / Problem</h2>
+            <p>Motoru and EVPicker both showed me the same thing: people don’t just need “more info”, they need help thinking through car and finance decisions. EVs, tax rules and novated leases are full of jargon, edge cases and scary fine print. I wanted a space where I could experiment with different ways of helping people reason about those decisions without burning a big budget or building a full product.</p>
+          </section>
 
-      <section>
-        <h2>Outcome / What I learned</h2>
-        <p>The tools all work, and they became a live lab for questions like: How much can you safely offload to AI? Where do you need hard rules? How do you explain gnarly tax logic in plain English?</p>
-        <p>It also reinforced a pattern I keep bumping into: building is the easy part. Getting real people to use the tools, trust them, and come back is the harder, longer game. Working on this set forced me to think more about growth, onboarding and expectation-setting, not just “can I wire this up in Firebase?”</p>
-      </section>
+          <section>
+            <h2>Approach</h2>
+            <p><strong>What I built</strong></p>
+            <p>I set up a single Firebase project as a sandbox and built a handful of tools inside it:</p>
+            <ul>
+              <li><strong>I know my car</strong> – you enter a specific car and get an AI-generated report on running costs, features and suitability.</li>
+              <li><strong>Find me a car to lease</strong> – you answer a few lifestyle questions and get a shortlist of cars (any fuel type) that actually match how you live.</li>
+              <li><strong>EV novated lease calculator – simple</strong> – a quick, high-level estimate of tax savings and weekly costs for an FBT-exempt EV.</li>
+              <li><strong>EV novated lease calculator – detailed</strong> – a more serious calculator that models pre-tax/post-tax, on-road costs and out-of-pocket impact.</li>
+              <li><strong>AI EV Research Assistant</strong> – an AI-powered research tool that produces consistent, well-cited EV insight reports: key specs, ownership costs, public sentiment from real drivers, and summaries of pro reviews, all in one place.</li>
+            </ul>
+            <p>Everything sits on Firebase, with AI APIs doing the heavy lifting for narrative explanations, comparisons and recommendations.</p>
+            <p>I built it alongside a novated lease consultant, using their feedback to keep the numbers sane and the language accurate enough to be useful but still human.</p>
+            <p>This was deliberately scrappy. Firebase gave me free hosting, auth and an easy way to keep everything in one place. There was a lot of vibe coding: wire something up quickly, see what comes out the other end, then tighten it once the shape is clear.</p>
+            <p>I focused on:</p>
+            <ul>
+              <li>Short, clear inputs – no giant forms.</li>
+              <li>Solid, explicit calculations for the money side.</li>
+              <li>AI used to explain, compare and suggest rather than “magic” everything.</li>
+            </ul>
+            <p>Each tool started as a basic UI and a rough prompt. I walked through real scenarios with a novated lease consultant, then tightened the flows and prompts until the outputs felt both trustworthy and understandable.</p>
+          </section>
 
-      <section>
-        <h2>My role</h2>
-        <p>I handled everything: product thinking, UX, interaction design, data and calculation logic, Firebase setup, AI integration and prompts, plus the ongoing tweaks with the novated lease consultant. The whole thing is still a working playground, and a base I can grow new EV and finance experiments from.</p>
-      </section>
+          <section>
+            <h2>Outcome / What I learned</h2>
+            <p>The tools all work, and they became a live lab for questions like: How much can you safely offload to AI? Where do you need hard rules? How do you explain gnarly tax logic in plain English?</p>
+            <p>It also reinforced a pattern I keep bumping into: building is the easy part. Getting real people to use the tools, trust them, and come back is the harder, longer game. Working on this set forced me to think more about growth, onboarding and expectation-setting, not just “can I wire this up in Firebase?”</p>
+          </section>
 
-      <section>
-        <h2>Closing note</h2>
-        <p>Together, these experiments are where I try new ideas, kill weak ones quickly and sharpen how I think about systems. They’re not polished products, but they’ve had a big influence on the tools and experiences I’ve gone on to build, and there’s more to come. I’m always tinkering, learning new tools and looking for the next thing worth turning into something real.</p>
-      </section>
+          <section>
+            <h2>My role</h2>
+            <p>I handled everything: product thinking, UX, interaction design, data and calculation logic, Firebase setup, AI integration and prompts, plus the ongoing tweaks with the novated lease consultant. The whole thing is still a working playground, and a base I can grow new EV and finance experiments from.</p>
+          </section>
 
-      <section class="snapshots" id="snapshots">
-        <h2>Solution snapshots</h2>
-        <p class="intro muted">A couple of screens from the Firebase toolkit.</p>
-        <div id="snapshot-grid" class="snapshot-grid">
-          <article class="snapshot-card">
-            <div class="snapshot-meta">
-              <strong>EV tools overview</strong>
-              <p>Landing view for the Firebase-hosted set of EV tools.</p>
+          <section>
+            <h2>Closing note</h2>
+            <p>Together, these experiments are where I try new ideas, kill weak ones quickly and sharpen how I think about systems. They’re not polished products, but they’ve had a big influence on the tools and experiences I’ve gone on to build, and there’s more to come. I’m always tinkering, learning new tools and looking for the next thing worth turning into something real.</p>
+          </section>
+
+          <section class="snapshots" id="snapshots">
+            <h2>Solution snapshots</h2>
+            <p class="intro muted">A couple of screens from the Firebase toolkit.</p>
+            <div id="snapshot-grid" class="snapshot-grid">
+              <article class="snapshot-card">
+                <div class="snapshot-meta">
+                  <strong>EV tools overview</strong>
+                  <p>Landing view for the Firebase-hosted set of EV tools.</p>
+                </div>
+                <img src="../../assets/img/ev-tools-firebase.png" alt="Firebase EV tools overview" loading="lazy">
+              </article>
+              <article class="snapshot-card">
+                <div class="snapshot-meta">
+                  <strong>Novated lease calculator</strong>
+                  <p>Detailed calculator showing pre/post tax, on-road costs and weekly out-of-pocket.</p>
+                </div>
+                <img src="../../assets/img/novated-lease-calculator-firebase.png" alt="Firebase novated lease calculator" loading="lazy">
+              </article>
             </div>
-            <img src="../../assets/img/ev-tools-firebase.png" alt="Firebase EV tools overview" loading="lazy">
-          </article>
-          <article class="snapshot-card">
-            <div class="snapshot-meta">
-              <strong>Novated lease calculator</strong>
-              <p>Detailed calculator showing pre/post tax, on-road costs and weekly out-of-pocket.</p>
-            </div>
-            <img src="../../assets/img/novated-lease-calculator-firebase.png" alt="Firebase novated lease calculator" loading="lazy">
-          </article>
+          </section>
         </div>
-      </section>
+      </div>
+
+      <div class="project-tabs__panel" role="tabpanel" id="firebase-technical-panel" aria-labelledby="firebase-technical-tab" hidden>
+        <div class="content">
+          <section>
+            <h2>Stack</h2>
+            <ul>
+              <li>Firebase (hosting + Cloud Functions)</li>
+              <li>Google Cloud Console</li>
+              <li>OpenAI API</li>
+              <li>Stripe (payments)</li>
+              <li>Resend (transactional email)</li>
+              <li>Dynamic PDF generation</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Architecture</h2>
+            <p>The tools all ran inside a single Firebase project.</p>
+            <p>The frontend handled user inputs (car searches, lease assumptions, etc.), which triggered Cloud Functions in the backend. Those functions handled the heavy lifting — calling AI APIs, running calculations, generating PDFs, and sending emails when needed.</p>
+            <p>Outputs were returned either directly in the UI or delivered via email/download depending on the tool.</p>
+            <p>The goal wasn’t to build a perfect backend, it was to move quickly and test ideas.</p>
+          </section>
+
+          <section>
+            <h2>Implementation Notes</h2>
+            <p>A surprising amount of time went into the “plumbing”.</p>
+            <p>Firebase itself is simple to start with, but once you begin connecting external services things get more technical.</p>
+            <p>Some of the trickier parts included:</p>
+            <ul>
+              <li>Configuring Google Cloud APIs, permissions and billing correctly</li>
+              <li>Wiring up Stripe for payments and handling webhook events</li>
+              <li>Integrating Resend for transactional emails</li>
+              <li>Generating PDFs dynamically based on user inputs</li>
+              <li>Keeping everything secure while passing data between services</li>
+            </ul>
+            <p>None of this was complex in isolation, but getting all the pieces talking to each other reliably took some iteration.</p>
+          </section>
+
+          <section>
+            <h2>Reflection</h2>
+            <p>Firebase was great for getting ideas live quickly. Hosting, functions and deployment were all handled in one place, which made experimentation easy.</p>
+            <p>As more integrations were added though, the setup became more complex than it probably needed to be. If I were rebuilding it today I’d likely use a simpler serverless backend and keep the architecture leaner.</p>
+            <p>That said, the project did exactly what it needed to do: let me test several EV tools quickly and see what actually helped people.</p>
+          </section>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -450,5 +506,6 @@
       </div>
     </section>
   </main>
+  <script src="../../assets/js/project-tabs.js" defer></script>
 </body>
 </html>

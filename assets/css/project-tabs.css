@@ -1,0 +1,73 @@
+.project-tabs {
+  display: grid;
+  gap: 20px;
+}
+
+.project-tabs__list {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #f8fafc;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.project-tabs__tab {
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.project-tabs__tab:hover {
+  color: var(--text);
+  background: #eef2f6;
+}
+
+.project-tabs__tab:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
+}
+
+.project-tabs__tab[aria-selected="true"] {
+  color: var(--text);
+  background: #ffffff;
+  border-color: var(--line);
+}
+
+.project-tabs__panel[hidden] {
+  display: none;
+}
+
+.project-tabs__panel .content {
+  margin-top: 0;
+}
+
+.project-tabs__placeholder {
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: #f8fafc;
+  padding: 16px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .project-tabs__list {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

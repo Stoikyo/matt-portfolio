@@ -89,9 +89,20 @@ When editing this repo:
   - A projects/case-study section (2–4 key projects).
   - A contact/CTA section and a footer.
 
+- Every project case study in `projects/` should use the standard two-tab content structure:
+  - `Overview`
+  - `How it was built`
+  - Existing narrative content belongs in `Overview`.
+  - If technical content is not ready, `How it was built` should render: `Technical breakdown coming soon.`
+
 - Layouts can evolve:
   - Cards, grids, and columns can be rearranged as long as the reading order remains clear.
   - Sections can be merged or split to improve UX, as long as the above core content still exists.
+
+- Case study tab component standards:
+  - Reuse shared assets: `assets/css/project-tabs.css` and `assets/js/project-tabs.js`.
+  - Follow the shared tab contract (`data-project-tabs`, `role="tablist"`, `role="tab"`, `role="tabpanel"`).
+  - Default to `Overview` on load, with no URL/hash mutation from tab clicks.
 
 - Design decisions (spacing, fonts, colour, etc.) should follow `front_end_design.md`. If a change requires bending those rules, update that document first.
 

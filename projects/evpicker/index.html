@@ -12,6 +12,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <link rel="icon" href="../../assets/favicons/mg_favicon.png" type="image/png">
   <link rel="stylesheet" href="../../assets/css/case-study-base.css">
+  <link rel="stylesheet" href="../../assets/css/project-tabs.css">
   <style>
     :root {
       --bg: #f7f9fc;
@@ -404,108 +405,126 @@
       </div>
     </section>
 
-    <section class="content">
-      <section>
-        <h2>Update (2026)</h2>
-        <p>The original idea behind EVPicker was a concierge-style EV shortlist service delivered within 48 hours. After exploring the concept and building the initial flow, the idea evolved into something slightly different: a faster, more lightweight EV discovery experience.</p>
-        <p>The core insight was that most people didn’t need a full concierge-style report. What they really needed was help cutting through the noise and narrowing down a few realistic EV options quickly.</p>
-        <p>The current direction focuses more on rapid EV shortlists and lightweight tools rather than a formal report-based service.</p>
-      </section>
+    <section class="project-tabs" data-project-tabs>
+      <div class="project-tabs__list" role="tablist" aria-label="Case study sections">
+        <button class="project-tabs__tab" type="button" role="tab" aria-selected="true" aria-controls="evpicker-overview-panel" id="evpicker-overview-tab">Overview</button>
+        <button class="project-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="evpicker-technical-panel" id="evpicker-technical-tab" tabindex="-1">How it was built</button>
+      </div>
 
-      <section>
-        <h2>Background</h2>
-        <ul>
-          <li>Created to test whether people would pay for a simple, human-reviewed EV shortlist.</li>
-          <li>Designed to see if a quick, paid shortlist could drive decisions faster than more exploratory tools.</li>
-          <li>Built to answer the hypothesis that wasn’t proven inside Motoru: will people pay directly for concise EV advice and concierge?</li>
-        </ul>
-      </section>
+      <div class="project-tabs__panel" role="tabpanel" id="evpicker-overview-panel" aria-labelledby="evpicker-overview-tab">
+        <div class="content">
+          <section>
+            <h2>Update (2026)</h2>
+            <p>The original idea behind EVPicker was a concierge-style EV shortlist service delivered within 48 hours. After exploring the concept and building the initial flow, the idea evolved into something slightly different: a faster, more lightweight EV discovery experience.</p>
+            <p>The core insight was that most people didn’t need a full concierge-style report. What they really needed was help cutting through the noise and narrowing down a few realistic EV options quickly.</p>
+            <p>The current direction focuses more on rapid EV shortlists and lightweight tools rather than a formal report-based service.</p>
+          </section>
 
-      <section>
-        <h2>Problem</h2>
-        <ul>
-          <li>Drivers ready to “go electric” still didn’t know which EV to pick and didn’t want another comparison tool.</li>
-          <li>Wanted a human to look at their situation and say, “Here are the options that make sense.”</li>
-          <li>Needed a helpful path into novated leasing/finance partners without feeling like a sales hand-off.</li>
-        </ul>
-      </section>
+          <section>
+            <h2>Background</h2>
+            <ul>
+              <li>Created to test whether people would pay for a simple, human-reviewed EV shortlist.</li>
+              <li>Designed to see if a quick, paid shortlist could drive decisions faster than more exploratory tools.</li>
+              <li>Built to answer the hypothesis that wasn’t proven inside Motoru: will people pay directly for concise EV advice and concierge?</li>
+            </ul>
+          </section>
 
-      <section>
-        <h2>Approach</h2>
-        <ul>
-          <li>Speed run in a day: shaped the offer, brand, copy and site in WordPress to move fastest.</li>
-          <li>Added an AI chat bot on the homepage to field questions before people submitted details.</li>
-          <li>Built a simple workflow behind the intake: review details, research, return a short, opinionated shortlist with reasoning.</li>
-          <li>Kept the interaction tight: one clear input, one clear shortlist, with a gentle path into novated leasing/finance when someone had a favourite.</li>
-          <li>Used the constraint to test willingness to pay and the service shape, not to prove a stack choice.</li>
-          <li>Used Jotform to capture details and Stripe for payment so I could validate quickly without custom billing code.</li>
-        </ul>
-      </section>
+          <section>
+            <h2>Problem</h2>
+            <ul>
+              <li>Drivers ready to “go electric” still didn’t know which EV to pick and didn’t want another comparison tool.</li>
+              <li>Wanted a human to look at their situation and say, “Here are the options that make sense.”</li>
+              <li>Needed a helpful path into novated leasing/finance partners without feeling like a sales hand-off.</li>
+            </ul>
+          </section>
 
-      <section>
-        <h2>Outcome / Evolution</h2>
-        <p>The original version proved useful as a way to structure EV recommendations quickly, but it also highlighted an important insight: most people don’t want a long report or a concierge-style process. They want clarity fast.</p>
-        <p>That insight pushed the concept toward simpler tools and faster recommendations rather than a formal report service.</p>
-        <p>This exploration also informed later experiments around EV discovery tools and AI-assisted recommendations.</p>
-      </section>
+          <section>
+            <h2>Approach</h2>
+            <ul>
+              <li>Speed run in a day: shaped the offer, brand, copy and site in WordPress to move fastest.</li>
+              <li>Added an AI chat bot on the homepage to field questions before people submitted details.</li>
+              <li>Built a simple workflow behind the intake: review details, research, return a short, opinionated shortlist with reasoning.</li>
+              <li>Kept the interaction tight: one clear input, one clear shortlist, with a gentle path into novated leasing/finance when someone had a favourite.</li>
+              <li>Used the constraint to test willingness to pay and the service shape, not to prove a stack choice.</li>
+              <li>Used Jotform to capture details and Stripe for payment so I could validate quickly without custom billing code.</li>
+            </ul>
+          </section>
 
-      <section>
-        <h2>My role</h2>
-        <ul>
-          <li>Sole contributor end to end: offer, product shape, UX, brand, content and delivery.</li>
-          <li>Built the site myself in a day, plus intake, email and automation workflow.</li>
-          <li>Handled every customer interaction and folded learnings into how I approach EV decision tools.</li>
-        </ul>
-      </section>
+          <section>
+            <h2>Outcome / Evolution</h2>
+            <p>The original version proved useful as a way to structure EV recommendations quickly, but it also highlighted an important insight: most people don’t want a long report or a concierge-style process. They want clarity fast.</p>
+            <p>That insight pushed the concept toward simpler tools and faster recommendations rather than a formal report service.</p>
+            <p>This exploration also informed later experiments around EV discovery tools and AI-assisted recommendations.</p>
+          </section>
 
-      <section class="snapshots" id="snapshots">
-        <h2>Original prototype screenshots</h2>
-        <p class="intro muted">Examples from the first version of the concept.</p>
-        <div class="snapshot-grid" id="snapshot-grid">
-          <article class="snapshot-card">
-            <div class="snapshot-meta">
-              <strong>Personal EV shortlist report (PDF)</strong>
-              <p>Opens inline; you can also download it if your browser blocks inline PDFs.</p>
+          <section>
+            <h2>My role</h2>
+            <ul>
+              <li>Sole contributor end to end: offer, product shape, UX, brand, content and delivery.</li>
+              <li>Built the site myself in a day, plus intake, email and automation workflow.</li>
+              <li>Handled every customer interaction and folded learnings into how I approach EV decision tools.</li>
+            </ul>
+          </section>
+
+          <section class="snapshots" id="snapshots">
+            <h2>Original prototype screenshots</h2>
+            <p class="intro muted">Examples from the first version of the concept.</p>
+            <div class="snapshot-grid" id="snapshot-grid">
+              <article class="snapshot-card">
+                <div class="snapshot-meta">
+                  <strong>Personal EV shortlist report (PDF)</strong>
+                  <p>Opens inline; you can also download it if your browser blocks inline PDFs.</p>
+                </div>
+                <object data="../../assets/img/your-personal-ev-picker-report.pdf" type="application/pdf" aria-label="EVPicker sample report PDF">
+                  <p class="muted" style="padding:12px;">PDF preview unavailable. <a href="../../assets/img/your-personal-ev-picker-report.pdf" target="_blank" rel="noopener noreferrer">Download the sample report</a>.</p>
+                </object>
+              </article>
+              <article class="snapshot-card">
+                <div class="snapshot-meta">
+                  <strong>Jotform intake + Stripe payment <span class="new-tab-icon" aria-hidden="true">↗</span></strong>
+                  <p>Fast intake and checkout flow used to validate willingness to pay.</p>
+                </div>
+                <a href="../../assets/img/ev-picker-jotform-embed.jpg" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit; display:block;">
+                  <img src="../../assets/img/ev-picker-jotform-embed.jpg" alt="EVPicker Jotform intake and payment embed" style="object-fit: contain; background:#f8fafc;" loading="lazy">
+                </a>
+              </article>
+              <article class="snapshot-card">
+                <div class="snapshot-meta">
+                  <strong>Landing page <span class="new-tab-icon" aria-hidden="true">↗</span></strong>
+                  <p>Homepage with AI chat bot entry point and clear 48-hour promise.</p>
+                </div>
+                <a href="../../assets/img/ev-picker-landing-page.png" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit; display:block;">
+                  <img src="../../assets/img/ev-picker-landing-page.png" alt="EVPicker landing page" style="object-fit: contain; background:#f8fafc;" loading="lazy">
+                </a>
+              </article>
+              <article class="snapshot-card">
+                <div class="snapshot-meta">
+                  <strong>AI chat bot <span class="new-tab-icon" aria-hidden="true">↗</span></strong>
+                  <p>Homepage bot used to field questions and guide people into the 48-hour service.</p>
+                </div>
+                <a href="../../assets/img/ev-picker-ai-chatbot.png" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit; display:block;">
+                  <img src="../../assets/img/ev-picker-ai-chatbot.png" alt="EVPicker AI chat bot example" style="object-fit: contain; background:#f8fafc;" loading="lazy">
+                </a>
+              </article>
             </div>
-            <object data="../../assets/img/your-personal-ev-picker-report.pdf" type="application/pdf" aria-label="EVPicker sample report PDF">
-              <p class="muted" style="padding:12px;">PDF preview unavailable. <a href="../../assets/img/your-personal-ev-picker-report.pdf" target="_blank" rel="noopener noreferrer">Download the sample report</a>.</p>
-            </object>
-          </article>
-          <article class="snapshot-card">
-            <div class="snapshot-meta">
-              <strong>Jotform intake + Stripe payment <span class="new-tab-icon" aria-hidden="true">↗</span></strong>
-              <p>Fast intake and checkout flow used to validate willingness to pay.</p>
-            </div>
-            <a href="../../assets/img/ev-picker-jotform-embed.jpg" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit; display:block;">
-              <img src="../../assets/img/ev-picker-jotform-embed.jpg" alt="EVPicker Jotform intake and payment embed" style="object-fit: contain; background:#f8fafc;" loading="lazy">
-            </a>
-          </article>
-          <article class="snapshot-card">
-            <div class="snapshot-meta">
-              <strong>Landing page <span class="new-tab-icon" aria-hidden="true">↗</span></strong>
-              <p>Homepage with AI chat bot entry point and clear 48-hour promise.</p>
-            </div>
-            <a href="../../assets/img/ev-picker-landing-page.png" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit; display:block;">
-              <img src="../../assets/img/ev-picker-landing-page.png" alt="EVPicker landing page" style="object-fit: contain; background:#f8fafc;" loading="lazy">
-            </a>
-          </article>
-          <article class="snapshot-card">
-            <div class="snapshot-meta">
-              <strong>AI chat bot <span class="new-tab-icon" aria-hidden="true">↗</span></strong>
-              <p>Homepage bot used to field questions and guide people into the 48-hour service.</p>
-            </div>
-            <a href="../../assets/img/ev-picker-ai-chatbot.png" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit; display:block;">
-              <img src="../../assets/img/ev-picker-ai-chatbot.png" alt="EVPicker AI chat bot example" style="object-fit: contain; background:#f8fafc;" loading="lazy">
-            </a>
-          </article>
+          </section>
+
+          <section>
+            <h2>Current direction</h2>
+            <p>The EVPicker idea is continuing to evolve. The current focus is exploring faster ways to help people shortlist EVs without requiring long questionnaires or manual research.</p>
+            <p>This includes lightweight tools, quick recommendation flows and experiments with AI-assisted discovery.</p>
+          </section>
         </div>
-      </section>
+      </div>
 
-      <section>
-        <h2>Current direction</h2>
-        <p>The EVPicker idea is continuing to evolve. The current focus is exploring faster ways to help people shortlist EVs without requiring long questionnaires or manual research.</p>
-        <p>This includes lightweight tools, quick recommendation flows and experiments with AI-assisted discovery.</p>
-      </section>
+      <div class="project-tabs__panel" role="tabpanel" id="evpicker-technical-panel" aria-labelledby="evpicker-technical-tab" hidden>
+        <div class="content">
+          <section>
+            <h2>How it was built</h2>
+            <p class="project-tabs__placeholder">Technical breakdown coming soon.</p>
+          </section>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -516,5 +535,6 @@
       </div>
     </section>
   </main>
+  <script src="../../assets/js/project-tabs.js" defer></script>
 </body>
 </html>

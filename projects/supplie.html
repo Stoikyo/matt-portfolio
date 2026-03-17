@@ -12,6 +12,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <link rel="icon" href="../assets/favicons/mg_favicon.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/case-study-base.css">
+  <link rel="stylesheet" href="../assets/css/project-tabs.css">
   <style>
     :root {
       --bg: #f7f9fc;
@@ -188,46 +189,64 @@
       </div>
     </section>
 
-    <section class="content">
-      <section>
-        <h2>Background / Problem</h2>
-        <p>Operational teams often rely on dashboards and spreadsheets to track what has already happened. These tools are useful, but they rarely help teams explore what might happen next.</p>
-        <p>The idea behind Supplie was to explore whether AI models could help surface useful signals from messy operational data and support planning decisions rather than just reporting.</p>
-        <p>The focus is not automation. The focus is helping humans understand complex systems faster.</p>
-      </section>
+    <section class="project-tabs" data-project-tabs>
+      <div class="project-tabs__list" role="tablist" aria-label="Case study sections">
+        <button class="project-tabs__tab" type="button" role="tab" aria-selected="true" aria-controls="supplie-overview-panel" id="supplie-overview-tab">Overview</button>
+        <button class="project-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="supplie-technical-panel" id="supplie-technical-tab" tabindex="-1">How it was built</button>
+      </div>
 
-      <section>
-        <h2>Approach</h2>
-        <p>I started by looking at how operational teams actually make decisions. A lot of the work happens in spreadsheets, Slack threads and meetings where people are trying to interpret partial information.</p>
-        <p>From there I explored a few directions:</p>
-        <ul>
-          <li>identifying signals that matter in supply chains and logistics</li>
-          <li>experimenting with ways AI models could surface patterns or anomalies</li>
-          <li>prototyping interfaces where teams could explore scenarios rather than just viewing reports</li>
-          <li>exploring simulation-style approaches to planning</li>
-        </ul>
-        <p>Most of the work so far has been early exploration and prototyping rather than a production system.</p>
-      </section>
+      <div class="project-tabs__panel" role="tabpanel" id="supplie-overview-panel" aria-labelledby="supplie-overview-tab">
+        <div class="content">
+          <section>
+            <h2>Background / Problem</h2>
+            <p>Operational teams often rely on dashboards and spreadsheets to track what has already happened. These tools are useful, but they rarely help teams explore what might happen next.</p>
+            <p>The idea behind Supplie was to explore whether AI models could help surface useful signals from messy operational data and support planning decisions rather than just reporting.</p>
+            <p>The focus is not automation. The focus is helping humans understand complex systems faster.</p>
+          </section>
 
-      <section>
-        <h2>Outcome / What I learned</h2>
-        <p>A few interesting themes came out of the exploration.</p>
-        <ul>
-          <li>Operational data is messy. Real-world systems rarely have clean inputs.</li>
-          <li>AI is most useful when it helps people reason about decisions rather than when it tries to replace the decision entirely.</li>
-          <li>The most interesting opportunity may be helping teams explore scenarios rather than generating answers.</li>
-        </ul>
-      </section>
+          <section>
+            <h2>Approach</h2>
+            <p>I started by looking at how operational teams actually make decisions. A lot of the work happens in spreadsheets, Slack threads and meetings where people are trying to interpret partial information.</p>
+            <p>From there I explored a few directions:</p>
+            <ul>
+              <li>identifying signals that matter in supply chains and logistics</li>
+              <li>experimenting with ways AI models could surface patterns or anomalies</li>
+              <li>prototyping interfaces where teams could explore scenarios rather than just viewing reports</li>
+              <li>exploring simulation-style approaches to planning</li>
+            </ul>
+            <p>Most of the work so far has been early exploration and prototyping rather than a production system.</p>
+          </section>
 
-      <section>
-        <h2>My role</h2>
-        <ul>
-          <li>Concept exploration</li>
-          <li>Product design</li>
-          <li>AI experimentation and prototyping</li>
-          <li>Research into operational decision workflows</li>
-        </ul>
-      </section>
+          <section>
+            <h2>Outcome / What I learned</h2>
+            <p>A few interesting themes came out of the exploration.</p>
+            <ul>
+              <li>Operational data is messy. Real-world systems rarely have clean inputs.</li>
+              <li>AI is most useful when it helps people reason about decisions rather than when it tries to replace the decision entirely.</li>
+              <li>The most interesting opportunity may be helping teams explore scenarios rather than generating answers.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>My role</h2>
+            <ul>
+              <li>Concept exploration</li>
+              <li>Product design</li>
+              <li>AI experimentation and prototyping</li>
+              <li>Research into operational decision workflows</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <div class="project-tabs__panel" role="tabpanel" id="supplie-technical-panel" aria-labelledby="supplie-technical-tab" hidden>
+        <div class="content">
+          <section>
+            <h2>How it was built</h2>
+            <p class="project-tabs__placeholder">Technical breakdown coming soon.</p>
+          </section>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -238,5 +257,6 @@
       </div>
     </section>
   </main>
+  <script src="../assets/js/project-tabs.js" defer></script>
 </body>
 </html>

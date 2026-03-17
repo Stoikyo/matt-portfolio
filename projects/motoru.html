@@ -12,6 +12,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <link rel="icon" href="../assets/favicons/mg_favicon.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/case-study-base.css">
+  <link rel="stylesheet" href="../assets/css/project-tabs.css">
   <style>
     :root {
       --bg: #f7f9fc;
@@ -440,66 +441,84 @@
       </div>
     </section>
 
-    <section class="content">
-      <section>
-        <h2>Background / Problem</h2>
-        <p>We started with a simple hypothesis: people aren’t avoiding EVs because they don’t want them; they’re stuck because choosing one feels confusing, risky and full of technical noise.</p>
-        <p>From user conversations, EV events and online communities we kept hearing the same things:</p>
-        <ul>
-          <li>Too many models and acronyms</li>
-          <li>Unclear running and charging costs</li>
-          <li>Comparison sites that expect you to know which car you want before you even understand the basics</li>
-        </ul>
-        <p>The challenge was to find out whether a different kind of “first step” could help: one that ignored model names and specs at the start, and focused on how people actually live.</p>
-      </section>
+    <section class="project-tabs" data-project-tabs>
+      <div class="project-tabs__list" role="tablist" aria-label="Case study sections">
+        <button class="project-tabs__tab" type="button" role="tab" aria-selected="true" aria-controls="motoru-overview-panel" id="motoru-overview-tab">Overview</button>
+        <button class="project-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="motoru-technical-panel" id="motoru-technical-tab" tabindex="-1">How it was built</button>
+      </div>
 
-      <section>
-        <h2>Approach</h2>
-        <p>I treated Motoru as a product experiment to see if we could identify, validate and solve a real problem for EV buyers.</p>
-        <ul>
-          <li><strong>Research &amp; hypothesis</strong> – Talked to people at EV events and in Facebook/Reddit groups, asking how they were trying to get into an EV. Most people froze when asked “Which car are you looking at?” but were comfortable talking about their life: commute, kids, trips, parking, budget.</li>
-          <li><strong>Reframe the problem</strong> – Instead of asking “What car do you want?”, we flipped it to “Tell us how you live, and we’ll work out which cars fit.”</li>
-          <li><strong>Design the flow</strong> – Mapped the journey from “curious about EVs” to “I’m ready to talk to someone”. Designed a short quiz that focused on lifestyle and constraints, plus a results view that explained why each recommendation matched.</li>
-          <li><strong>Build the system</strong> – Used WordPress for the marketing site and initial UI shell because I could move fastest there. The quiz, recommendation logic and AI integration were built by my technical cofounder in React, Rails and OpenAI, based on my specs. We rolled our own EV database in Google Sheets from manufacturer data, dealer input and community feedback. On top of that, we used AI to:
+      <div class="project-tabs__panel" role="tabpanel" id="motoru-overview-panel" aria-labelledby="motoru-overview-tab">
+        <div class="content">
+          <section>
+            <h2>Background / Problem</h2>
+            <p>We started with a simple hypothesis: people aren’t avoiding EVs because they don’t want them; they’re stuck because choosing one feels confusing, risky and full of technical noise.</p>
+            <p>From user conversations, EV events and online communities we kept hearing the same things:</p>
             <ul>
-              <li>turn quiz answers into weighted needs (range, charging pattern, budget, body type and so on),</li>
-              <li>score each car with a “Motoru Match” rating out of 10, and</li>
-              <li>generate short, plain-language explanations of why a car was a good fit.</li>
+              <li>Too many models and acronyms</li>
+              <li>Unclear running and charging costs</li>
+              <li>Comparison sites that expect you to know which car you want before you even understand the basics</li>
             </ul>
-          </li>
-          <li><strong>Test and iterate</strong> – Put the prototype in front of real people, watched where they hesitated, and tweaked question wording, order, scoring and the way we presented the Motoru Match scores. Shared it in EV Facebook groups and on Reddit to get a wider range of users and feedback.</li>
-        </ul>
-      </section>
+            <p>The challenge was to find out whether a different kind of “first step” could help: one that ignored model names and specs at the start, and focused on how people actually live.</p>
+          </section>
 
-      <section>
-        <h2>Outcome / What I learned</h2>
-        <p>The prototype solved a small but meaningful part of the problem: helping people move from vague interest to a concrete shortlist with a clear score attached:</p>
-        <ul>
-          <li>Over 90% of people who started the quiz finished it.</li>
-          <li>The Motoru Match score out of 10 gave people a quick, intuitive sense of which cars were strongest for their needs, and the AI-generated explanations helped them understand why.</li>
-          <li>Reddit and EV Facebook groups became a strong source of traffic, feedback and ideas for improving the questions, scoring and recommendations.</li>
-          <li>Multiple novated leasing companies approached us and competed to handle the leads coming through the tool.</li>
-          <li>Sustainable growth and marketing were harder. With limited time, my co-founder’s family commitments, and no simple path to scale without burning out, we chose to wrap the project up amicably rather than drag it out.</li>
-        </ul>
-        <p>Motoru proved the core insight that a lifestyle-first, scored path into EVs resonates, but also surfaced the reality: discovery alone isn’t enough without a sustainable way to grow and operate the business.</p>
-      </section>
+          <section>
+            <h2>Approach</h2>
+            <p>I treated Motoru as a product experiment to see if we could identify, validate and solve a real problem for EV buyers.</p>
+            <ul>
+              <li><strong>Research &amp; hypothesis</strong> – Talked to people at EV events and in Facebook/Reddit groups, asking how they were trying to get into an EV. Most people froze when asked “Which car are you looking at?” but were comfortable talking about their life: commute, kids, trips, parking, budget.</li>
+              <li><strong>Reframe the problem</strong> – Instead of asking “What car do you want?”, we flipped it to “Tell us how you live, and we’ll work out which cars fit.”</li>
+              <li><strong>Design the flow</strong> – Mapped the journey from “curious about EVs” to “I’m ready to talk to someone”. Designed a short quiz that focused on lifestyle and constraints, plus a results view that explained why each recommendation matched.</li>
+              <li><strong>Build the system</strong> – Used WordPress for the marketing site and initial UI shell because I could move fastest there. The quiz, recommendation logic and AI integration were built by my technical cofounder in React, Rails and OpenAI, based on my specs. We rolled our own EV database in Google Sheets from manufacturer data, dealer input and community feedback. On top of that, we used AI to:
+                <ul>
+                  <li>turn quiz answers into weighted needs (range, charging pattern, budget, body type and so on),</li>
+                  <li>score each car with a “Motoru Match” rating out of 10, and</li>
+                  <li>generate short, plain-language explanations of why a car was a good fit.</li>
+                </ul>
+              </li>
+              <li><strong>Test and iterate</strong> – Put the prototype in front of real people, watched where they hesitated, and tweaked question wording, order, scoring and the way we presented the Motoru Match scores. Shared it in EV Facebook groups and on Reddit to get a wider range of users and feedback.</li>
+            </ul>
+          </section>
 
-      <section>
-        <h2>My role</h2>
-        <p>I led Motoru end to end:</p>
-        <ul>
-          <li><strong>Founder</strong> – Ran the business and was the face of the company: strategy, positioning, and relationships with novated leasing partners; talking to users at EV events and in communities.</li>
-          <li><strong>Product &amp; UX</strong> – Defined the hypothesis, mapped the decision journey, designed the quiz and results experience, and iterated based on live feedback.</li>
-          <li><strong>Engineering</strong> – Built and maintained the WordPress marketing site and initial quiz/results UI, and turned the UX into detailed specs, rules and edge cases for my cofounder to implement in React/Rails/OpenAI. Created and maintained the EV database in Google Sheets.</li>
-          <li><strong>Marketing &amp; growth</strong> – Led all marketing experiments (content, social, community outreach on Reddit and EV Facebook groups). First time running marketing; learned how critical it is to product success.</li>
-        </ul>
-      </section>
+          <section>
+            <h2>Outcome / What I learned</h2>
+            <p>The prototype solved a small but meaningful part of the problem: helping people move from vague interest to a concrete shortlist with a clear score attached:</p>
+            <ul>
+              <li>Over 90% of people who started the quiz finished it.</li>
+              <li>The Motoru Match score out of 10 gave people a quick, intuitive sense of which cars were strongest for their needs, and the AI-generated explanations helped them understand why.</li>
+              <li>Reddit and EV Facebook groups became a strong source of traffic, feedback and ideas for improving the questions, scoring and recommendations.</li>
+              <li>Multiple novated leasing companies approached us and competed to handle the leads coming through the tool.</li>
+              <li>Sustainable growth and marketing were harder. With limited time, my co-founder’s family commitments, and no simple path to scale without burning out, we chose to wrap the project up amicably rather than drag it out.</li>
+            </ul>
+            <p>Motoru proved the core insight that a lifestyle-first, scored path into EVs resonates, but also surfaced the reality: discovery alone isn’t enough without a sustainable way to grow and operate the business.</p>
+          </section>
 
-      <section class="snapshots" id="snapshots">
-        <h2>Solution snapshots</h2>
-        <p class="intro muted">A few screens from the live prototype and experiments.</p>
-        <div id="snapshot-grid" class="snapshot-grid"></div>
-      </section>
+          <section>
+            <h2>My role</h2>
+            <p>I led Motoru end to end:</p>
+            <ul>
+              <li><strong>Founder</strong> – Ran the business and was the face of the company: strategy, positioning, and relationships with novated leasing partners; talking to users at EV events and in communities.</li>
+              <li><strong>Product &amp; UX</strong> – Defined the hypothesis, mapped the decision journey, designed the quiz and results experience, and iterated based on live feedback.</li>
+              <li><strong>Engineering</strong> – Built and maintained the WordPress marketing site and initial quiz/results UI, and turned the UX into detailed specs, rules and edge cases for my cofounder to implement in React/Rails/OpenAI. Created and maintained the EV database in Google Sheets.</li>
+              <li><strong>Marketing &amp; growth</strong> – Led all marketing experiments (content, social, community outreach on Reddit and EV Facebook groups). First time running marketing; learned how critical it is to product success.</li>
+            </ul>
+          </section>
+
+          <section class="snapshots" id="snapshots">
+            <h2>Solution snapshots</h2>
+            <p class="intro muted">A few screens from the live prototype and experiments.</p>
+            <div id="snapshot-grid" class="snapshot-grid"></div>
+          </section>
+        </div>
+      </div>
+
+      <div class="project-tabs__panel" role="tabpanel" id="motoru-technical-panel" aria-labelledby="motoru-technical-tab" hidden>
+        <div class="content">
+          <section>
+            <h2>How it was built</h2>
+            <p class="project-tabs__placeholder">Technical breakdown coming soon.</p>
+          </section>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -510,6 +529,7 @@
       </div>
     </section>
   </main>
+  <script src="../assets/js/project-tabs.js" defer></script>
 
   <script>
     window.snapshots = [
