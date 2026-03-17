@@ -142,6 +142,46 @@
     .content h2 { margin-bottom: 8px; }
     .content p { margin-bottom: 12px; }
 
+    .project-hero-avatar img {
+      width: 76%;
+      height: 76%;
+      object-fit: contain;
+      transform: none;
+    }
+
+    .snapshots {
+      display: grid;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .snapshots h2 { margin-bottom: 6px; }
+    .snapshots .intro { margin: 0; }
+
+    .snapshot-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .snapshot-card {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .snapshot-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #f8fafc;
+    }
+    .snapshot-card figcaption {
+      padding: 10px 12px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
     .bottom-nav {
       display: flex;
       flex-wrap: wrap;
@@ -153,6 +193,10 @@
     @media (min-width: 820px) {
       main { padding: 64px 24px 120px; gap: 40px; }
       section { padding: 32px 28px; }
+    }
+
+    @media (max-width: 720px) {
+      .snapshot-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -322,6 +366,29 @@
             <p>The long-term goal is to move beyond passive reporting systems toward AI-assisted operational decision support.</p>
           </section>
         </div>
+      </div>
+    </section>
+
+    <section class="snapshots" id="snapshots">
+      <h2>Solution snapshots</h2>
+      <p class="intro">Screens from the Rail Plan Assistant prototype used in this exploration.</p>
+      <div class="snapshot-grid">
+        <figure class="snapshot-card">
+          <img src="../assets/img/railplan-assistant-1.png" alt="Rail Plan Assistant - workflow screen one" loading="lazy">
+          <figcaption>Workflow overview and initial scenario setup.</figcaption>
+        </figure>
+        <figure class="snapshot-card">
+          <img src="../assets/img/railplan-assistant-2.png" alt="Rail Plan Assistant - workflow screen two" loading="lazy">
+          <figcaption>Decision support interface with AI-generated recommendations.</figcaption>
+        </figure>
+        <figure class="snapshot-card">
+          <img src="../assets/img/railplan-assistant-3.png" alt="Rail Plan Assistant - workflow screen three" loading="lazy">
+          <figcaption>Operational signals and constraints view.</figcaption>
+        </figure>
+        <figure class="snapshot-card">
+          <img src="../assets/img/railplan-assistant-4.png" alt="Rail Plan Assistant - workflow screen four" loading="lazy">
+          <figcaption>Scenario comparison and next-step planning output.</figcaption>
+        </figure>
       </div>
     </section>
 
