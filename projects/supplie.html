@@ -160,7 +160,7 @@
     .snapshot-grid {
       display: grid;
       gap: 16px;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
     }
     .snapshot-card {
       margin: 0;
@@ -195,9 +195,6 @@
       section { padding: 32px 28px; }
     }
 
-    @media (max-width: 720px) {
-      .snapshot-grid { grid-template-columns: 1fr; }
-    }
   </style>
 </head>
 <body>
