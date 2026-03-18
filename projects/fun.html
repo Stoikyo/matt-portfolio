@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none';">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <title>Fun · Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="icon" href="../assets/favicons/mg_favicon.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/case-study-base.css">
+  <link rel="stylesheet" href="../assets/css/project-tabs.css">
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --accent: #e90067;
+      --accent-strong: #cc005a;
+      --radius: 12px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 249, 252, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 14px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Fredoka', system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      font-size: 15px;
+      color: var(--text);
+    }
+    .brand-mark {
+      height: 40px;
+      width: 40px;
+      border-radius: 8px;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-weight: 600;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
+      background: #e9eef7;
+      outline: 2px solid transparent;
+      box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 48px 20px 96px;
+      display: grid;
+      gap: 32px;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 24px;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      color: var(--text);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      font-family: 'Fredoka', system-ui, sans-serif;
+    }
+    h1 { font-size: clamp(32px, 5.5vw, 44px); font-weight: 700; }
+    h2 { font-size: clamp(24px, 3.6vw, 32px); font-weight: 600; }
+
+    p { margin: 0 0 14px; color: var(--muted); }
+    .lead { font-size: 17px; color: var(--text); margin-bottom: 14px; }
+    .meta {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .content {
+      display: grid;
+      gap: 24px;
+    }
+    .content section {
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+    }
+    .content h2 { margin-bottom: 8px; }
+    .content p { margin-bottom: 12px; }
+
+    .project-hero-avatar .hero-emoji {
+      font-size: clamp(40px, 6vw, 56px);
+      line-height: 1;
+    }
+
+    .snapshots {
+      display: grid;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .snapshots h2 { margin-bottom: 6px; }
+    .snapshots .intro { margin: 0; }
+
+    .snapshot-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
+    .snapshot-card {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .snapshot-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #f8fafc;
+    }
+    .snapshot-card figcaption {
+      padding: 10px 12px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .bottom-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .spacer { flex: 1 1 auto; }
+
+    @media (min-width: 820px) {
+      main { padding: 64px 24px 120px; gap: 40px; }
+      section { padding: 32px 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="../" aria-label="Matt Grant home">
+        <img class="brand-mark" src="../assets/favicons/mg_favicon.png" alt="MG logo">
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../#projects">
+          <span aria-hidden="true" style="margin-right:8px;">←</span>
+          Back
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="project-header">
+        <div class="project-hero-avatar">
+          <span class="hero-emoji" role="img" aria-label="Party popper">🎉</span>
+        </div>
+        <div>
+          <h1>Fun</h1>
+          <p class="meta">Playground · Ongoing</p>
+          <p class="lead">A running collection of fun and silly things I have tinkered on, from one-night experiments to playful prototypes.</p>
+          <div class="actions">
+            <a class="button secondary" href="https://tictactoe-dun-nu.vercel.app/" target="_blank" rel="noopener noreferrer">
+              Try Tic Tac Toe
+              <span aria-hidden="true" style="margin-left:6px;">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-tabs" data-project-tabs>
+      <div class="project-tabs__list" role="tablist" aria-label="Case study sections">
+        <button class="project-tabs__tab" type="button" role="tab" aria-selected="true" aria-controls="fun-overview-panel" id="fun-overview-tab">Overview</button>
+        <button class="project-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="fun-experiments-panel" id="fun-experiments-tab" tabindex="-1">Experiments</button>
+      </div>
+
+      <div class="project-tabs__panel" role="tabpanel" id="fun-overview-panel" aria-labelledby="fun-overview-tab">
+        <div class="content">
+          <section>
+            <h2>What this page is for</h2>
+            <p>This section is where I collect small projects that are mostly about curiosity, learning, and enjoying the build process.</p>
+            <p>They are intentionally fast and lightweight. The goal is to make ideas tangible quickly, not polish every edge.</p>
+          </section>
+
+          <section>
+            <h2>How I use these projects</h2>
+            <ul>
+              <li>Try a new tool or coding pattern quickly</li>
+              <li>Build something playful with family and friends</li>
+              <li>Test rough ideas before deciding if they should become bigger projects</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <div class="project-tabs__panel" role="tabpanel" id="fun-experiments-panel" aria-labelledby="fun-experiments-tab" hidden>
+        <div class="content">
+          <section>
+            <h2>Tic Tac Toe</h2>
+            <p class="meta">Quick experiment · Built with my daughter</p>
+            <p>I made this as a very quick project with my daughter to show her how you can build and publish something fun together.</p>
+            <p><a class="text-link" href="https://tictactoe-dun-nu.vercel.app/" target="_blank" rel="noopener noreferrer">Play the live app</a></p>
+            <h3>How it was built</h3>
+            <ul>
+              <li>Started with a simple prompt in Codex to generate the game quickly.</li>
+              <li>Connected the project to GitHub for version control and easy iteration.</li>
+              <li>Deployed to Vercel to get it live fast and test in a real environment.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>AIce AIce Baby</h2>
+            <p class="meta">Silly problem-solving app · Fast experiment</p>
+            <p>A playful problem-solving app inspired by Vanilla Ice and the line, "If you gotta problem, yo I'll solve it" from Ice Ice Baby.</p>
+            <p><a class="text-link" href="https://a-ice-aice-baby.vercel.app/" target="_blank" rel="noopener noreferrer">Try AIce AIce Baby</a></p>
+            <h3>How it was built</h3>
+            <ul>
+              <li>Built quickly with Codex as the main build assistant.</li>
+              <li>Used the OpenAI API for the problem-solving interaction.</li>
+              <li>Deployed on Vercel for fast live testing.</li>
+              <li>Spent extra time tuning the prompt and selecting fitting imagery and MIDI files.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="snapshots" id="snapshots">
+      <h2>Solution snapshots</h2>
+      <p class="intro">A look at the experiments so far.</p>
+      <div class="snapshot-grid">
+        <figure class="snapshot-card">
+          <img src="../assets/img/tictactoe.png" alt="Tic Tac Toe board interface from the live app" loading="lazy">
+          <figcaption>Tic Tac Toe experiment made together as a quick learning build.</figcaption>
+        </figure>
+        <figure class="snapshot-card">
+          <img src="../assets/img/aice-aice-baby.png" alt="AIce AIce Baby problem-solving app interface" loading="lazy">
+          <figcaption>AIce AIce Baby experiment blending playful style with fast AI-assisted problem solving.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <div class="bottom-nav">
+        <a class="text-link" href="firebase-ev-tools/">Previous: Firebase EV Tools</a>
+        <span class="spacer"></span>
+        <a class="text-link" href="../#projects">Back to projects</a>
+      </div>
+    </section>
+  </main>
+  <script src="../assets/js/project-tabs.js" defer></script>
+</body>
+</html>
