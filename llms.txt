@@ -1,0 +1,26 @@
+# Matt Grant - AI Solutions, Automation, and Rapid Prototyping
+
+Canonical: https://matthewgrant.co/
+Primary location: Melbourne, Australia
+Service coverage: Remote across Australia; onsite in Melbourne when required.
+
+## Primary pages
+- https://matthewgrant.co/
+- https://matthewgrant.co/services/ai-consulting-automation.html
+- https://matthewgrant.co/services/rapid-ai-prototyping.html
+- https://matthewgrant.co/ai-overview.html
+
+## Supporting case studies
+- https://matthewgrant.co/projects/supplie.html
+- https://matthewgrant.co/projects/motoru.html
+- https://matthewgrant.co/projects/evpicker/
+- https://matthewgrant.co/projects/ai-auto-parts-fit-checker/
+
+## Services summary
+- AI consulting for practical use-case definition and delivery planning.
+- AI workflow automation design and implementation support.
+- Rapid AI prototype sprints to test product direction quickly.
+
+## Contact
+- Email: matt@matthewgrant.co
+- LinkedIn: https://www.linkedin.com/in/tnargttam/

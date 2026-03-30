@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none';">
   <meta name="referrer" content="no-referrer-when-downgrade">
-  <title>Matt Grant</title>
+  <title>Matt Grant | AI Solutions, Automation & Rapid Prototyping (Melbourne/Australia)</title>
+  <meta name="description" content="Portfolio of Matt Grant: product designer building practical AI solutions, workflow automations, and rapid prototypes. Based in Melbourne, working remotely across Australia.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://matthewgrant.co/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Matt Grant | AI Solutions, Automation & Rapid Prototyping">
+  <meta property="og:description" content="Portfolio-first site showcasing AI projects and consulting offers for AI automation and rapid prototyping in Melbourne and across Australia.">
+  <meta property="og:url" content="https://matthewgrant.co/">
+  <meta property="og:image" content="https://matthewgrant.co/assets/img/matt-headshot.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Matt Grant | AI Solutions, Automation & Rapid Prototyping">
+  <meta name="twitter:description" content="Portfolio-first site showcasing AI projects and consulting offers for AI automation and rapid prototyping in Melbourne and across Australia.">
+  <meta name="twitter:image" content="https://matthewgrant.co/assets/img/matt-headshot.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
@@ -15,6 +27,60 @@
   -->
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <link rel="icon" href="assets/favicons/mg_favicon.png" type="image/png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://matthewgrant.co/#person",
+          "name": "Matt Grant",
+          "url": "https://matthewgrant.co/",
+          "jobTitle": "Product Designer and AI Prototyper",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Melbourne",
+            "addressRegion": "VIC",
+            "addressCountry": "AU"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/in/tnargttam/",
+            "https://github.com/Stoikyo"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://matthewgrant.co/#service",
+          "name": "Matt Grant AI Consulting and Prototyping",
+          "url": "https://matthewgrant.co/",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Australia"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Melbourne",
+            "addressRegion": "VIC",
+            "addressCountry": "AU"
+          },
+          "serviceType": [
+            "AI solutions consulting",
+            "AI workflow automation consulting",
+            "Rapid AI prototyping"
+          ],
+          "provider": {
+            "@id": "https://matthewgrant.co/#person"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://matthewgrant.co/#website",
+          "url": "https://matthewgrant.co/",
+          "name": "Matt Grant Portfolio"
+        }
+      ]
+    }
+  </script>
   <style>
     :root {
       --bg: #f7f9fc;
@@ -592,6 +658,7 @@
       </a>
       <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">☰</button>
       <nav class="nav-links" aria-label="Primary" id="primary-navigation">
+        <a href="#services">Services</a>
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -605,13 +672,42 @@
         <div class="grid">
           <h1>HI, I’M MATT!</h1>
           <p class="lead"><strong>Product designer exploring practical uses of AI. Dad. Always tinkering.</strong></p>
+          <p>Based in Melbourne, I work remotely across Australia helping teams shape AI solutions, build practical automations, and ship rapid prototypes that are ready to test with real users.</p>
           <div class="actions">
+            <a class="button secondary" href="#services">View services</a>
             <a class="button primary" href="#projects">View projects</a>
           </div>
         </div>
         <div class="grid" style="justify-items:center;">
           <img class="hero-photo" src="assets/img/matt-headshot.png" alt="Photo of Matt Grant">
         </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>AI Services</h2>
+      <p class="muted">Portfolio-first, with clear service offers for teams that want hands-on support. Melbourne-based, Australia-wide remote collaboration, and onsite in Melbourne when useful.</p>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div>
+            <h3><a href="services/ai-consulting-automation.html">AI Consulting &amp; Automation</a></h3>
+            <p class="project-meta">For teams needing practical AI strategy, workflow automation, and implementation support.</p>
+          </div>
+          <p class="muted">I help you identify high-impact AI opportunities, design lightweight automations, and move from idea to measurable operational improvements.</p>
+          <div class="project-actions">
+            <a class="button primary" href="services/ai-consulting-automation.html">Explore consulting</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <div>
+            <h3><a href="services/rapid-ai-prototyping.html">Rapid AI Prototyping</a></h3>
+            <p class="project-meta">For teams that need a clickable AI-powered prototype quickly to test demand and de-risk product direction.</p>
+          </div>
+          <p class="muted">From discovery to a testable prototype in days, with enough engineering quality to learn from real usage and decide the next investment confidently.</p>
+          <div class="project-actions">
+            <a class="button primary" href="services/rapid-ai-prototyping.html">Explore prototyping</a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -713,6 +809,7 @@
       <div class="about-content">
         <p>I’m Matt. I like making things, mostly digital products, and I’m happiest when I can take a rough idea and turn it into something real you can click and play with. I’m not tied to one way of doing it: I enjoy learning new tools, trying different approaches and figuring it out as I go. </p>
         <p>Most days that means sketching, testing and shipping small pieces with a team. The rest of the time I’m chasing kids, drawing, or riding one of too many bikes. AI has become a big part of how I work. I’m actively exploring how it can help surface insights, speed up product discovery and support better decisions in complex systems. Over the past year I’ve also been exploring how AI can be applied to real-world problems through projects like Supplie, where I’m experimenting with how AI might help operational teams make better decisions in complex environments like supply chains.</p>
+        <p>Alongside portfolio work, I offer <a href="services/ai-consulting-automation.html">AI consulting and automation support</a> plus <a href="services/rapid-ai-prototyping.html">rapid AI prototyping</a> for teams that need to move quickly.</p>
         <div class="grid about-grid">
           <div class="about-panel">
             <h3>What I do</h3>
@@ -770,6 +867,7 @@
       <h2>Contact</h2>
       <p class="lead">Let’s talk about what you’re building next.</p>
       <p class="muted">If you’re working on something interesting and want to explore an idea or prototype, feel free to reach out.</p>
+      <p class="muted">You can also review a summary of capabilities on the <a href="ai-overview.html">AI overview</a> page.</p>
       <div class="contact-pills">
         <a class="contact-pill" href="mailto:matt@matthewgrant.co">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
