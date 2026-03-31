@@ -28,7 +28,7 @@
 
 .button:hover {
   transform: translateY(-1px);
-  background: #f8fafc;
+  background: #ede9e3;
 }
 
 .button:focus-visible {

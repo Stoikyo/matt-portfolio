@@ -20,12 +20,12 @@
   <meta name="twitter:image" content="https://matthewgrant.co/assets/img/matt-headshot.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
   <!--
-    You weren’t meant to see this.
+    You weren't meant to see this.
     (You absolutely were.)
   -->
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <link rel="icon" href="assets/favicons/mg_favicon.png" type="image/png">
   <script type="application/ld+json">
     {
@@ -82,16 +82,21 @@
     }
   </script>
   <style>
+    /* ——————————————————————————————
+       TOKENS
+    —————————————————————————————— */
     :root {
-      --bg: #f7f9fc;
+      --bg: #f4f1ec;
       --card: #ffffff;
       --text: #0f172a;
-      --muted: #475569;
+      --muted: #64748b;
       --line: #e2e8f0;
       --accent: #e90067;
       --accent-strong: #cc005a;
+      --accent-wash: #fff0f6;
       --radius: 12px;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+      --shadow-hover: 0 8px 28px rgba(15, 23, 42, 0.13);
       --max-width: 1100px;
       --space-1: 8px;
       --space-2: 12px;
@@ -103,8 +108,13 @@
       --space-8: 48px;
       --space-9: 64px;
       --space-10: 96px;
+      --space-11: 120px;
+      --space-12: 160px;
     }
 
+    /* ——————————————————————————————
+       RESET & BASE
+    —————————————————————————————— */
     * { box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
@@ -138,12 +148,15 @@
       box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.24);
     }
 
+    /* ——————————————————————————————
+       HEADER & NAV
+    —————————————————————————————— */
     header {
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(247, 249, 252, 0.96);
-      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
 
@@ -211,7 +224,7 @@
 
     .nav-toggle {
       display: none;
-      background: rgba(247, 249, 252, 0.92);
+      background: rgba(255, 255, 255, 0.92);
       border: 1px solid var(--line);
       border-radius: 12px;
       padding: 8px 10px;
@@ -228,59 +241,79 @@
       box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
     }
 
-    main {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 48px 20px 96px;
-      display: grid;
-      gap: 32px;
-    }
+    /* ——————————————————————————————
+       LAYOUT: SECTIONS
+    —————————————————————————————— */
+
+    /* main is full-width — sections handle their own layout */
+    main { display: block; }
 
     section {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 28px 24px;
       scroll-margin-top: 88px;
     }
 
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 72px 24px;
+    }
+
+    /* Section backgrounds */
+    #hero    { background: #ffffff; }
+    #projects { background: #ffffff; }
+
+    .section--dark    { background: #0f172a; }
+    .section--accent  { background: var(--accent); }
+
+    /* ——————————————————————————————
+       TYPOGRAPHY
+    —————————————————————————————— */
     h1, h2, h3 {
       margin: 0 0 12px;
       color: var(--text);
-      line-height: 1.2;
-      letter-spacing: -0.01em;
       font-family: 'Fredoka', system-ui, sans-serif;
     }
 
-    h1 { font-size: clamp(84px, 14vw, 128px); font-weight: 700; }
-    h2 { font-size: clamp(26px, 3.6vw, 34px); font-weight: 600; }
-    h3 { font-size: 20px; font-weight: 600; }
-
-    p { margin: 0 0 14px; color: var(--muted); }
-
-    .lead { font-size: 18px; color: var(--text); margin-bottom: 12px; }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-size: 12px;
-      color: var(--accent);
-      margin-bottom: 12px;
-      font-weight: 700;
+    h1 {
+      /* Bloc → Bebas Neue fallback. If Adobe Fonts/Bloc is available it wins automatically */
+      font-family: 'Bloc', 'Bebas Neue', 'Fredoka', system-ui, sans-serif;
+      font-size: clamp(76px, 12vw, 120px);
+      font-weight: 400;
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px dashed var(--line);
-      background: #eef2f6;
-      color: var(--text);
+    h2 {
+      font-size: clamp(30px, 4vw, 46px);
       font-weight: 600;
-      margin: 6px 0 14px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: clamp(16px, 1.8vw, 19px);
+      font-weight: 600;
+      margin: 0 0 6px;
+      letter-spacing: -0.01em;
+    }
+
+    p { margin: 0 0 14px; color: var(--muted); }
+    p:last-child { margin-bottom: 0; }
+
+    .lead { font-size: 18px; color: var(--text); margin-bottom: 14px; }
+
+    /* Eyebrow / overline label */
+    .text-display {
+      display: block;
+      font-family: 'Fredoka', system-ui, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 12px;
     }
 
     ul { padding-left: 20px; margin: 0 0 14px; color: var(--muted); }
@@ -290,22 +323,27 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 8px;
+      margin-top: 20px;
     }
 
+    /* ——————————————————————————————
+       BUTTONS
+    —————————————————————————————— */
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 11px 16px;
+      padding: 11px 18px;
       border-radius: 999px;
       border: 1px solid var(--line);
       font-weight: 700;
+      font-size: 14px;
       letter-spacing: 0.01em;
       color: var(--text);
       background: var(--card);
       transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
+      text-decoration: none;
     }
 
     .button.primary {
@@ -316,7 +354,7 @@
 
     .button:hover {
       transform: translateY(-1px);
-      background: #f8fafc;
+      background: #ede9e3;
     }
 
     .button:focus-visible {
@@ -327,8 +365,24 @@
     .button.primary:hover,
     .button.primary:focus-visible {
       background: var(--accent-strong);
+      border-color: var(--accent-strong);
     }
 
+    .button.secondary {
+      background: var(--card);
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .button.secondary:hover,
+    .button.secondary:focus-visible {
+      background: #ede9e3;
+      border-color: var(--accent);
+    }
+
+    /* ——————————————————————————————
+       MOBILE NAV
+    —————————————————————————————— */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -336,7 +390,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(236, 240, 246, 0.98);
+        background: rgba(255, 255, 255, 0.98);
         border-bottom: 1px solid var(--line);
         padding: 12px 16px;
         flex-direction: column;
@@ -352,7 +406,7 @@
         justify-content: flex-start;
       }
 
-    .nav-toggle {
+      .nav-toggle {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -360,11 +414,11 @@
       }
     }
 
+    /* ——————————————————————————————
+       REDUCED MOTION
+    —————————————————————————————— */
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
+      html { scroll-behavior: auto; }
       * {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
@@ -372,34 +426,314 @@
       }
     }
 
-    .grid { display: grid; gap: 18px; }
+    /* ——————————————————————————————
+       HERO
+    —————————————————————————————— */
+    #hero .section-inner {
+      padding-top: 64px;
+      padding-bottom: 80px;
+    }
 
     .hero-grid {
       display: grid;
-      gap: 16px;
-      grid-template-columns: 1fr;
+      gap: 48px;
       align-items: center;
     }
 
+    .hero-copy { display: grid; gap: 0; }
 
     .hero-photo {
       width: 100%;
-      max-width: 480px;
+      max-width: 340px;
       border-radius: 50%;
-      box-shadow: var(--shadow);
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
+      outline: 4px solid var(--accent);
+      outline-offset: 8px;
     }
 
-    .card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
+    /* ——————————————————————————————
+       SERVICES
+    —————————————————————————————— */
+    .services-grid {
+      display: grid;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      padding: 28px 28px 24px;
+      border-radius: 16px;
+      border: 1.5px solid var(--line);
       background: #ffffff;
-      padding: 18px;
-      box-shadow: var(--shadow);
+      display: grid;
+      gap: 10px;
+      transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
     }
 
+    .service-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      border-color: #d0d8e2;
+    }
+
+    .service-bar {
+      display: block;
+      width: 36px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 6px;
+    }
+
+    .service-meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 6px;
+    }
+
+    .service-actions {
+      margin-top: 8px;
+    }
+
+    /* ——————————————————————————————
+       PROJECTS
+    —————————————————————————————— */
+    .projects-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr;
+      margin-top: 40px;
+    }
+
+    .project-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      background: #ffffff;
+      display: grid;
+      gap: 10px;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-hover);
+      border-color: #c8d0db;
+      transform: translateY(-2px);
+    }
+
+    .project-card h3 { margin-bottom: 2px; }
+
+    .project-header {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .project-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+
+    .project-image {
+      width: 52px;
+      height: 52px;
+      border-radius: 11px;
+      border: 1px solid var(--line);
+      background: #f8f8f6;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .project-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    /* ——————————————————————————————
+       ABOUT (dark)
+    —————————————————————————————— */
+    .section--dark h2,
+    .section--dark h3 { color: #ffffff; }
+
+    .section--dark p { color: #94a3b8; }
+
+    .section--dark a {
+      color: #e2e8f0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .section--dark a:hover { color: #ffffff; }
+
+    .about-body {
+      margin-top: 8px;
+      display: grid;
+      gap: 0;
+      max-width: 720px;
+    }
+
+    .about-cols {
+      display: grid;
+      gap: 32px;
+      margin-top: 52px;
+      margin-bottom: 16px;
+    }
+
+    .about-list {
+      padding-left: 0;
+      list-style: none;
+      margin: 0;
+    }
+
+    .about-list li {
+      color: #94a3b8;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .about-list li:first-child {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .process-section {
+      margin-top: 60px;
+      padding-top: 52px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .process-steps {
+      display: grid;
+      gap: 28px;
+      margin-top: 36px;
+    }
+
+    .process-num {
+      display: block;
+      font-family: 'Fredoka', system-ui, sans-serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .process-step h4 {
+      color: #ffffff;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+
+    .process-step p {
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .process-note {
+      margin-top: 44px;
+      font-style: italic;
+      color: #475569;
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    /* ——————————————————————————————
+       CONTACT (accent pink)
+    —————————————————————————————— */
+    .section--accent .section-inner {
+      max-width: 660px;
+      text-align: center;
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
+
+    .section--accent h2 { color: #ffffff; }
+    .section--accent p  { color: rgba(255, 255, 255, 0.8); }
+
+    .section--accent .text-display {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .button.contact-cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 17px 40px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 16px;
+      border: 2px solid transparent;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+      text-decoration: none;
+      margin-top: 12px;
+    }
+
+    .button.contact-cta:hover {
+      background: var(--accent-strong);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .contact-links {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .contact-links a {
+      color: rgba(255, 255, 255, 0.72);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s ease;
+    }
+
+    .contact-links a:hover { color: #ffffff; }
+
+    .contact-links span { color: rgba(255, 255, 255, 0.3); }
+
+    /* ——————————————————————————————
+       FOOTER
+    —————————————————————————————— */
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 28px 24px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+    }
+
+    footer a { color: var(--accent); }
+
+    /* ——————————————————————————————
+       UTILITIES
+    —————————————————————————————— */
     .meta {
       display: inline-flex;
       flex-wrap: wrap;
@@ -409,243 +743,58 @@
       margin-bottom: 10px;
     }
 
-    .projects-grid {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: 1fr;
-    }
-
-    .about-grid {
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .about-content {
-      display: grid;
-      gap: 16px;
-    }
-
-    .about-panel {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 16px;
-      background: var(--card);
-      box-shadow: var(--shadow);
-    }
-
-    .about-panel ul {
-      padding-left: 18px;
-      line-height: 1.6;
-    }
-
-    .process-grid {
-      display: flex;
-      gap: var(--space-2);
-      margin-top: var(--space-4);
-      align-items: stretch;
-      width: 100%;
-      overflow-x: auto;
-      padding-bottom: 8px;
-    }
-
-    .process-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #ffffff;
-      box-shadow: var(--shadow);
-      padding: var(--space-3);
-      display: grid;
-      gap: 8px;
-      height: 100%;
-      min-width: 170px;
-      flex: 1 0 180px;
-    }
-
-    .process-arrow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-weight: 700;
-      font-size: 18px;
-      padding: 0 var(--space-1);
-      flex: 0 0 auto;
-    }
-
-    @media (min-width: 1024px) {
-      .process-grid {
-        overflow-x: visible;
-        gap: var(--space-2);
-      }
-      .process-card {
-        flex: 1 1 0;
-      }
-    }
-
-    .process-card h4 {
-      margin: 0;
-      font-size: 18px;
-      color: var(--text);
-      letter-spacing: -0.01em;
-    }
-
-    .process-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    .project-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 20px;
-      background: #ffffff;
-      box-shadow: var(--shadow);
-      display: grid;
-      gap: 14px;
-    }
-
-    .project-card h3 { margin-bottom: 6px; }
-
-    .project-header {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 12px;
-      align-items: start;
-    }
-
-    .project-meta {
-      font-size: 14px;
-      color: var(--muted);
-      margin: 0 0 12px;
-    }
-
-    .project-card .muted { margin-bottom: 14px; }
-
-    .project-actions {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .project-image {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      background: #f1f5f9;
-      box-shadow: var(--shadow);
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-    }
-
-    .button.secondary {
-      background: var(--card);
-      color: var(--text);
-      border-color: var(--line);
-    }
-
-    .button.secondary:hover,
-    .button.secondary:focus-visible {
-      background: #f8fafc;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
-    }
-
-    .contact-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--card);
-      box-shadow: var(--shadow);
-      padding: var(--space-3);
-      display: grid;
-      gap: var(--space-2);
-      margin-top: var(--space-3);
-    }
-
-    .contact-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-
-    .contact-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: #eef2f6;
-      border: 1px solid var(--line);
-      color: var(--text);
-      text-decoration: none;
-      font-size: 15px;
-      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
-    }
-
-    .contact-pill:hover {
-      background: #e2e8f0;
-      transform: translateY(-1px);
-    }
-
-    .contact-pill:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
-    }
-
-    .contact-pill svg {
-      width: 18px;
-      height: 18px;
-      color: var(--muted);
-      flex-shrink: 0;
-    }
-
-    .contact-label {
-      font-weight: 700;
-      color: var(--text);
-    }
-
     .placeholder {
       border: 1px dashed var(--line);
       border-radius: var(--radius);
       padding: 12px;
       text-align: center;
       color: var(--muted);
-      background: #f1f5f9;
+      background: #ede9e3;
       font-size: 14px;
     }
 
-    footer {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 20px 48px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      font-size: 14px;
-    }
-
-    footer a { color: var(--accent); }
-
+    /* ——————————————————————————————
+       RESPONSIVE: 820px+
+    —————————————————————————————— */
     @media (min-width: 820px) {
-      .nav { padding: 14px 20px; }
-      main { padding: 64px 24px 120px; gap: 40px; }
-      section { padding: 32px 28px; }
+      .section-inner {
+        padding: 104px 32px;
+      }
+
+      #hero .section-inner {
+        padding-top: 80px;
+        padding-bottom: 96px;
+      }
+
       .hero-grid {
         grid-template-columns: 1.2fr 1fr;
-        column-gap: 16px;
+        column-gap: 72px;
+        gap: 0;
       }
-      .about-grid { grid-template-columns: 1fr 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
+
+      .hero-photo {
+        max-width: 100%;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+
+      .about-cols {
+        grid-template-columns: 1fr 1fr;
+        gap: 52px;
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+      }
     }
   </style>
 </head>
@@ -667,232 +816,237 @@
   </header>
 
   <main id="main-content">
+
+    <!-- ————————————————— HERO ————————————————— -->
     <section id="hero">
-      <div class="hero-grid">
-        <div class="grid">
-          <h1>HI, I’M MATT!</h1>
-          <p class="lead"><strong>Product designer exploring practical uses of AI. Dad. Always tinkering.</strong></p>
-          <p>Based in Melbourne, I work remotely across Australia helping teams shape AI solutions, build practical automations, and ship rapid prototypes that are ready to test with real users.</p>
-          <div class="actions">
-            <a class="button secondary" href="#services">View services</a>
-            <a class="button primary" href="#projects">View projects</a>
+      <div class="section-inner">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="text-display" aria-hidden="true">Product Designer &amp; AI Builder</span>
+            <h1>HI, I'M MATT!</h1>
+            <p class="lead"><strong>Product designer. AI tinkerer. Dad. Too many bikes.</strong></p>
+            <p>I'm based in Melbourne and work with teams across Australia to shape AI ideas into things you can actually click. Fast prototypes, practical automations, and products built to learn from real people.</p>
+            <div class="actions">
+              <a class="button secondary" href="#services">View services</a>
+              <a class="button primary" href="#projects">View projects</a>
+            </div>
           </div>
-        </div>
-        <div class="grid" style="justify-items:center;">
-          <img class="hero-photo" src="assets/img/matt-headshot.png" alt="Photo of Matt Grant">
+          <div style="display:grid; justify-items:center;">
+            <img class="hero-photo" src="assets/img/matt-headshot.png" alt="Photo of Matt Grant">
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ————————————————— SERVICES ————————————————— -->
     <section id="services">
-      <h2>AI Services</h2>
-      <p class="muted">Portfolio-first, with clear service offers for teams that want hands-on support. Melbourne-based, Australia-wide remote collaboration, and onsite in Melbourne when useful.</p>
-      <div class="projects-grid">
-        <article class="project-card">
-          <div>
+      <div class="section-inner">
+        <span class="text-display">What I offer</span>
+        <h2>AI Services</h2>
+        <p>Two things I do well: help teams figure out where AI actually fits in their work, and build prototypes fast enough that you can test the idea before you commit to it.</p>
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-bar" aria-hidden="true"></span>
             <h3><a href="services/ai-consulting-automation.html">AI Consulting &amp; Automation</a></h3>
-            <p class="project-meta">For teams needing practical AI strategy, workflow automation, and implementation support.</p>
-          </div>
-          <p class="muted">I help you identify high-impact AI opportunities, design lightweight automations, and move from idea to measurable operational improvements.</p>
-          <div class="project-actions">
-            <a class="button primary" href="services/ai-consulting-automation.html">Explore consulting</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <div>
+            <p class="service-meta">For teams that want hands-on help figuring out where AI fits — and actually making it happen.</p>
+            <p>I work through it with you: where the real opportunity is, what to automate first, and how to get from whiteboard to something working without a six-month project.</p>
+            <div class="service-actions">
+              <a class="button primary" href="services/ai-consulting-automation.html">Explore consulting</a>
+            </div>
+          </article>
+          <article class="service-card">
+            <span class="service-bar" aria-hidden="true"></span>
             <h3><a href="services/rapid-ai-prototyping.html">Rapid AI Prototyping</a></h3>
-            <p class="project-meta">For teams that need a clickable AI-powered prototype quickly to test demand and de-risk product direction.</p>
-          </div>
-          <p class="muted">From discovery to a testable prototype in days, with enough engineering quality to learn from real usage and decide the next investment confidently.</p>
-          <div class="project-actions">
-            <a class="button primary" href="services/rapid-ai-prototyping.html">Explore prototyping</a>
-          </div>
-        </article>
+            <p class="service-meta">For teams that need something real to test — not a slide deck — before committing to a full build.</p>
+            <p>I take an idea from conversation to clickable prototype in days. Real enough to put in front of users, solid enough to learn something useful from.</p>
+            <div class="service-actions">
+              <a class="button primary" href="services/rapid-ai-prototyping.html">Explore prototyping</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
+    <!-- ————————————————— PROJECTS ————————————————— -->
     <section id="projects">
-      <h2>Projects</h2>
-      <p class="muted">A handful of recent things I’ve designed and built. From scrappy prototypes to live tools, each card is a quick snapshot with a link to a deeper case study if you want the full story.</p>
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-header">
-            <div class="project-image"><img src="assets/img/supplie-logo-icon.png" alt="Supplie project icon" style="width: 100%; height: 100%; object-fit: contain; display: block; background:#fff; padding:10px;" loading="lazy"></div>
-            <div>
-              <h3><a href="projects/supplie.html">Supplie - AI decision support exploration</a></h3>
-              <p class="project-meta">Concept prototype · 2026</p>
-            </div>
-          </div>
-          <p class="muted">Exploring how AI could help operational teams make better decisions when dealing with messy supply chain and logistics data.</p>
-          <div class="project-actions">
-            <a class="button primary" href="projects/supplie.html">View project</a>
-          </div>
-        </article>
+      <div class="section-inner">
+        <span class="text-display">Selected work</span>
+        <h2>Projects</h2>
+        <p>A mix of recent things — some shipped, some experiments, some still evolving. Each one links to a deeper case study if you want the full story.</p>
+        <div class="projects-grid">
 
-        <article class="project-card">
-          <div class="project-header">
-            <div class="project-image"><img src="assets/img/ev-picker-square-logo.png" alt="EVPicker logo" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy"></div>
-            <div>
-              <h3><a href="projects/evpicker/">EVPicker - Fast EV Shortlists & Buying Tools</a></h3>
-              <p class="project-meta">Rapid prototype · Built in a day · 2025</p>
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-image"><img src="assets/img/supplie-logo-icon.png" alt="Supplie project icon" style="width:100%;height:100%;object-fit:contain;display:block;background:#fff;padding:10px;" loading="lazy"></div>
+              <div>
+                <h3><a href="projects/supplie.html">Supplie — AI decision support exploration</a></h3>
+                <p class="project-meta">Concept prototype &middot; 2026</p>
+              </div>
             </div>
-          </div>
-          <p class="muted">A concierge-style service that gives people a personalised EV shortlist within 48 hours, with a warm path into novated leasing and finance partners.</p>
-          <div class="project-actions">
-            <a class="button primary" href="projects/evpicker/">View project</a>
-          </div>
-        </article>
+            <p>What does AI actually look like inside a messy operations team? This is me exploring that — messy data, real decisions, no clean answers.</p>
+            <div class="project-actions">
+              <a class="button primary" href="projects/supplie.html">View project</a>
+            </div>
+          </article>
 
-        <article class="project-card">
-          <div class="project-header">
-            <div class="project-image"><img src="assets/favicons/motoru-favicon.png" alt="Motoru logo" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy"></div>
-            <div>
-              <h3><a href="projects/motoru.html">Motoru - EV Discovery Experience</a></h3>
-              <p class="project-meta">Product design, lightweight engineering &amp; venture building · 2025</p>
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-image"><img src="assets/img/ev-picker-square-logo.png" alt="EVPicker logo" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+              <div>
+                <h3><a href="projects/evpicker/">EVPicker — Fast EV Shortlists &amp; Buying Tools</a></h3>
+                <p class="project-meta">Rapid prototype &middot; Built in a day &middot; 2025</p>
+              </div>
             </div>
-          </div>
-          <p class="muted">Lifestyle-first EV quiz with an AI-powered Motoru Match score and human explanations, built and tested with real drivers to prove demand for a simpler way into EVs.</p>
-          <div class="project-actions">
-            <a class="button primary" href="projects/motoru.html">View project</a>
-          </div>
-        </article>
+            <p>You answer a few questions, get a shortlist of EVs that actually fit your life, and a warm intro to the leasing and finance people worth talking to. Built in a day to test whether anyone wanted it.</p>
+            <div class="project-actions">
+              <a class="button primary" href="projects/evpicker/">View project</a>
+            </div>
+          </article>
 
-        <article class="project-card">
-          <div class="project-header">
-            <div class="project-image"><img src="assets/img/tinkeru-logo.png" alt="AI Auto Parts Fit Checker logo" style="width: 100%; height: 100%; object-fit: contain; display: block; background:#fff; padding:10px;" loading="lazy"></div>
-            <div>
-              <h3><a href="projects/ai-auto-parts-fit-checker/">AI Auto Parts Fit Checker</a></h3>
-              <p class="project-meta">AI-powered prototype · Built in a day, rebuilt in an afternoon · 2024–2025</p>
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-image"><img src="assets/favicons/motoru-favicon.png" alt="Motoru logo" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+              <div>
+                <h3><a href="projects/motoru.html">Motoru — EV Discovery Experience</a></h3>
+                <p class="project-meta">Product design, lightweight engineering &amp; venture building &middot; 2025</p>
+              </div>
             </div>
-          </div>
-          <p class="muted">Upload a photo of a part, add your car details, and get a quick email back checking fit, install difficulty, tools, tips and links to products and videos.</p>
-          <div class="project-actions">
-            <a class="button primary" href="projects/ai-auto-parts-fit-checker/">View project</a>
-          </div>
-        </article>
+            <p>An EV quiz that leads with lifestyle, not specs. Real drivers tested it. The AI match score explained its reasoning in plain English. Built to find out if there was a simpler way into the EV market.</p>
+            <div class="project-actions">
+              <a class="button primary" href="projects/motoru.html">View project</a>
+            </div>
+          </article>
 
-        <article class="project-card">
-          <div class="project-header">
-            <div class="project-image"><img src="assets/img/firebase_studio_logo.png" alt="Firebase EV Tools logo" style="width: 100%; height: 100%; object-fit: contain; display: block; background:#fff; padding:8px;" loading="lazy"></div>
-            <div>
-              <h3><a href="projects/firebase-ev-tools/">Firebase EV Tools</a></h3>
-              <p class="project-meta">Firebase AI toolkit · 2024–2025</p>
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-image"><img src="assets/img/tinkeru-logo.png" alt="AI Auto Parts Fit Checker logo" style="width:100%;height:100%;object-fit:contain;display:block;background:#fff;padding:10px;" loading="lazy"></div>
+              <div>
+                <h3><a href="projects/ai-auto-parts-fit-checker/">AI Auto Parts Fit Checker</a></h3>
+                <p class="project-meta">AI-powered prototype &middot; Built in a day, rebuilt in an afternoon &middot; 2024–2025</p>
+              </div>
             </div>
-          </div>
-          <p class="muted">A small suite of AI tools to help people choose an EV and make sense of novated leasing, built in one Firebase project to ship fast and learn cheaply.</p>
-          <div class="project-actions">
-            <a class="button primary" href="projects/firebase-ev-tools/">View project</a>
-          </div>
-        </article>
+            <p>Photo of a part + your car = an email back with fit assessment, install difficulty, tools you'll need, and links to products and videos. Scratched an itch I actually had.</p>
+            <div class="project-actions">
+              <a class="button primary" href="projects/ai-auto-parts-fit-checker/">View project</a>
+            </div>
+          </article>
 
-        <article class="project-card">
-          <div class="project-header">
-            <div class="project-image" style="display:grid; place-items:center; background:#fff;">
-              <span role="img" aria-label="Party popper" style="font-size:40px; line-height:1;">🎉</span>
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-image"><img src="assets/img/firebase_studio_logo.png" alt="Firebase EV Tools logo" style="width:100%;height:100%;object-fit:contain;display:block;background:#fff;padding:8px;" loading="lazy"></div>
+              <div>
+                <h3><a href="projects/firebase-ev-tools/">Firebase EV Tools</a></h3>
+                <p class="project-meta">Firebase AI toolkit &middot; 2024–2025</p>
+              </div>
             </div>
-            <div>
-              <h3><a href="projects/fun.html">Fun</a></h3>
-              <p class="project-meta">Playground · Ongoing</p>
+            <p>A handful of AI tools for picking EVs and making sense of novated leasing — all jammed into one Firebase project to keep things fast, cheap, and easy to iterate on.</p>
+            <div class="project-actions">
+              <a class="button primary" href="projects/firebase-ev-tools/">View project</a>
             </div>
-          </div>
-          <p class="muted">A running collection of fun and silly experiments I’ve tinkered on, from quick one-night ideas to odd little prototypes.</p>
-          <div class="project-actions">
-            <a class="button primary" href="projects/fun.html">View project</a>
-          </div>
-        </article>
+          </article>
 
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-image" style="display:grid;place-items:center;background:#fff;">
+                <span role="img" aria-label="Party popper" style="font-size:36px;line-height:1;">🎉</span>
+              </div>
+              <div>
+                <h3><a href="projects/fun.html">Fun</a></h3>
+                <p class="project-meta">Playground &middot; Ongoing</p>
+              </div>
+            </div>
+            <p>One-night ideas, odd little experiments, things that made me laugh. Not everything needs a business case.</p>
+            <div class="project-actions">
+              <a class="button primary" href="projects/fun.html">View project</a>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <div class="about-content">
-        <p>I’m Matt. I like making things, mostly digital products, and I’m happiest when I can take a rough idea and turn it into something real you can click and play with. I’m not tied to one way of doing it: I enjoy learning new tools, trying different approaches and figuring it out as I go. </p>
-        <p>Most days that means sketching, testing and shipping small pieces with a team. The rest of the time I’m chasing kids, drawing, or riding one of too many bikes. AI has become a big part of how I work. I’m actively exploring how it can help surface insights, speed up product discovery and support better decisions in complex systems. Over the past year I’ve also been exploring how AI can be applied to real-world problems through projects like Supplie, where I’m experimenting with how AI might help operational teams make better decisions in complex environments like supply chains.</p>
-        <p>Alongside portfolio work, I offer <a href="services/ai-consulting-automation.html">AI consulting and automation support</a> plus <a href="services/rapid-ai-prototyping.html">rapid AI prototyping</a> for teams that need to move quickly.</p>
-        <div class="grid about-grid">
-          <div class="about-panel">
+    <!-- ————————————————— ABOUT ————————————————— -->
+    <section id="about" class="section--dark">
+      <div class="section-inner">
+        <span class="text-display" style="color:var(--accent)">About me</span>
+        <h2>About</h2>
+        <div class="about-body">
+          <p>I'm Matt. I like making things — mostly digital, always with real people in mind. I'm happiest when a rough idea becomes something you can actually click and hand to someone. I don't have a fixed way of working; I pick the tools and approach that fit the problem.</p>
+          <p>Most days that's sketching, building, testing, repeat. When I'm not at the desk it's usually kids, bikes, or drawing something I'll never finish. AI has become a big part of how I work — I build with it daily and I'm genuinely curious about where it's useful and where it just gets in the way.</p>
+          <p>I also take on consulting and prototyping work directly — <a href="services/ai-consulting-automation.html">AI consulting</a> for teams figuring out where to start, and <a href="services/rapid-ai-prototyping.html">rapid prototyping</a> for teams that need to move fast.</p>
+        </div>
+
+        <div class="about-cols">
+          <div class="about-col">
             <h3>What I do</h3>
-            <ul>
+            <ul class="about-list">
               <li>Take fuzzy briefs and turn them into a simple plan and a first version.</li>
               <li>Design the flow and interface, then get things far enough in code to feel real.</li>
               <li>Build things like Motoru and Supplie, along with smaller tools and experiments to test ideas quickly.</li>
               <li>Work best in teams that care about real users and are willing to keep improving the product.</li>
             </ul>
           </div>
-          <div class="about-panel">
+          <div class="about-col">
             <h3>Who I am</h3>
-            <ul>
+            <ul class="about-list">
               <li>Easy-going, collaborative and straight with feedback.</li>
               <li>Big on culture, sharing what I know and learning from others.</li>
-              <li>Often involved in local and community projects when I’m not at the desk.</li>
-              <li>Artist and bike nerd  who takes the work seriously, but not myself.</li>
+              <li>Often involved in local and community projects when I'm not at the desk.</li>
+              <li>Artist and bike nerd who takes the work seriously, but not myself.</li>
             </ul>
           </div>
         </div>
-        <div style="margin-top: var(--space-4); display:grid; gap: var(--space-3);">
-          <h3 style="margin:0; font-family:'Fredoka', system-ui, sans-serif; font-size:22px; letter-spacing:-0.01em;">How I like to work</h3>
-          <div class="process-grid">
-            <div class="process-card">
+
+        <div class="process-section">
+          <h3>How I like to work</h3>
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="process-num">01</span>
               <h4>Design</h4>
               <p>Understand the problem and pick a clear starting point.</p>
             </div>
-            <div class="process-arrow" aria-hidden="true">→</div>
-            <div class="process-card">
+            <div class="process-step">
+              <span class="process-num">02</span>
               <h4>Build</h4>
-              <p>Make a small slice that’s real enough to click and poke at.</p>
+              <p>Make a small slice that's real enough to click and poke at.</p>
             </div>
-            <div class="process-arrow" aria-hidden="true">→</div>
-            <div class="process-card">
+            <div class="process-step">
+              <span class="process-num">03</span>
               <h4>Test</h4>
               <p>Put it in front of actual humans and watch what happens.</p>
             </div>
-            <div class="process-arrow" aria-hidden="true">→</div>
-            <div class="process-card">
+            <div class="process-step">
+              <span class="process-num">04</span>
               <h4>Learn</h4>
-              <p>Keep what worked, change what didn’t, drop what doesn’t matter.</p>
+              <p>Keep what worked, change what didn't, drop what doesn't matter.</p>
             </div>
-            <div class="process-arrow" aria-hidden="true">→</div>
-            <div class="process-card">
+            <div class="process-step">
+              <span class="process-num">05</span>
               <h4>Ship</h4>
-              <p>Get the next version out of Figma/Git and into someone’s hands.</p>
+              <p>Get the next version out of Figma/Git and into someone's hands.</p>
             </div>
           </div>
-          <div style="font-family:'Inter', system-ui, sans-serif; font-size:16px; font-style:italic; color:var(--muted);">Usually from first chat to a clickable prototype in a few days, not weeks.</div>
+          <p class="process-note">First chat to clickable prototype — usually days, not weeks.</p>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p class="lead">Let’s talk about what you’re building next.</p>
-      <p class="muted">If you’re working on something interesting and want to explore an idea or prototype, feel free to reach out.</p>
-      <p class="muted">You can also review a summary of capabilities on the <a href="ai-overview.html">AI overview</a> page.</p>
-      <div class="contact-pills">
-        <a class="contact-pill" href="mailto:matt@matthewgrant.co">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-            <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.26l8 4.8 8-4.8V6H4Zm16 2.74-7.47 4.48a1 1 0 0 1-1.06 0L4 8.74V18h16V8.74Z"/>
-          </svg>
-          <span class="contact-label">Email</span>
-        </a>
-        <a class="contact-pill" href="https://www.linkedin.com/in/tnargttam/" target="_blank" rel="noopener noreferrer">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-            <path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.08 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.98h4.52V24H.24V8.98zM8.89 8.98h4.33v2.05h.06c.6-1.14 2.07-2.35 4.26-2.35 4.56 0 5.4 3 5.4 6.9V24h-4.52v-7.02c0-1.67-.03-3.82-2.33-3.82-2.33 0-2.69 1.82-2.69 3.7V24H8.89V8.98z"/>
-          </svg>
-          <span class="contact-label">LinkedIn</span>
-        </a>
-        <a class="contact-pill" href="https://github.com/Stoikyo" target="_blank" rel="noopener noreferrer">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-            <path d="M12 .5C5.73.5.7 5.52.7 11.77c0 5 3.24 9.23 7.73 10.72.57.1.77-.25.77-.54 0-.27-.01-1.16-.02-2.1-3.15.69-3.81-1.34-3.81-1.34-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.21 1.79 1.21 1.03 1.77 2.71 1.26 3.37.97.1-.75.4-1.26.72-1.55-2.52-.29-5.17-1.26-5.17-5.6 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.47.11-3.07 0 0 .95-.3 3.1 1.16a10.8 10.8 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.62 1.6.23 2.78.11 3.07.73.79 1.17 1.8 1.17 3.04 0 4.35-2.65 5.3-5.18 5.58.41.36.78 1.08.78 2.18 0 1.58-.02 2.86-.02 3.25 0 .3.2.65.78.54a11.32 11.32 0 0 0 7.7-10.72C23.3 5.52 18.27.5 12 .5Z"/>
-          </svg>
-          <span class="contact-label">GitHub</span>
-        </a>
-        <a class="contact-pill" href="tel:+61405387557">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-            <path d="M17.707 13.293a1 1 0 0 0-1.32-.083l-2.043 1.53a1 1 0 0 1-1.063.08c-.96-.48-1.97-1.19-3.038-2.258-1.067-1.068-1.778-2.078-2.257-3.038a1 1 0 0 1 .08-1.063l1.53-2.043a1 1 0 0 0-.083-1.32l-2.5-2.5a1 1 0 0 0-1.42.004L3.3 4.46c-.88.884-1.083 2.202-.516 3.29 1.02 1.988 2.57 4.238 4.758 6.426 2.188 2.188 4.438 3.738 6.426 4.758 1.088.567 2.406.364 3.29-.516l2.319-2.319a1 1 0 0 0 .004-1.42l-2.5-2.5Z"/>
-          </svg>
-          <span class="contact-label">Call</span>
-        </a>
+    <!-- ————————————————— CONTACT ————————————————— -->
+    <section id="contact" class="section--accent">
+      <div class="section-inner">
+        <span class="text-display">Get in touch</span>
+        <h2>Let's talk.</h2>
+        <p>Working on something and want a second brain? Or just want to see if I'm the right fit? Either way, drop me a line.</p>
+        <a class="button contact-cta" href="mailto:matt@matthewgrant.co">Send me an email</a>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/tnargttam/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/Stoikyo" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <span aria-hidden="true">·</span>
+          <a href="tel:+61405387557">Call</a>
+          <span aria-hidden="true">·</span>
+          <a href="ai-overview.html">AI overview</a>
+        </div>
       </div>
     </section>
 

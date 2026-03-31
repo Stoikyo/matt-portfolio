@@ -10,7 +10,7 @@
   padding: 6px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: #f8fafc;
+  background: #f0ede7;
   width: fit-content;
   max-width: 100%;
   overflow-x: auto;
@@ -34,7 +34,7 @@
 
 .project-tabs__tab:hover {
   color: var(--text);
-  background: #eef2f6;
+  background: #ebe8e1;
 }
 
 .project-tabs__tab:focus-visible {
@@ -59,7 +59,7 @@
 .project-tabs__placeholder {
   border: 1px dashed var(--line);
   border-radius: var(--radius);
-  background: #f8fafc;
+  background: #f0ede7;
   padding: 16px;
   color: var(--muted);
   font-weight: 600;
