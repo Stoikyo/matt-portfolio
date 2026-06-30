@@ -16,6 +16,9 @@ Service coverage: Remote across Australia; onsite in Melbourne when required.
 - https://matthewgrant.co/projects/evpicker/
 - https://matthewgrant.co/projects/ai-auto-parts-fit-checker/
 
+## App support pages
+- https://matthewgrant.co/projects/dfw/privacy-policy.html
+
 ## Services summary
 - AI consulting for practical use-case definition and delivery planning.
 - AI workflow automation design and implementation support.
