@@ -1,0 +1,24 @@
+# Phase 1 (image/video/PDF compression): originals kept in git history and
+# working tree for reversibility, but not shipped — replaced by the .webp /
+# recompressed versions the site actually references. See
+# docs/portfolio-punch-list.md Phase 1.
+assets/img/ev-picker-landing-page.png
+assets/img/original-homepage-design-motoru.png
+assets/img/car-part-fit-checker-results-page.png
+assets/img/aice-aice-baby.png
+assets/img/railplan-assistant-1.png
+assets/img/railplan-assistant-2.png
+assets/img/railplan-assistant-3.png
+assets/img/railplan-assistant-4.png
+assets/img/lfiestyle-quiz-motoru.png
+assets/img/tictactoe.png
+assets/img/ev-picker-jotform-embed.jpg
+assets/img/washere.png
+assets/img/homepage-final-motoru.png
+assets/img/car-part-fit-checker-empty-state.png
+assets/img/ev-tools-firebase.png
+assets/img/novated-lease-calculator-firebase.png
+assets/img/supplie-logo-icon.png
+assets/img/matt-headshot.png
+assets/img/motoru-recommendations-original.mp4
+assets/img/your-personal-ev-picker-report-original.pdf
