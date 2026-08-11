@@ -1,117 +1,148 @@
 # AGENT_NOTES
 
-These notes describe how AI agents and humans should work in this repo.
+Working rules for this repo, for AI agents and humans.
 
-The goal of this project is a **portfolio** for product design / front-end / “Designer Engineer” roles. The main experience lives on `index.html`, and a small set of **project case study pages** are allowed. Everything should stay simple, readable, and production-ready.
+Read `/CLAUDE.md` first for purpose and audience. Read `docs/design-system.md`
+before any CSS work. This file covers structure, editing rules and code
+expectations.
 
----
-
-## 1. Files and structure
-
-Core files:
-
-- `index.html` – the main site (HTML + CSS + minimal JS in a single file).
-- `projects/` – optional standalone project case study pages (e.g., `projects/motoru.html`), each self-contained (HTML + CSS + minimal JS in a single file).
-- `README.md` – public-facing repo info.
-- `AGENT_NOTES.md` – these rules.
-- `front_end_design.md` – visual design and UX principles.
-- Optional:
-  - `assets/` – images, SVGs, or other static assets, if needed.
-
-**Do not** introduce build tools or a complex folder structure. This repo should remain a small, readable static site.
+> **This document was rewritten in Aug 2026.** The previous version required
+> every page to be self-contained with a single inline `<style>` block and
+> banned all build tooling. Those rules produced ~2,000 lines of duplicated CSS
+> and design tokens declared twelve times. They are reversed below. If you find
+> older guidance repeating them, this file supersedes it.
 
 ---
 
-## 2. General guidelines
+## 1. Structure
 
-- Keep the project **company-agnostic**. The content may mention specific roles or applications, but the structure and docs should not hard-code any particular company.
-- Aim for **clarity, stability, and small iterations**. Prefer small, well-defined changes over large rewrites.
-- The page is primarily for **desktop and mobile web**, no special support for legacy browsers is required.
+```
+CLAUDE.md                 — purpose, audience, hard constraints
+README.md                 — public repo info
+docs/AGENT_NOTES.md       — this file
+docs/design-system.md     — tokens; source of truth for visual decisions
+index.html                — homepage
+projects/<name>/          — case studies, trailing-slash directories
+services/<name>/          — service pages
+assets/css/               — tokens.css, base.css, component CSS
+assets/js/                — site-nav.js, project-tabs.js
+assets/img/               — imagery
+vercel.json               — redirects
+sitemap.xml, robots.txt, llms.txt
+```
 
----
+Target structure once Eleventy lands (punch list Phase 5):
 
-## 3. Editing rules for AI agents
-
-When editing this repo:
-
-1. **Always read** `AGENT_NOTES.md` and `front_end_design.md` before changing pages.
-2. Assume that:
-   - `index.html` is the main entry point.
-   - Case studies may live in `projects/` as standalone HTML files.
-   - Each HTML file should be self-contained: a single `<style>` block and a single `<script>` block (minimal JS) within that file.
-
-3. You MAY:
-   - Refactor HTML structure for better semantics and accessibility.
-   - Adjust layout, spacing, and component structure while respecting the design guide.
-   - Update copy, links, and content placeholders when explicitly asked.
-   - Add small utility assets (e.g. SVGs) under an `assets/` folder.
-
-4. You MUST NOT:
-   - Add build tooling (no Webpack, Vite, parcel, etc.).
-   - Introduce frameworks (no React, Vue, Tailwind, Bootstrap, etc.).
-   - Add heavy or unnecessary JavaScript.
-   - Remove core sections of the main page (navigation, hero/intro, about, projects, contact, footer) unless explicitly requested.
-   - Break design consistency between `index.html` and case study pages (reuse tokens, typography, card style).
-
-5. Keep changes **minimal and reversible**:
-   - Avoid large CSS rewrites unless explicitly asked.
-   - Preserve class names and structure where possible to keep diffs readable.
-   - If a change is experimental or risky, leave a short comment explaining it.
+```
+src/_includes/layouts/    — base, case-study, service
+src/_includes/partials/   — nav, footer
+src/_data/projects.json   — drives homepage cards AND prev/next links
+```
 
 ---
 
-## 4. HTML, CSS, and JS expectations
+## 2. Editing rules
 
-- **HTML**
-  - Use semantic elements: `<header>`, `<main>`, `<section>`, `<article>`, `<footer>`, etc.
-  - Ensure heading levels are logical (one `<h1>`, then `<h2>`, `<h3>` as needed).
-  - Accessible anchor links for navigation; ensure IDs exist for in-page links.
+Before changing pages, read `/CLAUDE.md` and `docs/design-system.md`.
 
-- **CSS**
-  - Keep all CSS in a single `<style>` block within each HTML file.
-  - Favour readability over clever hacks.
-  - Avoid deeply nested selectors; keep specificity manageable.
-  - Prefer CSS for smooth scrolling and simple states where possible.
+**You may:**
+- Refactor HTML for better semantics and accessibility.
+- Adjust layout and component structure within the token set.
+- Extract repeated CSS into shared files.
+- Update copy, links and content when asked.
+- Add build tooling **only** where the punch list calls for it (Eleventy).
 
-- **JavaScript**
-  - Only use JS for very small enhancements (e.g. current year in footer, smooth-scroll polyfill if needed).
-  - Do not depend on external JS libraries.
-  - Put all JS in one `<script>` block at the end of the `<body>` of each HTML file.
+**You must not:**
+- Introduce frameworks — React, Vue, Next.js, Tailwind, Bootstrap.
+- Add heavy JavaScript or external JS dependencies.
+- Use raw values where a token exists. See `docs/design-system.md`.
+- Use `#0d6efd` or `rgba(13, 110, 253, …)`. The accent is `#e90067`.
+- Drop the Content-Security-Policy from any page.
+- Ship an `<img>` without `alt`, `width` and `height`.
+- Remove core homepage sections — nav, hero, services, projects, about,
+  contact, footer — unless asked.
+- Change a URL without adding a redirect (see §5).
+- **Invent outcomes, metrics, client names or testimonials.** Mark placeholders
+  clearly and flag them.
 
----
-
-## 5. Layout and content flexibility
-
-- The site should always have:
-  - A top navigation bar with anchor links.
-  - A hero/intro section that clearly states who this is for and what the reader will find.
-  - An about/working-style section.
-  - A projects/case-study section (2–4 key projects).
-  - A contact/CTA section and a footer.
-
-- Every project case study in `projects/` should use the standard two-tab content structure:
-  - `Overview`
-  - `How it was built`
-  - Existing narrative content belongs in `Overview`.
-  - If technical content is not ready, `How it was built` should render: `Technical breakdown coming soon.`
-
-- Layouts can evolve:
-  - Cards, grids, and columns can be rearranged as long as the reading order remains clear.
-  - Sections can be merged or split to improve UX, as long as the above core content still exists.
-
-- Case study tab component standards:
-  - Reuse shared assets: `assets/css/project-tabs.css` and `assets/js/project-tabs.js`.
-  - Follow the shared tab contract (`data-project-tabs`, `role="tablist"`, `role="tab"`, `role="tabpanel"`).
-  - Default to `Overview` on load, with no URL/hash mutation from tab clicks.
-
-- Design decisions (spacing, fonts, colour, etc.) should follow `front_end_design.md`. If a change requires bending those rules, update that document first.
+Keep changes minimal and reversible. Preserve class names where practical so
+diffs stay readable. Comment anything experimental.
 
 ---
 
-## 6. Commit hygiene
+## 3. Code expectations
 
-For humans and agents:
+**HTML** — semantic elements. One `<h1>`, logical heading descent. IDs present
+for every in-page anchor. Skip-to-content link on the homepage.
 
-- Make small, purposeful commits with clear messages.
-- Avoid bundling unrelated changes together (e.g. copy tweaks + large CSS rewrite).
-- When in doubt, prefer a smaller, clearly described change over a big redesign.
+**CSS** — shared files, not inline blocks. Token references, not raw values.
+Shallow selectors, manageable specificity. Mobile-first media queries.
+
+**JavaScript** — progressive enhancement only; the site must work without it.
+No external libraries. Shared behaviour goes in `assets/js/`, not per-page
+inline scripts.
+
+**Performance** — images as WebP, sized to their display context. `loading="lazy"`
+below the fold. Explicit dimensions on everything to prevent layout shift.
+
+---
+
+## 4. Page requirements
+
+**Homepage:** nav with anchor links, hero stating who this is for, services,
+projects, about/working-style, contact CTA, footer.
+
+**Case studies** (`projects/<name>/`):
+- Two-tab structure — `Overview` and `How it was built`. Narrative belongs in
+  Overview. If technical content isn't ready, render
+  `Technical breakdown coming soon.`
+- Reuse `assets/css/project-tabs.css` and `assets/js/project-tabs.js`. Follow
+  the contract: `data-project-tabs`, `role="tablist"`, `role="tab"`,
+  `role="tabpanel"`. Default to Overview; no URL/hash mutation on tab click.
+- Structure: Problem → Approach → Outcome → My role.
+- **Every case study needs site navigation and a footer CTA.** Case study pages
+  currently dead-end with only a back link — a known bug, fixed by shared
+  layouts in Phase 5. Don't reproduce it on new pages.
+
+**Service pages** (`services/<name>/`): what you get, timeline, how I work,
+relevant project links, FAQ, contact CTA.
+
+---
+
+## 5. URLs and redirects
+
+Trailing-slash directories: `/projects/name/`, not `/projects/name.html`.
+
+Any URL change requires **all** of:
+1. `permanent: true` redirect in `vercel.json`
+2. `<link rel="canonical">` updated
+3. `og:url` and Twitter meta updated
+4. All internal links updated, including case study prev/next
+5. `sitemap.xml` and `llms.txt` updated
+6. Relative asset paths checked — depth changes when a file moves from
+   `projects/x.html` to `projects/x/index.html`
+
+---
+
+## 6. Exempt pages
+
+Some pages aren't portfolio content and don't move through the phases above.
+
+- **`projects/dfw/privacy-policy.html`** — privacy policy for DFW (Down For
+  Workouts), a separate Android app. App-support/compliance content, not a
+  case study. Its URL may be registered in a Play Console listing, so it
+  keeps its `.html` path with no Phase 3 trailing-slash migration and no
+  redirect. Excluded from Phase 5 Eleventy templating — it doesn't fit the
+  case-study or service layouts and isn't worth a template of its own. It is
+  not listed in `sitemap.xml` or `llms.txt`. The only work it still receives
+  is the Phase 4 colour fix (`#0d6efd` → `#e90067`, the stale focus-ring
+  `rgba(13, 110, 253, …)` → `--focus-ring`) — everything else about it stays
+  as-is.
+
+---
+
+## 7. Commits
+
+Small and purposeful. Don't bundle unrelated changes — copy tweaks and CSS
+refactors go in separate commits. Prefer a small clearly-described change over
+a large redesign.
