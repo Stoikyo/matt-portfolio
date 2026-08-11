@@ -640,18 +640,24 @@
       {
         src: "../assets/img/homepage-final-motoru.webp",
         alt: "Motoru final homepage",
+        width: 1362,
+        height: 2034,
         title: "Final homepage",
         caption: "Updated landing page focused on lifestyle-first discovery."
       },
       {
         src: "../assets/img/lfiestyle-quiz-motoru.webp",
         alt: "Motoru lifestyle quiz flow",
+        width: 1600,
+        height: 1773,
         title: "Lifestyle-first quiz",
         caption: "Question flow that leads to a scored shortlist."
       },
       {
         src: "../assets/img/original-homepage-design-motoru.webp",
         alt: "Original Motoru homepage design",
+        width: 1600,
+        height: 4254,
         title: "Original homepage",
         caption: "Early homepage design before the lifestyle-first focus."
       }
@@ -707,6 +713,10 @@
       const item = snapshots[currentIndex];
       lightboxImg.src = item.src;
       lightboxImg.alt = item.alt || '';
+      if (item.width && item.height) {
+        lightboxImg.width = item.width;
+        lightboxImg.height = item.height;
+      }
       lightboxTitle.textContent = item.title || '';
       lightboxCaption.textContent = item.caption || '';
       setLightboxState(true);
@@ -789,7 +799,7 @@
               <strong>${item.title || ''}</strong>
               <p>${item.caption || ''}</p>
             </div>
-            <img src="${item.src}" alt="${item.alt || ''}" loading="lazy">
+            <img src="${item.src}" alt="${item.alt || ''}" width="${item.width}" height="${item.height}" loading="lazy">
           `;
           card.addEventListener('click', () => openLightbox(index));
           card.addEventListener('keydown', (event) => {
