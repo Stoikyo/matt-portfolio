@@ -17,6 +17,27 @@ values outside `:root`.
 
 ---
 
+## Global Styles
+
+Every page must include the global image reset:
+
+```css
+img {
+  max-width: 100%;
+  height: auto;
+}
+```
+
+Image `width` and `height` attributes and this CSS reset are a pair. The
+attributes reserve the intrinsic aspect ratio to prevent layout shift; the CSS
+lets images scale down responsively without using the attribute height as a
+fixed rendered height. Never add one without the other.
+
+Fixed-format image containers, such as square project-card thumbnails, may add
+a scoped override when the image is deliberately controlled by the container.
+
+---
+
 ## Colour
 
 ```css
