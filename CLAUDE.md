@@ -73,6 +73,10 @@ inconsistencies into shared components.
   a case study needs a number and you don't have it, leave a clearly marked
   placeholder and flag it. Fabricated proof on a portfolio is a serious
   problem, not a drafting shortcut.
+- **Never imply Motoru and LeasePlease are connected.** Motoru ended in a
+  co-founder split; LeasePlease is an independent build sharing no IP. Words
+  like "became", "grew out of", "evolved into", "successor" are prohibited, as
+  is any visual device linking them.
 
 ## Conventions
 
