@@ -47,14 +47,82 @@
   color: var(--accent);
 }
 
+.chrome-footer-wrap {
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  background: var(--text);
+  color: #ffffff;
+}
+
 .chrome-footer {
-  padding-top: 0;
+  display: block;
+  padding-top: var(--space-12, 48px);
   padding-bottom: var(--space-8, 32px);
+}
+
+.chrome-footer-cta {
+  max-width: 560px;
+}
+
+.chrome-footer-eyebrow {
+  margin: 0 0 var(--space-4, 16px);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: var(--text-xs, 12px);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.chrome-footer h2 {
+  margin: 0 0 var(--space-4, 16px);
+  color: #ffffff;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-size: clamp(44px, 8vw, 82px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.chrome-footer-cta > p:not(.chrome-footer-eyebrow) {
+  max-width: 46ch;
+  margin: 0 0 var(--space-6, 24px);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.chrome-footer-email {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  border: 1px solid #ffffff;
+  border-radius: var(--radius-sm, 8px);
+  background: #ffffff;
+  color: var(--accent) !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.chrome-footer-email:hover {
+  background: var(--accent);
+  color: #ffffff !important;
+}
+
+.chrome-footer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5, 20px);
+  margin-top: var(--space-16, 64px);
+  color: rgba(255, 255, 255, 0.72);
   font-size: var(--text-sm, 14px);
 }
 
-.chrome-footer-wrap {
-  border-top: 1px solid var(--line);
+.chrome-footer-links {
+  display: flex;
+  gap: var(--space-5, 20px);
+}
+
+.chrome-footer-meta a {
+  color: rgba(255, 255, 255, 0.72) !important;
 }
 
 @media (max-width: 640px) {
@@ -68,5 +136,11 @@
 
   .chrome-nav {
     gap: var(--space-4, 16px);
+  }
+
+  .chrome-footer-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: var(--space-12, 48px);
   }
 }
