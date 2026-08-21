@@ -15,6 +15,9 @@ Service coverage: Remote across Australia; onsite in Melbourne when required.
 - https://matthewgrant.co/work/motoru/
 - https://matthewgrant.co/work/evpicker/
 - https://matthewgrant.co/work/ai-auto-parts-fit-checker/
+- https://matthewgrant.co/work/leaseplease/
+- https://matthewgrant.co/work/hundi/
+- https://matthewgrant.co/work/lease-of-mind/
 
 ## Services summary
 - AI consulting for practical use-case definition and delivery planning.
