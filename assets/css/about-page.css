@@ -58,6 +58,7 @@
 .about-glue {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  max-width: 780px;
   gap: var(--space-10);
   margin-top: var(--space-12);
   padding: var(--space-8);
@@ -121,40 +122,22 @@
 }
 
 .work-timeline {
-  position: relative;
   display: grid;
-  gap: 0;
-  max-width: 780px;
-  padding: var(--space-4) 0 var(--space-4) var(--space-8);
-  border-left: 3px solid var(--accent);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--space-3);
+  padding: var(--space-5) 0;
+  border-top: 3px solid var(--accent);
+  border-bottom: 3px solid var(--accent);
 }
 
 .timeline-step {
   position: relative;
   display: grid;
   gap: var(--space-2);
-  padding: var(--space-5) 0 var(--space-5) var(--space-6);
-}
-
-.timeline-step::before {
-  position: absolute;
-  top: var(--space-6);
-  left: -11px;
-  width: 16px;
-  height: 16px;
-  border: 3px solid var(--accent);
-  border-radius: 50%;
-  background: var(--bg);
-  content: '';
-}
-
-.timeline-step:not(:last-child)::after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: var(--space-6);
-  border-bottom: 1px solid var(--line);
-  content: '';
+  min-width: 0;
+  padding: var(--space-4);
+  border-top: 3px solid var(--text);
+  background: var(--surface-alt);
 }
 
 .timeline-step strong {
@@ -213,10 +196,18 @@
   }
 
   .work-timeline {
-    padding-left: var(--space-5);
+    display: flex;
+    gap: var(--space-3);
+    margin-right: calc(var(--space-5) * -1);
+    padding: var(--space-5) var(--space-5) var(--space-5) 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
   }
 
   .timeline-step {
-    padding-left: var(--space-5);
+    flex: 0 0 220px;
+    min-height: 170px;
+    padding: var(--space-4);
   }
 }
