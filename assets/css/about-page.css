@@ -57,12 +57,12 @@
 
 .about-glue {
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  grid-template-columns: minmax(0, 0.7fr) 150px minmax(0, 1.3fr);
   gap: var(--space-10);
   margin-top: var(--space-12);
   padding: var(--space-8);
   border-radius: var(--radius);
-  background: var(--text);
+  background: var(--surface-alt);
 }
 
 .about-glue-label {
@@ -76,12 +76,23 @@
 
 .about-glue h2 {
   margin: 0;
-  color: #ffffff;
+  color: var(--text);
   font-size: var(--text-h2);
 }
 
 .about-glue p:not(.about-glue-label) {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--muted);
+}
+
+.about-glue-avatar {
+  align-self: center;
+}
+
+.about-glue-avatar img {
+  width: 150px;
+  aspect-ratio: 1;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
 }
 
 .about-page ul {
@@ -102,57 +113,61 @@
   font-size: var(--text-h3);
 }
 
-.work-loop {
+.work-timeline {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-4);
-  padding: var(--space-8);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface-alt);
+  gap: 0;
+  max-width: 780px;
+  padding: var(--space-4) 0 var(--space-4) var(--space-8);
+  border-left: 3px solid var(--accent);
 }
 
-.work-loop::before {
+.timeline-step {
+  position: relative;
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-5) 0 var(--space-5) var(--space-6);
+}
+
+.timeline-step::before {
   position: absolute;
-  inset: var(--space-12);
+  top: var(--space-6);
+  left: -11px;
+  width: 16px;
+  height: 16px;
   border: 3px solid var(--accent);
   border-radius: 50%;
+  background: var(--bg);
   content: '';
-  pointer-events: none;
 }
 
-.loop-step {
-  position: relative;
-  z-index: 1;
-  min-height: 0;
-  padding: var(--space-5);
-  border-top: 3px solid var(--text);
-  border-radius: var(--radius-sm);
-  background: var(--card);
+.timeline-step:not(:last-child)::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: var(--space-6);
+  border-bottom: 1px solid var(--line);
+  content: '';
 }
 
-.loop-step strong {
-  display: block;
-  margin-bottom: var(--space-2);
+.timeline-step strong {
   color: var(--text);
   font-family: 'Bricolage Grotesque', system-ui, sans-serif;
   font-size: var(--text-lg);
   font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-.loop-step span {
+.timeline-step span {
   color: var(--muted);
-  font-size: var(--text-sm);
   line-height: 1.5;
 }
 
-.loop-note {
+.timeline-note {
   margin: var(--space-4) 0 0;
   color: var(--accent) !important;
   font-size: var(--text-sm);
   font-weight: 700;
-  text-align: center;
 }
 
 .about-link {
@@ -182,12 +197,19 @@
     padding: var(--space-6);
   }
 
-  .work-loop {
-    grid-template-columns: 1fr;
-    padding: var(--space-4);
+  .about-glue-avatar {
+    order: -1;
   }
 
-  .work-loop::before {
-    display: none;
+  .about-glue-avatar img {
+    width: 120px;
+  }
+
+  .work-timeline {
+    padding-left: var(--space-5);
+  }
+
+  .timeline-step {
+    padding-left: var(--space-5);
   }
 }

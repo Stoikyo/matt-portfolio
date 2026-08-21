@@ -1,5 +1,5 @@
 header[data-global-header] {
-  min-height: 64px;
+  height: 65px;
 }
 
 .chrome-header {
@@ -20,6 +20,10 @@ header[data-global-header] {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-5, 20px);
+}
+
+.chrome-shell {
+  height: 64px;
 }
 
 .chrome-mark {
@@ -152,7 +156,7 @@ header[data-global-header] {
 
 @media (max-width: 640px) {
   header[data-global-header] {
-    min-height: 104px;
+    height: 105px;
   }
 
   .chrome-shell,
@@ -164,6 +168,7 @@ header[data-global-header] {
   }
 
   .chrome-shell {
+    height: 104px;
     padding-bottom: var(--space-4, 16px);
   }
 
