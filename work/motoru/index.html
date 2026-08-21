@@ -37,15 +37,10 @@
   </script>
   <link rel="stylesheet" href="../assets/css/case-study-base.css">
   <link rel="stylesheet" href="../assets/css/project-tabs.css">
+  <link rel="stylesheet" href="../assets/css/global-chrome.css">
   <style>
     :root {
-      --bg: #f4f1ec;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --line: #e2e8f0;
       --accent: #e90067;
-      --accent-strong: #cc005a;
       --radius: 12px;
       --shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
       --max-width: 1100px;
@@ -133,7 +128,7 @@
       color: var(--text);
       background: #e9eef7;
       outline: 2px solid transparent;
-      box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
+      box-shadow: var(--focus-ring);
     }
 
     main {
@@ -290,7 +285,7 @@
       width: 100%;
       height: auto;
       object-fit: contain;
-      background: #f4f1ec;
+      background: var(--bg);
     }
 
     .snapshot-card video {
@@ -380,7 +375,7 @@
     .lightbox-actions button:focus-visible {
       border-color: var(--accent);
       outline: none;
-      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
+      box-shadow: var(--focus-ring);
     }
 
     .project-header {
@@ -408,7 +403,7 @@
       height: 96px;
       border-radius: 50%;
       border: 1px solid var(--line);
-      background: #f0ede7;
+      background: var(--surface-alt);
       box-shadow: var(--shadow);
       display: grid;
       place-items: center;
@@ -448,7 +443,7 @@
   </style>
 </head>
 <body>
-  <header>
+  <header data-global-header>
     <div class="nav">
       <a class="brand" href="../" aria-label="Matt Grant home">
         <img class="brand-mark" src="../assets/favicons/mg_favicon.png" alt="MG logo" width="512" height="512">
@@ -498,17 +493,17 @@
             <h2>Approach</h2>
             <p>I treated Motoru as a product experiment to see if we could identify, validate and solve a real problem for EV buyers.</p>
             <ul>
-              <li><strong>Research &amp; hypothesis</strong> – Talked to people at EV events and in Facebook/Reddit groups, asking how they were trying to get into an EV. Most people froze when asked “Which car are you looking at?” but were comfortable talking about their life: commute, kids, trips, parking, budget.</li>
-              <li><strong>Reframe the problem</strong> – Instead of asking “What car do you want?”, we flipped it to “Tell us how you live, and we’ll work out which cars fit.”</li>
-              <li><strong>Design the flow</strong> – Mapped the journey from “curious about EVs” to “I’m ready to talk to someone”. Designed a short quiz that focused on lifestyle and constraints, plus a results view that explained why each recommendation matched.</li>
-              <li><strong>Build the system</strong> – Used WordPress for the marketing site and initial UI shell because I could move fastest there. The quiz, recommendation logic and AI integration were built by my technical cofounder in React, Rails and OpenAI, based on my specs. We rolled our own EV database in Google Sheets from manufacturer data, dealer input and community feedback. On top of that, we used AI to:
+              <li><strong>Research &amp; hypothesis</strong> - Talked to people at EV events and in Facebook/Reddit groups, asking how they were trying to get into an EV. Most people froze when asked “Which car are you looking at?” but were comfortable talking about their life: commute, kids, trips, parking, budget.</li>
+              <li><strong>Reframe the problem</strong> - Instead of asking “What car do you want?”, we flipped it to “Tell us how you live, and we’ll work out which cars fit.”</li>
+              <li><strong>Design the flow</strong> - Mapped the journey from “curious about EVs” to “I’m ready to talk to someone”. Designed a short quiz that focused on lifestyle and constraints, plus a results view that explained why each recommendation matched.</li>
+              <li><strong>Build the system</strong> - Used WordPress for the marketing site and initial UI shell because I could move fastest there. The quiz, recommendation logic and AI integration were built by my technical cofounder in React, Rails and OpenAI, based on my specs. We rolled our own EV database in Google Sheets from manufacturer data, dealer input and community feedback. On top of that, we used AI to:
                 <ul>
                   <li>turn quiz answers into weighted needs (range, charging pattern, budget, body type and so on),</li>
                   <li>score each car with a “Motoru Match” rating out of 10, and</li>
                   <li>generate short, plain-language explanations of why a car was a good fit.</li>
                 </ul>
               </li>
-              <li><strong>Test and iterate</strong> – Put the prototype in front of real people, watched where they hesitated, and tweaked question wording, order, scoring and the way we presented the Motoru Match scores. Shared it in EV Facebook groups and on Reddit to get a wider range of users and feedback.</li>
+              <li><strong>Test and iterate</strong> - Put the prototype in front of real people, watched where they hesitated, and tweaked question wording, order, scoring and the way we presented the Motoru Match scores. Shared it in EV Facebook groups and on Reddit to get a wider range of users and feedback.</li>
             </ul>
           </section>
 
@@ -529,10 +524,10 @@
             <h2>My role</h2>
             <p>I led Motoru end to end:</p>
             <ul>
-              <li><strong>Founder</strong> – Ran the business and was the face of the company: strategy, positioning, and relationships with novated leasing partners; talking to users at EV events and in communities.</li>
-              <li><strong>Product &amp; UX</strong> – Defined the hypothesis, mapped the decision journey, designed the quiz and results experience, and iterated based on live feedback.</li>
-              <li><strong>Engineering</strong> – Built and maintained the WordPress marketing site and initial quiz/results UI, and turned the UX into detailed specs, rules and edge cases for my cofounder to implement in React/Rails/OpenAI. Created and maintained the EV database in Google Sheets.</li>
-              <li><strong>Marketing &amp; growth</strong> – Led all marketing experiments (content, social, community outreach on Reddit and EV Facebook groups). First time running marketing; learned how critical it is to product success.</li>
+              <li><strong>Founder</strong> - Ran the business and was the face of the company: strategy, positioning, and relationships with novated leasing partners; talking to users at EV events and in communities.</li>
+              <li><strong>Product &amp; UX</strong> - Defined the hypothesis, mapped the decision journey, designed the quiz and results experience, and iterated based on live feedback.</li>
+              <li><strong>Engineering</strong> - Built and maintained the WordPress marketing site and initial quiz/results UI, and turned the UX into detailed specs, rules and edge cases for my cofounder to implement in React/Rails/OpenAI. Created and maintained the EV database in Google Sheets.</li>
+              <li><strong>Marketing &amp; growth</strong> - Led all marketing experiments (content, social, community outreach on Reddit and EV Facebook groups). First time running marketing; learned how critical it is to product success.</li>
             </ul>
           </section>
 
@@ -618,7 +613,7 @@
           <section>
             <h2>Reflection</h2>
             <p>Motoru highlighted how difficult EV research can be for buyers.</p>
-            <p>Most people don’t struggle with access to information — they struggle with translating that information into a confident decision.</p>
+            <p>Most people don’t struggle with access to information - they struggle with translating that information into a confident decision.</p>
             <p>The platform explored how structured decision frameworks and guided inputs could simplify that process.</p>
             <p>Many of the ideas tested in Motoru later informed other prototypes and experiments around EV decision-support systems.</p>
           </section>
@@ -635,6 +630,8 @@
     </section>
   </main>
   <script src="../assets/js/project-tabs.js" defer></script>
+  <footer data-global-footer></footer>
+  <script src="../assets/js/global-chrome.js"></script>
 
   <script>
     window.snapshots = [

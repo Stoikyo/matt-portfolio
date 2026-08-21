@@ -1,0 +1,44 @@
+:root {
+  --bg: #f4f1ec;
+  --card: #ffffff;
+  --surface-hover: #ede9e3;
+  --surface-alt: #f0ede7;
+  --text: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --accent: #e90067;
+  --accent-strong: #cc005a;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-30: 120px;
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px;
+  --text-hero: clamp(40px, 7vw, 60px);
+  --text-h2: clamp(24px, 3.6vw, 32px);
+  --text-h3: clamp(20px, 2.4vw, 24px);
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-pill: 999px;
+
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-hover: 0 12px 30px rgba(15, 23, 42, 0.10);
+  --focus-ring: 0 0 0 3px rgba(233, 0, 103, 0.28);
+}

@@ -3,7 +3,7 @@
 ## Purpose
 
 Design principles for matthewgrant.co. This document sets **direction and
-intent**. It does not specify values — those live in `docs/design-system.md`,
+intent**. It does not specify values - those live in `docs/design-system.md`,
 which is the source of truth for colour, spacing, type, radius and elevation.
 
 If a design decision requires bending these principles, update this document
@@ -25,8 +25,8 @@ design, product design, AI engineering/design, and founder roles.
 
 **One positioning, not four.** The through-line is: *takes an ambiguous problem
 and gets a working thing in front of real users, fast.* Audiences differ in the
-evidence they want — engagement shape for clients, depth and history for hiring
-teams — not in the claim being made. Resist writing parallel pitches; it
+evidence they want - engagement shape for clients, depth and history for hiring
+teams - not in the claim being made. Resist writing parallel pitches; it
 produces mush.
 
 The site should read quickly, show how Matt thinks, and feel like it was built
@@ -40,12 +40,12 @@ by someone who cares about design and engineering equally.
    reading harder.
 
 2. **Typography does the heavy lifting.** Headings carry the hierarchy. Body
-   copy is comfortable — sensible line length and line height.
+   copy is comfortable - sensible line length and line height.
 
 3. **One mental model.** Sections stack vertically in a single main column.
    Repeated patterns behave identically wherever they appear.
 
-4. **Minimal, confident UI.** Few variants — one card treatment, one primary
+4. **Minimal, confident UI.** Few variants - one card treatment, one primary
    button, one secondary. Avoid UI for its own sake: extra borders, panels,
    badges.
 
@@ -59,7 +59,7 @@ by someone who cares about design and engineering equally.
    before visual polish.
 
 8. **Consistency is enforced, not remembered.** Every visual decision comes from
-   the token set. A new raw value means the scale needs a considered addition —
+   the token set. A new raw value means the scale needs a considered addition -
    not a one-off.
 
 ---
@@ -68,14 +68,14 @@ by someone who cares about design and engineering equally.
 
 Warm and confident rather than clinical. The background is a soft off-white
 with warmth in it, not a cold grey. The accent is a strong pink (`#e90067`) used
-sparingly and with intent — primary actions, key links, focus states. Greys
+sparingly and with intent - primary actions, key links, focus states. Greys
 carry structure, never emphasis.
 
 Headings use Bricolage Grotesque: tall, condensed and confident, doing most of the visual
 work. Body uses Inter, quiet and readable.
 
 Cards are soft-radius with a light border and subtle shadow. Generous internal
-spacing, but not wasteful. The same card treatment applies everywhere —
+spacing, but not wasteful. The same card treatment applies everywhere -
 projects, services, snapshots.
 
 Do not introduce additional brand colours without a clear reason.
@@ -84,27 +84,27 @@ Do not introduce additional brand colours without a clear reason.
 
 ## Content responsibilities
 
-**Hero** — states what Matt does and why the page exists, in a way that lands
+**Hero** - states what Matt does and why the page exists, in a way that lands
 for both a prospective client and a hiring manager. One or two clear CTAs.
 
-**Services** — two offers: AI consulting/automation, and rapid prototyping.
+**Services** - two offers: AI consulting/automation, and rapid prototyping.
 Each should let a prospect self-qualify on scope and engagement shape.
 
-**Projects** — case studies following Problem → Approach → Outcome → My role.
+**Projects** - case studies following Problem → Approach → Outcome → My role.
 Outcomes need evidence: what was tested, with whom, what happened. Live demo and
 code links where they exist.
 
-**About** — how Matt works, not a life story. A compact snapshot of where he's
+**About** - how Matt works, not a life story. A compact snapshot of where he's
 most useful.
 
-**Contact** — one clear CTA, key links, and a current availability signal.
+**Contact** - one clear CTA, key links, and a current availability signal.
 
 ---
 
 ## What this document should not do
 
-- Lock in pixel values, padding or grid configurations — that's
+- Lock in pixel values, padding or grid configurations - that's
   `docs/design-system.md`.
-- Describe class names, component APIs or file structure — that's
+- Describe class names, component APIs or file structure - that's
   `docs/AGENT_NOTES.md`.
 - Attempt to cover every CSS decision.

@@ -1,0 +1,9 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}

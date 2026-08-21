@@ -39,13 +39,7 @@
   <link rel="stylesheet" href="../assets/css/project-tabs.css">
   <style>
     :root {
-      --bg: #f4f1ec;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --line: #e2e8f0;
       --accent: #e90067;
-      --accent-strong: #cc005a;
       --radius: 12px;
       --shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
       --max-width: 1100px;
@@ -123,7 +117,7 @@
       color: var(--text);
       background: #e9eef7;
       outline: 2px solid transparent;
-      box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
+      box-shadow: var(--focus-ring);
     }
 
     main {
@@ -207,7 +201,7 @@
       display: block;
       width: 100%;
       height: auto;
-      background: #f4f1ec;
+      background: var(--bg);
     }
     .snapshot-card figcaption {
       padding: 10px 12px;

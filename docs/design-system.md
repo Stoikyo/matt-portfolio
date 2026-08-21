@@ -1,7 +1,7 @@
 # Design system
 
 The single source of truth for visual decisions. If a value isn't here, it
-doesn't go in the CSS — extend this document first.
+doesn't go in the CSS - extend this document first.
 
 Implemented in `assets/css/tokens.css`, declared once on `:root`.
 
@@ -10,7 +10,7 @@ Implemented in `assets/css/tokens.css`, declared once on `:root`.
 ## Why this exists
 
 The site previously had 24 tokens covering colour, radius, shadow and
-max-width — but **no spacing scale and no type scale**. New UI drifted because
+max-width - but **no spacing scale and no type scale**. New UI drifted because
 there was no token to reach for; a raw px value was the only option. The audit
 found 25 distinct spacing values, 23 distinct font sizes, and 62 hardcoded hex
 values outside `:root`.
@@ -48,7 +48,7 @@ a scoped override when the image is deliberately controlled by the container.
 --text:           #0f172a;
 --muted:          #64748b;  /* meta labels, captions */
 --line:           #e2e8f0;  /* borders and dividers */
---accent:         #e90067;  /* primary — pink */
+--accent:         #e90067;  /* primary - pink */
 --accent-strong:  #cc005a;  /* hover/active on accent */
 ```
 
@@ -84,14 +84,14 @@ emphasis.
 --space-30: 120px;
 ```
 
-Migration notes — the audit found these off-scale values in use:
+Migration notes - the audit found these off-scale values in use:
 
 | Found | Maps to | Confidence |
 |---|---|---|
 | 6px | `--space-2` (8px) | safe |
 | 10px | `--space-3` (12px) | safe |
 | 11px | `--space-3` (12px) | safe |
-| 14px | `--space-4` (16px) | **check visually** — 49 uses, some will be deliberate |
+| 14px | `--space-4` (16px) | **check visually** - 49 uses, some will be deliberate |
 | 18px | `--space-5` (20px) | check |
 | 22px | `--space-6` (24px) | safe |
 | 28px | `--space-8` (32px) | check |
@@ -100,7 +100,7 @@ Migration notes — the audit found these off-scale values in use:
 | 72px | `--space-20` (80px) | safe |
 | 88px | `--space-24` (96px) | safe |
 
-14px is the one to be careful with — it's the second most common value on the
+14px is the one to be careful with - it's the second most common value on the
 site and rounding all 49 instances blindly will shift layouts.
 
 ---
@@ -108,7 +108,7 @@ site and rounding all 49 instances blindly will shift layouts.
 ## Typography
 
 Headings: **Bricolage Grotesque** (via Google Fonts, opsz 12..96, weights
-400/600/800). Body: **Inter** (400–700), system sans fallback.
+400/600/800). Body: **Inter** (400-700), system sans fallback.
 
 ### Resolved font stack history
 
@@ -128,7 +128,7 @@ Headings now standardise on `'Bricolage Grotesque', system-ui, sans-serif`.
 ### Static scale
 
 ```css
---text-xs:   12px;  /* eyebrows, meta labels — use sparingly */
+--text-xs:   12px;  /* eyebrows, meta labels - use sparingly */
 --text-sm:   14px;  /* captions, secondary UI */
 --text-base: 16px;  /* body copy */
 --text-lg:   18px;  /* lead paragraphs */
@@ -138,13 +138,13 @@ Headings now standardise on `'Bricolage Grotesque', system-ui, sans-serif`.
 ```
 
 The audit found 13px, 15px and 17px in use across ~20 instances. Collapse into
-neighbours, but check each — some may be deliberate optical adjustments rather
+neighbours, but check each - some may be deliberate optical adjustments rather
 than drift.
 
 ### Fluid headings
 
 One formula per level. The audit found six near-duplicate `clamp()` values,
-including `clamp(40px, 7vw, 60px)` and `clamp(40px, 7vw, 58px)` — a 2px
+including `clamp(40px, 7vw, 60px)` and `clamp(40px, 7vw, 58px)` - a 2px
 difference that was almost certainly accidental.
 
 ```css
@@ -158,8 +158,8 @@ deliberate one-off. Keep it scoped to that page and comment it.
 
 ### Rules
 
-- One `<h1>` per page. Logical descent — no skipped levels.
-- Body line-height 1.6; headings 1.15–1.25.
+- One `<h1>` per page. Logical descent - no skipped levels.
+- Body line-height 1.6; headings 1.15-1.25.
 - Body line length capped around 70 characters.
 
 ---
@@ -211,11 +211,11 @@ that happened to match. Nothing enforced that.
 
 ### Buttons
 
-- `.button` — base. Pill (`--radius-pill`), `--space-3` / `--space-4` padding.
-- `.button.primary` — solid `--accent`, white label.
-- `.button.secondary` — outline, `--surface-hover` fill on hover.
+- `.button` - base. Pill (`--radius-pill`), `--space-3` / `--space-4` padding.
+- `.button.primary` - solid `--accent`, white label.
+- `.button.secondary` - outline, `--surface-hover` fill on hover.
 
-Three variants maximum. `.button.contact-cta` currently exists as a fourth —
+Three variants maximum. `.button.contact-cta` currently exists as a fourth -
 fold it into `.primary` with a layout modifier rather than a new variant.
 
 ### Cards
@@ -241,7 +241,7 @@ depend on large-screen behaviour to make sense.
 ## Accessibility
 
 - Contrast: 4.5:1 body text, 3:1 large text and UI boundaries.
-  `--muted` (#64748b) on `--bg` (#f4f1ec) passes for body size — verify before
+  `--muted` (#64748b) on `--bg` (#f4f1ec) passes for body size - verify before
   using it smaller than `--text-sm`.
 - White on `--accent` passes at body size. Verify any new accent pairing.
 - Visible focus on everything interactive.

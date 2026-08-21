@@ -22,6 +22,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/global-chrome.css">
   <link rel="icon" href="assets/favicons/mg_favicon.png" type="image/png">
   <script type="application/ld+json">
     {
@@ -63,15 +66,6 @@
   </script>
   <style>
     :root {
-      --bg: #f4f1ec;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --line: #e2e8f0;
-      --accent: #e90067;
-      --accent-strong: #cc005a;
-      --radius: 12px;
-      --shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
       --max-width: 780px;
     }
 
@@ -93,61 +87,6 @@
     }
 
     a { color: inherit; text-decoration: none; }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      font-size: 14px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Inter', system-ui, sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      font-size: 15px;
-      color: var(--text);
-    }
-
-    .brand-mark {
-      height: 40px;
-      width: 40px;
-      border-radius: 8px;
-      display: block;
-    }
-
-    .nav-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 12px;
-      border-radius: 8px;
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 14px;
-      transition: color 0.2s ease, background 0.2s ease;
-    }
-
-    .nav-back:hover {
-      color: var(--text);
-      background: #e9eef7;
-    }
 
     main {
       max-width: var(--max-width);
@@ -263,7 +202,7 @@
       transition: background 0.2s ease, transform 0.15s ease;
     }
 
-    .button:hover { background: #ede9e3; transform: translateY(-1px); }
+    .button:hover { background: var(--surface-hover); transform: translateY(-1px); }
 
     .button.primary {
       background: var(--accent);
@@ -273,46 +212,24 @@
 
     .button.primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
 
-    footer {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 24px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 13px;
-      border-top: 1px solid var(--line);
-    }
-
-    footer a { color: var(--accent); }
   </style>
 </head>
 <body>
-  <header>
-    <div class="nav">
-      <a class="brand" href="./" aria-label="Matt Grant home">
-        <img class="brand-mark" src="assets/favicons/mg_favicon.png" alt="MG logo" width="512" height="512">
-      </a>
-      <a class="nav-back" href="./">
-        <span aria-hidden="true">←</span> Back
-      </a>
-    </div>
-  </header>
+  <header data-global-header></header>
 
   <main>
 
     <div class="page-header">
       <span class="text-display">For recruiters &amp; collaborators</span>
       <h1>AI Overview</h1>
-      <p class="lead">A quick summary of how I work with AI — what I build, what I've shipped, and how to get in touch.</p>
+      <p class="lead">A quick summary of how I work with AI - what I build, what I've shipped, and how to get in touch.</p>
     </div>
 
     <hr class="divider">
 
     <div class="content-block">
       <h2>What I do</h2>
-      <p>I'm a product designer who builds with AI — not just designs for it. Over the past few years I've shipped prototypes, tools, and consulting work that puts AI inside real workflows. I work in Melbourne and remotely across Australia.</p>
+      <p>I'm a product designer who builds with AI - not just designs for it. Over the past few years I've shipped prototypes, tools, and consulting work that puts AI inside real workflows. I work in Melbourne and remotely across Australia.</p>
       <p>Two main things: helping teams figure out where AI genuinely fits in their work, and building fast enough that you can test the idea before committing to it.</p>
     </div>
 
@@ -331,9 +248,9 @@
     <div class="content-block">
       <h2>Recent work</h2>
       <ul class="link-list">
-        <li><a href="/work/supplie/">Supplie — AI decision support for operations teams ↗</a></li>
-        <li><a href="/work/motoru/">Motoru — EV discovery with AI match scoring ↗</a></li>
-        <li><a href="/work/evpicker/">EVPicker — personalised EV shortlists ↗</a></li>
+        <li><a href="/work/supplie/">Supplie - AI decision support for operations teams ↗</a></li>
+        <li><a href="/work/motoru/">Motoru - EV discovery with AI match scoring ↗</a></li>
+        <li><a href="/work/evpicker/">EVPicker - personalised EV shortlists ↗</a></li>
         <li><a href="/work/ai-auto-parts-fit-checker/">AI Auto Parts Fit Checker ↗</a></li>
       </ul>
     </div>
@@ -351,13 +268,7 @@
 
   </main>
 
-  <footer>
-    <span>© <span id="year"></span> Matt Grant</span>
-    <a href="#top">Back to top</a>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <footer data-global-footer></footer>
+  <script src="assets/js/global-chrome.js"></script>
 </body>
 </html>

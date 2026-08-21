@@ -22,6 +22,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/global-chrome.css">
   <link rel="icon" href="../assets/favicons/mg_favicon.png" type="image/png">
   <script type="application/ld+json">
     {
@@ -84,14 +87,6 @@
   </script>
   <style>
     :root {
-      --bg: #f4f1ec;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --line: #e2e8f0;
-      --accent: #e90067;
-      --radius: 12px;
-      --shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
       --max-width: 980px;
     }
 
@@ -220,7 +215,7 @@
   </style>
 </head>
 <body>
-  <header>
+  <header data-global-header>
     <div class="nav">
       <a class="brand" href="../" aria-label="Matt Grant home">
         <img src="../assets/favicons/mg_favicon.png" alt="MG logo" width="512" height="512">
@@ -289,5 +284,7 @@
       </div>
     </section>
   </main>
+  <footer data-global-footer></footer>
+  <script src="../assets/js/global-chrome.js"></script>
 </body>
 </html>

@@ -36,15 +36,10 @@
     }
   </script>
   <link rel="stylesheet" href="../../assets/css/project-tabs.css">
+  <link rel="stylesheet" href="../../assets/css/global-chrome.css">
   <style>
     :root {
-      --bg: #f4f1ec;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --line: #e2e8f0;
       --accent: #e90067;
-      --accent-strong: #cc005a;
       --radius: 12px;
       --shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
       --max-width: 1100px;
@@ -138,7 +133,7 @@
       color: var(--text);
       background: #e9eef7;
       outline: 2px solid transparent;
-      box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
+      box-shadow: var(--focus-ring);
     }
 
     main {
@@ -186,7 +181,7 @@
       height: 96px;
       border-radius: 50%;
       border: 1px solid var(--line);
-      background: #f0ede7;
+      background: var(--surface-alt);
       box-shadow: var(--shadow);
       display: grid;
       place-items: center;
@@ -232,7 +227,7 @@
 
     .button.primary {
       background: var(--accent);
-      color: #ffffff;
+      color: var(--card);
       border-color: var(--accent);
     }
 
@@ -244,7 +239,7 @@
 
     .button:hover {
       transform: translateY(-1px);
-      background: #f4f1ec;
+      background: var(--bg);
     }
 
     .button.primary:hover,
@@ -254,7 +249,7 @@
 
     .button:focus-visible {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
+      box-shadow: var(--focus-ring);
     }
 
     .content {
@@ -292,7 +287,7 @@
   </style>
 </head>
 <body>
-  <header>
+  <header data-global-header>
     <div class="nav">
       <a class="brand" href="../../" aria-label="Matt Grant home">
         <img class="brand-mark" src="../../assets/favicons/mg_favicon.png" alt="MG logo" width="512" height="512">
@@ -312,7 +307,7 @@
         <div class="project-hero-avatar"><img src="../../assets/img/tinkeru-logo.png" alt="AI Auto Parts Fit Checker mark" width="1351" height="400"></div>
         <div>
           <h1>AI Auto Parts Fit Checker</h1>
-          <p class="meta">AI-powered prototype · Built in a day, rebuilt in an afternoon · 2024–2025</p>
+          <p class="meta">AI-powered prototype · Built in a day, rebuilt in an afternoon · 2024-2025</p>
           <p class="lead">A quick experiment to see if AI could answer “will this part fit my car?” from a photo and a few details, then send back a useful, human-readable answer in under a minute.</p>
           <div class="actions">
             <a class="button" href="https://github.com/Stoikyo/car-fitment-ollama" target="_blank" rel="noopener noreferrer">
@@ -359,7 +354,7 @@
           <section>
             <h2>Outcome / What I learned</h2>
             <p>The thing actually worked. I took it into auto parts stores and tested it in the wild: a customer could snap a part on the shelf, enter their car, and get a fit check plus install guidance almost instantly, without needing to hunt down the one staff member who “knows that stuff”.</p>
-            <p>For me, it was also a good reality check: building the prototype was the easy bit. The harder part was finding people, getting them to try it, and understanding whether it solved the problem in a way they cared about. It made it very clear that marketing and growth aren’t “somebody else’s job” — they’re core skills if you want your work to actually touch real users.</p>
+            <p>For me, it was also a good reality check: building the prototype was the easy bit. The harder part was finding people, getting them to try it, and understanding whether it solved the problem in a way they cared about. It made it very clear that marketing and growth aren’t “somebody else’s job” - they’re core skills if you want your work to actually touch real users.</p>
             <p>It proved that AI can genuinely reduce friction in this kind of decision, that boring glue tools (forms, Sheets, Apps Script, an API) are more than enough for a meaningful prototype, and that you don’t need the “right” stack to learn something useful. Constraint and speed mattered more than elegance; once the idea was proven, switching to a Docker + Ollama setup was just another iteration.</p>
           </section>
 
@@ -474,5 +469,7 @@
     </section>
   </main>
   <script src="../../assets/js/project-tabs.js" defer></script>
+  <footer data-global-footer></footer>
+  <script src="../../assets/js/global-chrome.js"></script>
 </body>
 </html>

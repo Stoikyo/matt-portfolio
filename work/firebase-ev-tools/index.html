@@ -37,15 +37,10 @@
   </script>
   <link rel="stylesheet" href="../../assets/css/case-study-base.css">
   <link rel="stylesheet" href="../../assets/css/project-tabs.css">
+  <link rel="stylesheet" href="../../assets/css/global-chrome.css">
   <style>
     :root {
-      --bg: #f4f1ec;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --line: #e2e8f0;
       --accent: #e90067;
-      --accent-strong: #cc005a;
       --radius: 12px;
       --shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
       --max-width: 1100px;
@@ -135,7 +130,7 @@
       color: var(--text);
       background: #e9eef7;
       outline: 2px solid transparent;
-      box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
+      box-shadow: var(--focus-ring);
     }
     .nav-toggle {
       display: none;
@@ -152,7 +147,7 @@
     }
     .nav-toggle:focus-visible {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
+      box-shadow: var(--focus-ring);
     }
 
     main {
@@ -220,7 +215,7 @@
       height: 96px;
       border-radius: 50%;
       border: 1px solid var(--line);
-      background: #f0ede7;
+      background: var(--surface-alt);
       box-shadow: var(--shadow);
       display: grid;
       place-items: center;
@@ -276,7 +271,7 @@
     .placeholder {
       border: 1px dashed var(--line);
       border-radius: var(--radius);
-      background: #f4f1ec;
+      background: var(--bg);
       color: var(--muted);
       display: grid;
       place-items: center;
@@ -334,7 +329,7 @@
       width: 100%;
       height: auto;
       object-fit: contain;
-      background: #f4f1ec;
+      background: var(--bg);
     }
 
     .snapshot-meta {
@@ -382,7 +377,7 @@
   </style>
 </head>
 <body>
-  <header>
+  <header data-global-header>
     <div class="nav">
       <a class="brand" href="../../" aria-label="Matt Grant home">
         <img class="brand-mark" src="../../assets/favicons/mg_favicon.png" alt="MG logo" width="512" height="512">
@@ -402,7 +397,7 @@
         <div class="project-hero-avatar"><img src="../../assets/img/firebase_studio_logo.png" alt="Firebase EV Tools logo" width="330" height="330"></div>
         <div>
           <h1>Firebase EV Tools</h1>
-          <p class="meta">Firebase AI toolkit · 2024–2025</p>
+          <p class="meta">Firebase AI toolkit · 2024-2025</p>
           <p class="lead">A small suite of AI tools to help people choose an EV and make sense of novated leasing, all built as a single Firebase project so I could ship fast and learn cheaply.</p>
         </div>
       </div>
@@ -426,18 +421,18 @@
             <p><strong>What I built</strong></p>
             <p>I set up a single Firebase project as a sandbox and built a handful of tools inside it:</p>
             <ul>
-              <li><strong>I know my car</strong> – you enter a specific car and get an AI-generated report on running costs, features and suitability.</li>
-              <li><strong>Find me a car to lease</strong> – you answer a few lifestyle questions and get a shortlist of cars (any fuel type) that actually match how you live.</li>
-              <li><strong>EV novated lease calculator – simple</strong> – a quick, high-level estimate of tax savings and weekly costs for an FBT-exempt EV.</li>
-              <li><strong>EV novated lease calculator – detailed</strong> – a more serious calculator that models pre-tax/post-tax, on-road costs and out-of-pocket impact.</li>
-              <li><strong>AI EV Research Assistant</strong> – an AI-powered research tool that produces consistent, well-cited EV insight reports: key specs, ownership costs, public sentiment from real drivers, and summaries of pro reviews, all in one place.</li>
+              <li><strong>I know my car</strong> - you enter a specific car and get an AI-generated report on running costs, features and suitability.</li>
+              <li><strong>Find me a car to lease</strong> - you answer a few lifestyle questions and get a shortlist of cars (any fuel type) that actually match how you live.</li>
+              <li><strong>EV novated lease calculator - simple</strong> - a quick, high-level estimate of tax savings and weekly costs for an FBT-exempt EV.</li>
+              <li><strong>EV novated lease calculator - detailed</strong> - a more serious calculator that models pre-tax/post-tax, on-road costs and out-of-pocket impact.</li>
+              <li><strong>AI EV Research Assistant</strong> - an AI-powered research tool that produces consistent, well-cited EV insight reports: key specs, ownership costs, public sentiment from real drivers, and summaries of pro reviews, all in one place.</li>
             </ul>
             <p>Everything sits on Firebase, with AI APIs doing the heavy lifting for narrative explanations, comparisons and recommendations.</p>
             <p>I built it alongside a novated lease consultant, using their feedback to keep the numbers sane and the language accurate enough to be useful but still human.</p>
             <p>This was deliberately scrappy. Firebase gave me free hosting, auth and an easy way to keep everything in one place. There was a lot of vibe coding: wire something up quickly, see what comes out the other end, then tighten it once the shape is clear.</p>
             <p>I focused on:</p>
             <ul>
-              <li>Short, clear inputs – no giant forms.</li>
+              <li>Short, clear inputs - no giant forms.</li>
               <li>Solid, explicit calculations for the money side.</li>
               <li>AI used to explain, compare and suggest rather than “magic” everything.</li>
             </ul>
@@ -500,7 +495,7 @@
           <section>
             <h2>Architecture</h2>
             <p>The tools all ran inside a single Firebase project.</p>
-            <p>The frontend handled user inputs (car searches, lease assumptions, etc.), which triggered Cloud Functions in the backend. Those functions handled the heavy lifting — calling AI APIs, running calculations, generating PDFs, and sending emails when needed.</p>
+            <p>The frontend handled user inputs (car searches, lease assumptions, etc.), which triggered Cloud Functions in the backend. Those functions handled the heavy lifting - calling AI APIs, running calculations, generating PDFs, and sending emails when needed.</p>
             <p>Outputs were returned either directly in the UI or delivered via email/download depending on the tool.</p>
             <p>The goal wasn’t to build a perfect backend, it was to move quickly and test ideas.</p>
           </section>
@@ -539,5 +534,7 @@
     </section>
   </main>
   <script src="../../assets/js/project-tabs.js" defer></script>
+  <footer data-global-footer></footer>
+  <script src="../../assets/js/global-chrome.js"></script>
 </body>
 </html>

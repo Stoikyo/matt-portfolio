@@ -21,9 +21,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/global-chrome.css">
   <link rel="icon" href="../assets/favicons/mg_favicon.png" type="image/png">
   <style>
-    :root{--bg:#f4f1ec;--card:#fff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;--accent:#e90067;--accent-strong:#cc005a;--radius:12px;--shadow:0 2px 12px rgba(15,23,42,.06);--max-width:1240px}
+    :root{--accent:#e90067;--radius:12px;--shadow:0 2px 12px rgba(15,23,42,.06);--max-width:1240px}
     *{box-sizing:border-box} img{max-width:100%;height:auto}
     body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
     a{color:inherit;text-decoration:none}
@@ -31,23 +34,24 @@
     h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin:0}
     h1{font-size:clamp(48px,8vw,96px);margin-bottom:12px}
     h2{font-size:clamp(28px,4vw,44px);margin-top:40px;padding-bottom:10px;border-bottom:2px solid var(--line)}
-    .intro{max-width:62ch;color:var(--muted);font-size:18px;margin-bottom:24px}
-    .row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,2.2fr) auto;gap:28px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);transition:padding-left .25s cubic-bezier(.2,.7,.3,1);text-decoration:none}
+    .intro{max-width:62ch;color:var(--muted);font-size:var(--text-lg);margin-bottom:24px}
+    .row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,2.2fr) auto;gap:var(--space-8);align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);transition:padding-left .25s cubic-bezier(.2,.7,.3,1);text-decoration:none}
     .row:hover{padding-left:14px}.row:hover .name{color:var(--accent)}.row:hover .arrow{opacity:1;transform:none}
     .name{font-size:clamp(28px,3.6vw,44px);font-weight:800;letter-spacing:-.04em;line-height:1;margin:0}
-    .role{font-size:15px;color:#3b4553}.role b{display:block;font-weight:600;color:var(--text);margin-bottom:2px}
+    .role{font-size:var(--text-base);color:#3b4553}.role b{display:block;font-weight:600;color:var(--text);margin-bottom:2px}
     .status{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)} .status.live{color:var(--accent)}
     .arrow{font-size:22px;opacity:0;transform:translateX(-6px);transition:.25s cubic-bezier(.2,.7,.3,1);color:var(--accent)}
     .group{margin-top:34px}.group:first-of-type{margin-top:0}
     .group-label{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0;padding-bottom:10px;border-bottom:2px solid var(--text)}
-    .exp{display:flex;flex-wrap:wrap;gap:0 28px;margin-top:22px}.exp a{font-size:16px;font-weight:500;padding:8px 0;border-bottom:1px solid transparent}.exp a:hover{border-color:var(--accent);color:var(--accent)}
+    .exp{display:flex;flex-wrap:wrap;gap:0 28px;margin-top:var(--space-6)}.exp a{font-size:16px;font-weight:500;padding:8px 0;border-bottom:1px solid transparent}.exp a:hover{border-color:var(--accent);color:var(--accent)}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:2px;border:1.5px solid var(--text);font-weight:700}.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-    .foot{margin-top:44px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+    .foot{margin-top:44px;display:flex;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;color:var(--muted);font-size:var(--text-sm)}
     @media(max-width:820px){.row{grid-template-columns:1fr auto;gap:6px 16px;padding:22px 0}.name{grid-column:1}.status{grid-column:2;justify-self:end;align-self:center}.role{grid-column:1/-1}.arrow{display:none}}
     @media(max-width:600px){main{padding:32px 20px 72px}}
   </style>
 </head>
 <body>
+<header data-global-header></header>
 <main>
   <p class="group-label">Work index</p>
   <h1>Work</h1>
@@ -67,7 +71,8 @@
     <p class="group-label">Experiments</p>
     <div class="exp"><a href="../work/supplie/">Supplie</a><a href="../work/evpicker/">EVPicker</a><a href="../work/ai-auto-parts-fit-checker/">AI Auto Parts Fit Checker</a><a href="../work/firebase-ev-tools/">Firebase EV Tools</a><a href="./fun/">Fun</a></div>
   </section>
-  <div class="foot"><a class="btn primary" href="../">Back home</a><span>Trailing-slash structure is in progress.</span></div>
 </main>
+<footer data-global-footer></footer>
+<script src="../assets/js/global-chrome.js"></script>
 </body>
 </html>
