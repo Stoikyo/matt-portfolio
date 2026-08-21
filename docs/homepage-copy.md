@@ -7,28 +7,22 @@ every claim traces to something you've told me or that's live on a site.
 
 ## Hero
 
-**Eyebrow:** Product designer & founder
-
 **H1:** Hi, I'm Matt!
 
-**Tagline:** Product designer. Co-founder. Dad. Too many bikes.
+**Tagline:** Product designer. Founder. Dad.
 
 **Body:**
 
-I'm based in Melbourne and I build products end to end - design, code, content,
-the lot. I launched LeasePlease solo this year, co-founded Motoru before that,
-and I'm co-founding Hundi now. I also take on consulting and prototyping work
-for teams who need something real in front of users quickly.
+I build products end to end - design, code, content, the lot. I launched
+LeasePlease solo this year, and I'm co-founding Hundi now, where I own design,
+product and build.
 
 **CTAs:** View projects · View services
 
 ### Notes on the hero
 
 **"AI tinkerer" is gone.** A tinkerer hasn't launched a product generating 80+
-leads or co-founded two companies. The warmth survives in "Dad. Too many bikes."
-
-**"Co-founder" is the most useful word on the page** and currently appears
-nowhere on the site.
+leads or co-founded two companies. The warmth survives in "Dad."
 
 **Hedges removed.** The earlier draft said "usually my own, sometimes for other
 people" - a qualifier that turned a strength into an apology. The list of three
