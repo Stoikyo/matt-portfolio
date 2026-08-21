@@ -77,6 +77,8 @@ inconsistencies into shared components.
   co-founder split; LeasePlease is an independent build sharing no IP. Words
   like "became", "grew out of", "evolved into", "successor" are prohibited, as
   is any visual device linking them.
+- **Never visually link Motoru and LeasePlease.** Do not reuse imagery, logos,
+  treatments or layout cues that suggest lineage between them.
 
 ## Conventions
 
