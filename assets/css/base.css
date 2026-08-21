@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
 img {
   max-width: 100%;
   height: auto;
