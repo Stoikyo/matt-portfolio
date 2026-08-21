@@ -12,16 +12,6 @@
       "permanent": true
     },
     {
-      "source": "/work/supplie/",
-      "destination": "/work/supplie/",
-      "permanent": true
-    },
-    {
-      "source": "/work/motoru/",
-      "destination": "/work/motoru/",
-      "permanent": true
-    },
-    {
       "source": "/projects/fun.html",
       "destination": "/work/fun/",
       "permanent": true
@@ -40,6 +30,20 @@
       "source": "/ai-overview.html",
       "destination": "/ai-overview/",
       "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/ai-overview/",
+      "destination": "/ai-overview.html"
+    },
+    {
+      "source": "/services/ai-consulting-automation/",
+      "destination": "/services/ai-consulting-automation.html"
+    },
+    {
+      "source": "/services/rapid-ai-prototyping/",
+      "destination": "/services/rapid-ai-prototyping.html"
     }
   ]
 }
