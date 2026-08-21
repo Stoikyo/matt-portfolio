@@ -8,7 +8,37 @@
     },
     {
       "source": "/projects/evpicker.html",
-      "destination": "/projects/evpicker/",
+      "destination": "/work/evpicker/",
+      "permanent": true
+    },
+    {
+      "source": "/work/supplie/",
+      "destination": "/work/supplie/",
+      "permanent": true
+    },
+    {
+      "source": "/work/motoru/",
+      "destination": "/work/motoru/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/fun.html",
+      "destination": "/work/fun/",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-consulting-automation.html",
+      "destination": "/services/ai-consulting-automation/",
+      "permanent": true
+    },
+    {
+      "source": "/services/rapid-ai-prototyping.html",
+      "destination": "/services/rapid-ai-prototyping/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-overview.html",
+      "destination": "/ai-overview/",
       "permanent": true
     }
   ]

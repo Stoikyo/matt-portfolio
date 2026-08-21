@@ -5,1126 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none';">
   <meta name="referrer" content="no-referrer-when-downgrade">
-  <title>Matt Grant | AI Solutions, Automation & Rapid Prototyping (Melbourne/Australia)</title>
-  <meta name="description" content="Portfolio of Matt Grant: product designer building practical AI solutions, workflow automations, and rapid prototypes. Based in Melbourne, working remotely across Australia.">
+  <title>Matt Grant | Product Designer and Founder</title>
+  <meta name="description" content="Matt Grant is a product designer and founder in Melbourne, building AI solutions, consulting and rapid prototypes.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://matthewgrant.co/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Matt Grant | AI Solutions, Automation & Rapid Prototyping">
-  <meta property="og:description" content="Portfolio-first site showcasing AI projects and consulting offers for AI automation and rapid prototyping in Melbourne and across Australia.">
+  <meta property="og:title" content="Matt Grant | Product Designer and Founder">
+  <meta property="og:description" content="Product designer and founder building AI solutions, consulting and rapid prototypes.">
   <meta property="og:url" content="https://matthewgrant.co/">
   <meta property="og:image" content="https://matthewgrant.co/assets/img/matt-headshot-800.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Matt Grant | AI Solutions, Automation & Rapid Prototyping">
-  <meta name="twitter:description" content="Portfolio-first site showcasing AI projects and consulting offers for AI automation and rapid prototyping in Melbourne and across Australia.">
+  <meta name="twitter:title" content="Matt Grant | Product Designer and Founder">
+  <meta name="twitter:description" content="Product designer and founder building AI solutions, consulting and rapid prototypes.">
   <meta name="twitter:image" content="https://matthewgrant.co/assets/img/matt-headshot-800.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
-  <!--
-    You weren't meant to see this.
-    (You absolutely were.)
-  -->
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <link rel="icon" href="assets/favicons/mg_favicon.png" type="image/png">
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://matthewgrant.co/#person",
-          "name": "Matt Grant",
-          "url": "https://matthewgrant.co/",
-          "jobTitle": "Product Designer and AI Prototyper",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Melbourne",
-            "addressRegion": "VIC",
-            "addressCountry": "AU"
-          },
-          "sameAs": [
-            "https://www.linkedin.com/in/tnargttam/",
-            "https://github.com/Stoikyo"
-          ]
-        },
-        {
-          "@type": "ProfessionalService",
-          "@id": "https://matthewgrant.co/#service",
-          "name": "Matt Grant AI Consulting and Prototyping",
-          "url": "https://matthewgrant.co/",
-          "areaServed": {
-            "@type": "Country",
-            "name": "Australia"
-          },
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Melbourne",
-            "addressRegion": "VIC",
-            "addressCountry": "AU"
-          },
-          "serviceType": [
-            "AI solutions consulting",
-            "AI workflow automation consulting",
-            "Rapid AI prototyping"
-          ],
-          "provider": {
-            "@id": "https://matthewgrant.co/#person"
-          }
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://matthewgrant.co/#website",
-          "url": "https://matthewgrant.co/",
-          "name": "Matt Grant Portfolio"
-        }
-      ]
-    }
-  </script>
   <style>
-    /* ——————————————————————————————
-       TOKENS
-    —————————————————————————————— */
-    :root {
-      --bg: #f4f1ec;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --line: #e2e8f0;
-      --accent: #e90067;
-      --accent-strong: #cc005a;
-      --accent-wash: #fff0f6;
-      --radius: 12px;
-      --shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
-      --shadow-hover: 0 8px 28px rgba(15, 23, 42, 0.13);
-      --max-width: 1100px;
-      --space-1: 8px;
-      --space-2: 12px;
-      --space-3: 16px;
-      --space-4: 20px;
-      --space-5: 24px;
-      --space-6: 32px;
-      --space-7: 40px;
-      --space-8: 48px;
-      --space-9: 64px;
-      --space-10: 96px;
-      --space-11: 120px;
-      --space-12: 160px;
-    }
-
-    /* ——————————————————————————————
-       RESET & BASE
-    —————————————————————————————— */
-    * { box-sizing: border-box; }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .skip-link {
-      position: absolute;
-      left: 12px;
-      top: -100px;
-      z-index: 1000;
-      background: var(--text);
-      color: #ffffff;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-weight: 600;
-      transition: top 0.2s ease;
-    }
-
-    .skip-link:focus {
-      top: 12px;
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.24);
-    }
-
-    /* ——————————————————————————————
-       HEADER & NAV
-    —————————————————————————————— */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      font-size: 14px;
-      position: relative;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Inter', system-ui, sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      font-size: 15px;
-      color: var(--text);
-    }
-
-    .brand-mark {
-      height: 40px;
-      width: 40px;
-      border-radius: 8px;
-      display: block;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 12px;
-      border-radius: 8px;
-      color: var(--muted);
-      font-weight: 600;
-      transition: color 0.2s ease, background 0.2s ease;
-      width: auto;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--text);
-      background: #e9eef7;
-      outline: 2px solid transparent;
-      box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
-    }
-
-    .nav-links a[aria-current="page"] {
-      color: var(--text);
-      background: #e9eef7;
-      box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.12);
-    }
-
-    .nav-toggle {
-      display: none;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 8px 10px;
-      cursor: pointer;
-      color: var(--text);
-      width: 40px;
-      height: 40px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .nav-toggle:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
-    }
-
-    /* ——————————————————————————————
-       LAYOUT: SECTIONS
-    —————————————————————————————— */
-
-    /* main is full-width — sections handle their own layout */
-    main { display: block; }
-
-    section {
-      scroll-margin-top: 88px;
-    }
-
-    .section-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 72px 24px;
-    }
-
-    /* Section backgrounds */
-    #hero    { background: #ffffff; }
-    #projects { background: #ffffff; }
-
-    .section--dark    { background: #0f172a; }
-    .section--accent  { background: var(--accent); }
-
-    /* ——————————————————————————————
-       TYPOGRAPHY
-    —————————————————————————————— */
-    h1, h2, h3 {
-      margin: 0 0 12px;
-      color: var(--text);
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-weight: 800;
-      font-variation-settings: "opsz" 96;
-      line-height: 1.0;
-      letter-spacing: -0.04em;
-      text-transform: none;
-    }
-
-    h1 {
-      font-size: clamp(76px, 12vw, 120px);
-      line-height: 0.92;
-      margin-bottom: 24px;
-    }
-
-    h2 {
-      font-size: clamp(30px, 4vw, 46px);
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: clamp(16px, 1.8vw, 22px);
-      margin: 0 0 6px;
-    }
-
-    p { margin: 0 0 14px; color: var(--muted); }
-    p:last-child { margin-bottom: 0; }
-
-    .lead { font-size: 18px; color: var(--text); margin-bottom: 14px; }
-
-    /* Eyebrow / overline label */
-    .text-display {
-      display: block;
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin: 0 0 12px;
-    }
-
-    ul { padding-left: 20px; margin: 0 0 14px; color: var(--muted); }
-    li { margin-bottom: 8px; }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    /* ——————————————————————————————
-       BUTTONS
-    —————————————————————————————— */
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.01em;
-      color: var(--text);
-      background: var(--card);
-      transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    .button.primary {
-      background: var(--accent);
-      color: #ffffff;
-      border-color: var(--accent);
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-      background: #ede9e3;
-    }
-
-    .button:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
-    }
-
-    .button.primary:hover,
-    .button.primary:focus-visible {
-      background: var(--accent-strong);
-      border-color: var(--accent-strong);
-    }
-
-    .button.secondary {
-      background: var(--card);
-      color: var(--text);
-      border-color: var(--line);
-    }
-
-    .button.secondary:hover,
-    .button.secondary:focus-visible {
-      background: #ede9e3;
-      border-color: var(--accent);
-    }
-
-    /* ——————————————————————————————
-       MOBILE NAV
-    —————————————————————————————— */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        border-bottom: 1px solid var(--line);
-        padding: 12px 16px;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        width: 100%;
-        justify-content: flex-start;
-      }
-
-      .nav-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-      }
-    }
-
-    /* ——————————————————————————————
-       REDUCED MOTION
-    —————————————————————————————— */
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-      }
-    }
-
-    /* ——————————————————————————————
-       HERO
-    —————————————————————————————— */
-    #hero .section-inner {
-      padding-top: 64px;
-      padding-bottom: 80px;
-    }
-
-    .hero-grid {
-      display: grid;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .hero-copy { display: grid; gap: 0; }
-
-    .hero-photo {
-      width: 100%;
-      max-width: 340px;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto;
-      outline: 4px solid var(--accent);
-      outline-offset: 8px;
-    }
-
-    /* ——————————————————————————————
-       SERVICES
-    —————————————————————————————— */
-    .services-grid {
-      display: grid;
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .service-card {
-      padding: 28px 28px 24px;
-      border-radius: 16px;
-      border: 1.5px solid var(--line);
-      background: #ffffff;
-      display: grid;
-      gap: 10px;
-      transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .service-card:hover {
-      box-shadow: var(--shadow-hover);
-      transform: translateY(-2px);
-      border-color: #d0d8e2;
-    }
-
-    .service-bar {
-      display: block;
-      width: 36px;
-      height: 4px;
-      background: var(--accent);
-      border-radius: 2px;
-      margin-bottom: 6px;
-    }
-
-    .service-meta {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0 0 6px;
-    }
-
-    .service-actions {
-      margin-top: 8px;
-    }
-
-    /* ——————————————————————————————
-       PROJECTS
-    —————————————————————————————— */
-    .projects-grid {
-      display: grid;
-      gap: 18px;
-      grid-template-columns: 1fr;
-      margin-top: 40px;
-    }
-
-    .project-card {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 22px;
-      background: #ffffff;
-      display: grid;
-      gap: 10px;
-      transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
-    }
-
-    .project-card:hover {
-      box-shadow: var(--shadow-hover);
-      border-color: #c8d0db;
-      transform: translateY(-2px);
-    }
-
-    .project-card h3 { margin-bottom: 2px; }
-
-    .project-header {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 14px;
-      align-items: start;
-    }
-
-    .project-meta {
-      font-size: 12px;
-      color: var(--muted);
-      margin: 0;
-      letter-spacing: 0.01em;
-    }
-
-    .project-image {
-      width: 52px;
-      height: 52px;
-      border-radius: 11px;
-      border: 1px solid var(--line);
-      background: #f8f8f6;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .project-image img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .project-actions {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 6px;
-    }
-
-    /* ——————————————————————————————
-       ABOUT (dark)
-    —————————————————————————————— */
-    .section--dark h2,
-    .section--dark h3 { color: #ffffff; }
-
-    .section--dark p { color: #94a3b8; }
-
-    .section--dark a {
-      color: #e2e8f0;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .section--dark a:hover { color: #ffffff; }
-
-    .about-body {
-      margin-top: 8px;
-      display: grid;
-      gap: 0;
-      max-width: 720px;
-    }
-
-    .about-cols {
-      display: grid;
-      gap: 32px;
-      margin-top: 52px;
-      margin-bottom: 16px;
-    }
-
-    .about-list {
-      padding-left: 0;
-      list-style: none;
-      margin: 0;
-    }
-
-    .about-list li {
-      color: #94a3b8;
-      padding: 11px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      margin: 0;
-      font-size: 15px;
-      line-height: 1.55;
-    }
-
-    .about-list li:first-child {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .process-section {
-      margin-top: 60px;
-      padding-top: 52px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .process-steps {
-      display: grid;
-      gap: 28px;
-      margin-top: 36px;
-    }
-
-    .process-num {
-      display: block;
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 44px;
-      font-weight: 800;
-      font-variation-settings: "opsz" 48;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-
-    .process-step h4 {
-      color: #ffffff;
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin: 0 0 8px;
-    }
-
-    .process-step p {
-      color: #64748b;
-      font-size: 14px;
-      line-height: 1.5;
-      margin: 0;
-    }
-
-    .process-note {
-      margin-top: 44px;
-      font-style: italic;
-      color: #475569;
-      font-size: 15px;
-      margin-bottom: 0;
-    }
-
-    /* ——————————————————————————————
-       CONTACT (accent pink)
-    —————————————————————————————— */
-    .section--accent .section-inner {
-      max-width: 660px;
-      text-align: center;
-      padding-top: 96px;
-      padding-bottom: 96px;
-    }
-
-    .section--accent h2 { color: #ffffff; }
-    .section--accent p  { color: rgba(255, 255, 255, 0.8); }
-
-    .section--accent .text-display {
-      color: rgba(255, 255, 255, 0.65);
-    }
-
-    .button.contact-cta {
-      display: inline-flex;
-      align-items: center;
-      padding: 17px 40px;
-      border-radius: 999px;
-      background: #ffffff;
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 16px;
-      border: 2px solid transparent;
-      transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
-      text-decoration: none;
-      margin-top: 12px;
-    }
-
-    .button.contact-cta:hover {
-      background: var(--accent-strong);
-      color: #ffffff;
-      transform: translateY(-2px);
-    }
-
-    .contact-links {
-      margin-top: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      font-size: 14px;
-    }
-
-    .contact-links a {
-      color: rgba(255, 255, 255, 0.72);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      transition: color 0.15s ease;
-    }
-
-    .contact-links a:hover { color: #ffffff; }
-
-    .contact-links span { color: rgba(255, 255, 255, 0.3); }
-
-    /* ——————————————————————————————
-       FOOTER
-    —————————————————————————————— */
-    footer {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 28px 24px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      font-size: 13px;
-      border-top: 1px solid var(--line);
-    }
-
-    footer a { color: var(--accent); }
-
-    /* ——————————————————————————————
-       UTILITIES
-    —————————————————————————————— */
-    .meta {
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .placeholder {
-      border: 1px dashed var(--line);
-      border-radius: var(--radius);
-      padding: 12px;
-      text-align: center;
-      color: var(--muted);
-      background: #ede9e3;
-      font-size: 14px;
-    }
-
-    /* ——————————————————————————————
-       RESPONSIVE: 820px+
-    —————————————————————————————— */
-    @media (min-width: 820px) {
-      .section-inner {
-        padding: 104px 32px;
-      }
-
-      #hero .section-inner {
-        padding-top: 80px;
-        padding-bottom: 96px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1.2fr 1fr;
-        column-gap: 72px;
-        gap: 0;
-      }
-
-      .hero-photo {
-        max-width: 100%;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 28px;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 22px;
-      }
-
-      .about-cols {
-        grid-template-columns: 1fr 1fr;
-        gap: 52px;
-      }
-
-      .process-steps {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
-      }
-    }
+    :root{--bg:#f4f1ec;--card:#fff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;--accent:#e90067;--accent-strong:#cc005a;--radius:12px;--radius-sm:2px;--shadow:0 2px 12px rgba(15,23,42,.06);--max:1240px}
+    *{box-sizing:border-box} img{max-width:100%;height:auto;display:block}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+    a{color:inherit} .wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+    @media(max-width:600px){.wrap{padding:0 20px}}
+    nav{position:sticky;top:0;z-index:50;background:rgba(244,241,236,.86);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+    nav.stuck{border-color:var(--line)}
+    .navin{max-width:var(--max);margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .mark{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:21px;letter-spacing:-.04em;text-decoration:none}
+    .mark span{color:var(--accent)}
+    .navlinks{display:flex;gap:28px;font-size:14px;font-weight:500}
+    .navlinks a{text-decoration:none;color:var(--muted)} .navlinks a:hover{color:var(--accent)}
+    @media(max-width:600px){.navin{padding:14px 20px}.navlinks{gap:16px;font-size:13px;flex-wrap:wrap;justify-content:flex-end}}
+    .btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',system-ui,sans-serif;font-weight:700;font-size:15px;text-decoration:none;padding:14px 18px;border-radius:2px;border:1.5px solid var(--text);transition:background .18s,color .18s,transform .18s}
+    .btn.solid{background:var(--accent);border-color:var(--accent);color:#fff}.btn.solid:hover{background:var(--accent-strong);border-color:var(--accent-strong)}
+    .tlink{font-weight:700;font-size:15px;text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:2px}
+    .tlink:hover{color:var(--accent)}
+    .hero{padding:76px 0 0}
+    .heroin{max-width:var(--max);margin:0 auto;padding:0 32px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:0 40px;align-items:end}
+    .eyebrow{grid-column:1;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0 0 20px}
+    .bigname{grid-column:1 / -1;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(62px,12.4vw,178px);line-height:.84;letter-spacing:-.05em;margin:0;position:relative;z-index:3;grid-row:2;text-transform:none}
+    .portraitcol{grid-column:2;grid-row:2 / span 2;justify-self:end;align-self:start;position:relative;width:clamp(180px,25vw,300px);margin-top:-12px}
+    .portraitcol img{border-radius:50%;position:relative;z-index:2}
+    .ring{position:absolute;inset:-18px;border:2px solid var(--accent);border-radius:50%;z-index:1}
+    .herotext{grid-column:1;grid-row:3;max-width:46ch;margin-top:34px;position:relative;z-index:4}
+    .tagline{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:600;font-size:clamp(19px,2.2vw,25px);letter-spacing:-.025em;margin:0 0 16px;line-height:1.25}
+    .herotext p{margin:0 0 30px;color:#3b4553}
+    .cta{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .hero-rule{grid-column:1 / -1;grid-row:4;border-top:1px solid var(--line);margin-top:76px}
+    @media(max-width:820px){.heroin{grid-template-columns:1fr}.bigname,.eyebrow,.herotext,.portraitcol,.hero-rule{grid-column:1}.portraitcol{grid-row:auto;justify-self:start;width:170px;margin:30px 0 0}.bigname{grid-row:auto}.herotext{grid-row:auto;margin-top:26px}.hero-rule{grid-row:auto;margin-top:56px}}
+    .sec{padding:92px 0}
+    .sechead{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin:0 0 8px;flex-wrap:wrap}
+    .sechead h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(34px,5.4vw,60px);letter-spacing:-.045em;margin:0;line-height:1}
+    .grouplabel{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:52px 0 0;padding-bottom:10px;border-bottom:2px solid var(--text)}
+    .grouplabel.first{margin-top:34px}
+    .row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,2.2fr) auto;gap:28px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);text-decoration:none;position:relative;transition:padding-left .25s cubic-bezier(.2,.7,.3,1)}
+    .row:hover{padding-left:14px}.row:hover .rname{color:var(--accent)}.row:hover .arrow{opacity:1;transform:none}
+    .rname{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);letter-spacing:-.04em;line-height:1;margin:0;text-transform:none}
+    .rrole{font-size:15px;color:#3b4553}.rrole b{display:block;font-weight:600;color:var(--text);margin-bottom:2px}
+    .rstatus{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}.rstatus.live{color:var(--accent)}
+    .arrow{font-size:22px;opacity:0;transform:translateX(-6px);transition:.25s cubic-bezier(.2,.7,.3,1);color:var(--accent)}
+    .exp{display:flex;flex-wrap:wrap;gap:0 28px;margin-top:22px}.exp a{font-size:16px;font-weight:500;text-decoration:none;padding:8px 0;border-bottom:1px solid transparent;transition:.18s}.exp a:hover{border-color:var(--accent);color:var(--accent)}
+    .about{background:#0f172a;color:#e6eaf0}.about .sechead h2{color:#fff}
+    .aboutgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:start;margin-top:40px}
+    .lead{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:600;font-size:clamp(23px,3vw,34px);color:#fff;letter-spacing:-.03em;line-height:1.25;margin:0}
+    .about p{color:#aab5c4;max-width:60ch}.about .tlink{color:#fff}
+    .contact{background:var(--accent);color:#fff;padding:104px 0}
+    .contact h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(44px,8.4vw,96px);letter-spacing:-.05em;margin:0 0 20px;line-height:.9}
+    .contact p{max-width:46ch;margin:0 0 32px;color:rgba(255,255,255,.92)}
+    .contact .btn{background:#fff;border-color:#fff;color:var(--accent)} .contact .btn:hover{background:var(--text);border-color:var(--text);color:#fff}
+    .avail{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin:0 0 24px;color:rgba(255,255,255,.85)}
+    footer{padding:28px 0;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .rv{opacity:0;transform:translateY(12px)} .on .rv{opacity:1;transform:none;transition:opacity .5s cubic-bezier(.2,.7,.3,1),transform .5s cubic-bezier(.2,.7,.3,1)}
+    .on .d1{transition-delay:.04s}.on .d2{transition-delay:.11s}.on .d3{transition-delay:.19s}.on .d4{transition-delay:.27s}.on .d5{transition-delay:.36s}
+    .portraitcol{opacity:0}.on .portraitcol{opacity:1;transition:opacity .7s .22s}
+    .ring{transform:scale(.86);opacity:0}.on .ring{transform:none;opacity:1;transition:transform .95s .34s cubic-bezier(.16,1,.3,1),opacity .5s .34s}
+    @media(prefers-reduced-motion:reduce){.rv,.portraitcol,.ring{opacity:1!important;transform:none!important;transition:none!important}}
+    :focus-visible{outline:none;box-shadow:0 0 0 3px rgba(233,0,103,.4)}
+    @media(max-width:820px){.row{grid-template-columns:1fr auto;gap:6px 16px;padding:22px 0}.rname{grid-column:1}.rstatus{grid-column:2;justify-self:end;align-self:center}.rrole{grid-column:1/-1}.arrow{display:none}.aboutgrid{grid-template-columns:1fr;gap:28px}.sec{padding:72px 0}}
+    @media(max-width:600px){.navlinks{gap:16px;font-size:13px;flex-wrap:wrap;justify-content:flex-end}.heroin{padding:0 20px}.wrap{padding:0 20px}.sec{padding:64px 0}.contact{padding:84px 0}}
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <header>
-    <div class="nav">
-      <a class="brand" href="./" aria-label="Matt Grant home">
-        <img class="brand-mark" src="assets/favicons/mg_favicon.png" alt="MG logo" width="512" height="512">
-      </a>
-      <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">☰</button>
-      <nav class="nav-links" aria-label="Primary" id="primary-navigation">
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<nav id="nav"><div class="navin"><a class="mark" href="#top">MG<span>.</span></a><div class="navlinks"><a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></div></div></nav>
+<header class="hero" id="hero">
+  <div class="heroin">
+    <p class="eyebrow rv d1">Product designer &amp; founder</p>
+    <h1 class="bigname rv d2">Hi, I'm Matt.</h1>
+    <div class="portraitcol"><div class="ring"></div><img src="assets/img/matt-headshot-800.webp" alt="Portrait of Matt Grant" width="800" height="800"></div>
+    <div class="herotext">
+      <p class="tagline rv d3">Product designer. Co-founder. Dad. Too many bikes.</p>
+      <p class="rv d4">I build products end to end — design, code, content, the lot. I launched LeasePlease solo this year, co-founded Motoru before that, and I'm co-founding Hundi now.</p>
+      <div class="cta rv d5"><a class="btn solid" href="#work">See the work</a><a class="tlink" href="#services">What I do →</a></div>
     </div>
-  </header>
-
-  <main id="main-content">
-
-    <!-- ————————————————— HERO ————————————————— -->
-    <section id="hero">
-      <div class="section-inner">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <span class="text-display" aria-hidden="true">Product designer &amp; founder</span>
-            <h1>HI, I'M MATT!</h1>
-            <p class="lead"><strong>Product designer. Co-founder. Dad. Too many bikes.</strong></p>
-            <p>I'm based in Melbourne and I build products end to end — design, code, content, the lot. I launched LeasePlease solo this year, co-founded Motoru before that, and I'm co-founding Hundi now. I also take on consulting and prototyping work for teams who need something real in front of users quickly.</p>
-            <div class="actions">
-              <a class="button primary" href="#projects">View projects</a>
-              <a class="button secondary" href="#services">View services</a>
-            </div>
-          </div>
-          <div style="display:grid; justify-items:center;">
-            <img class="hero-photo" src="assets/img/matt-headshot-800.webp" srcset="assets/img/matt-headshot-400.webp 400w, assets/img/matt-headshot-800.webp 800w" sizes="(min-width: 820px) 340px, 100vw" alt="Photo of Matt Grant" width="800" height="800">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ————————————————— SERVICES ————————————————— -->
-    <section id="services">
-      <div class="section-inner">
-        <span class="text-display">What I offer</span>
-        <h2>AI Services</h2>
-        <p>Two things I do well: help teams figure out where AI actually fits in their work, and build prototypes fast enough that you can test the idea before you commit to it.</p>
-        <div class="services-grid">
-          <article class="service-card">
-            <span class="service-bar" aria-hidden="true"></span>
-            <h3><a href="services/ai-consulting-automation.html">AI Consulting &amp; Automation</a></h3>
-            <p class="service-meta">For teams that want hands-on help figuring out where AI fits — and actually making it happen.</p>
-            <p>I work through it with you: where the real opportunity is, what to automate first, and how to get from whiteboard to something working without a six-month project.</p>
-            <div class="service-actions">
-              <a class="button primary" href="services/ai-consulting-automation.html">Explore consulting</a>
-            </div>
-          </article>
-          <article class="service-card">
-            <span class="service-bar" aria-hidden="true"></span>
-            <h3><a href="services/rapid-ai-prototyping.html">Rapid AI Prototyping</a></h3>
-            <p class="service-meta">For teams that need something real to test — not a slide deck — before committing to a full build.</p>
-            <p>I take an idea from conversation to clickable prototype in days. Real enough to put in front of users, solid enough to learn something useful from.</p>
-            <div class="service-actions">
-              <a class="button primary" href="services/rapid-ai-prototyping.html">Explore prototyping</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ————————————————— PROJECTS ————————————————— -->
-    <section id="projects">
-      <div class="section-inner">
-        <span class="text-display">Selected work</span>
-        <h2>Projects</h2>
-        <p>A mix of ventures, client work, and experiments. The top cards are the strongest proof; the compact ones keep the rest of the track record visible without competing for attention.</p>
-
-        <div class="projects-group">
-          <h3>Ventures</h3>
-          <div class="projects-grid">
-            <article class="project-card">
-              <div class="project-header">
-                <div class="project-image" style="display:grid;place-items:center;background:#fff;">
-                  <span role="img" aria-label="LeasePlease monogram" style="font-size:32px;line-height:1;font-weight:700;">LP</span>
-                </div>
-                <div>
-                  <h3><a href="https://leaseplease.com.au" target="_blank" rel="noreferrer">LeasePlease</a></h3>
-                  <p class="project-meta">Live &middot; 2026</p>
-                </div>
-              </div>
-              <p>Solo venture. Novated leasing tool for EVs. Designed, built and launched on my own in May 2026. 80+ leads on minimal advertising, partnerships in place.</p>
-              <div class="project-actions">
-                <a class="button primary" href="https://leaseplease.com.au" target="_blank" rel="noreferrer">Visit site</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-header">
-                <div class="project-image" style="display:grid;place-items:center;background:#fff;">
-                  <span role="img" aria-label="Hundi monogram" style="font-size:32px;line-height:1;font-weight:700;">H</span>
-                </div>
-                <div>
-                  <h3>Hundi</h3>
-                  <p class="project-meta">In discovery &middot; 2026</p>
-                </div>
-              </div>
-              <p>Co-founder. A finance function for Australian startups. Two of us; I own design, product and build.</p>
-            </article>
-
-            <article class="project-card">
-              <div class="project-header">
-                <div class="project-image"><img src="assets/favicons/motoru-favicon.png" alt="Motoru logo" width="500" height="500" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
-                <div>
-                  <h3><a href="projects/motoru.html">Motoru</a></h3>
-                  <p class="project-meta">Closed &middot; 2025</p>
-                </div>
-              </div>
-              <p>Co-founder, design and product. EV discovery tool used by 2,000+ people. Wound up after a co-founder split.</p>
-              <div class="project-actions">
-                <a class="button primary" href="projects/motoru.html">View project</a>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="projects-group">
-          <h3>Client work</h3>
-          <div class="projects-grid">
-            <article class="project-card">
-              <div class="project-header">
-                <div class="project-image" style="display:grid;place-items:center;background:#fff;">
-                  <span role="img" aria-label="Lease of Mind monogram" style="font-size:28px;line-height:1;font-weight:700;">LoM</span>
-                </div>
-                <div>
-                  <h3><a href="https://www.leaseofmind.com.au" target="_blank" rel="noreferrer">Lease of Mind</a></h3>
-                  <p class="project-meta">Shipped &middot; 2026</p>
-                </div>
-              </div>
-              <p>Full site build for a novated leasing consultancy: content, code, imagery and SEO, live in under two weeks.</p>
-              <div class="project-actions">
-                <a class="button primary" href="https://www.leaseofmind.com.au" target="_blank" rel="noreferrer">Visit site</a>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="projects-group">
-          <h3>Experiments</h3>
-          <div class="projects-grid">
-            <article class="project-card">
-              <div class="project-header">
-                <div class="project-image"><img src="assets/img/supplie-logo-icon.webp" alt="Supplie project icon" width="947" height="1094" style="width:100%;height:100%;object-fit:contain;display:block;background:#fff;padding:10px;" loading="lazy"></div>
-                <div>
-                  <h3><a href="projects/supplie.html">Supplie</a></h3>
-                  <p class="project-meta">Ongoing &middot; 2026</p>
-                </div>
-              </div>
-              <p>What does AI actually look like inside a messy operations team? Messy data, real decisions, no clean answers.</p>
-              <div class="project-actions">
-                <a class="button primary" href="projects/supplie.html">View project</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-header">
-                <div class="project-image"><img src="assets/img/ev-picker-square-logo.png" alt="EVPicker logo" width="1024" height="1024" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
-                <div>
-                  <h3><a href="projects/evpicker/">EVPicker</a></h3>
-                  <p class="project-meta">Ongoing &middot; 2025</p>
-                </div>
-              </div>
-              <p>You answer a few questions, get a shortlist of EVs that actually fit your life, and a warm intro to the leasing and finance people worth talking to.</p>
-              <div class="project-actions">
-                <a class="button primary" href="projects/evpicker/">View project</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-header">
-                <div class="project-image"><img src="assets/img/tinkeru-logo.png" alt="AI Auto Parts Fit Checker logo" width="1351" height="400" style="width:100%;height:100%;object-fit:contain;display:block;background:#fff;padding:10px;" loading="lazy"></div>
-                <div>
-                  <h3><a href="projects/ai-auto-parts-fit-checker/">AI Auto Parts Fit Checker</a></h3>
-                  <p class="project-meta">Ongoing &middot; 2024–2025</p>
-                </div>
-              </div>
-              <p>Photo of a part + your car = an email back with fit assessment, install difficulty, tools you'll need, and links to products and videos.</p>
-              <div class="project-actions">
-                <a class="button primary" href="projects/ai-auto-parts-fit-checker/">View project</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-header">
-                <div class="project-image"><img src="assets/img/firebase_studio_logo.png" alt="Firebase EV Tools logo" width="330" height="330" style="width:100%;height:100%;object-fit:contain;display:block;background:#fff;padding:8px;" loading="lazy"></div>
-                <div>
-                  <h3><a href="projects/firebase-ev-tools/">Firebase EV Tools</a></h3>
-                  <p class="project-meta">Ongoing &middot; 2024–2025</p>
-                </div>
-              </div>
-              <p>A handful of AI tools for picking EVs and making sense of novated leasing — all jammed into one Firebase project to keep things fast, cheap, and easy to iterate on.</p>
-              <div class="project-actions">
-                <a class="button primary" href="projects/firebase-ev-tools/">View project</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-header">
-                <div class="project-image" style="display:grid;place-items:center;background:#fff;">
-                  <span role="img" aria-label="Party popper" style="font-size:36px;line-height:1;">🎉</span>
-                </div>
-                <div>
-                  <h3><a href="projects/fun.html">Fun</a></h3>
-                  <p class="project-meta">Ongoing &middot; Ongoing</p>
-                </div>
-              </div>
-              <p>One-night ideas, odd little experiments, things that made me laugh. Not everything needs a business case.</p>
-              <div class="project-actions">
-                <a class="button primary" href="projects/fun.html">View project</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ————————————————— ABOUT ————————————————— -->
-    <section id="about" class="section--dark">
-      <div class="section-inner">
-        <span class="text-display" style="color:var(--accent)">About me</span>
-        <h2>About</h2>
-        <div class="about-body">
-          <p>I'm Matt. I make things — mostly digital, always with real people in mind. I'm at my best when a rough idea becomes something you can click and hand to someone.</p>
-          <p>Most of what I build is my own. I co-founded Motoru, an EV discovery tool that 2,000+ people used before it wound up. LeasePlease came after — a novated leasing tool I designed, built and launched on my own in May 2026, from scratch. It's live, generating leads on barely any advertising, with partnerships in place. I'm now co-founding Hundi, a finance function for Australian startups. There are two of us, so we both do everything — I own the design, product and build.</p>
-          <p>I take on client work directly too. Most recently a full site build for a novated leasing consultancy — content, code, imagery and SEO, live in under two weeks. AI runs through all of it. I build with it daily and I know where it earns its place and where it just gets in the way.</p>
-          <p>When I'm not at the desk it's kids, bikes, or drawing something I'll never finish.</p>
-        </div>
-
-        <div class="about-cols">
-          <div class="about-col">
-            <h3>What I do</h3>
-            <ul class="about-list">
-              <li>Turn fuzzy briefs into a clear plan and a working first version.</li>
-              <li>Design the flow and interface, then build it far enough in code to feel real.</li>
-              <li>Ship whole products solo — design, build, content, SEO, the lot.</li>
-              <li>Build with AI daily, and know where it earns its place and where it doesn't.</li>
-            </ul>
-          </div>
-          <div class="about-col">
-            <h3>Who I am</h3>
-            <ul class="about-list">
-              <li>Collaborative, and straight with feedback.</li>
-              <li>Big on culture, sharing what I know and learning from others.</li>
-              <li>Often involved in local and community projects when I'm not at the desk.</li>
-              <li>Artist and bike nerd. I take the work seriously, not myself.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="process-section">
-          <h3>How I like to work</h3>
-          <div class="process-steps">
-            <div class="process-step">
-              <span class="process-num">01</span>
-              <h4>Design</h4>
-              <p>Understand the problem and pick a clear starting point.</p>
-            </div>
-            <div class="process-step">
-              <span class="process-num">02</span>
-              <h4>Build</h4>
-              <p>Make a small slice that's real enough to click and poke at.</p>
-            </div>
-            <div class="process-step">
-              <span class="process-num">03</span>
-              <h4>Test</h4>
-              <p>Put it in front of actual humans and watch what happens.</p>
-            </div>
-            <div class="process-step">
-              <span class="process-num">04</span>
-              <h4>Learn</h4>
-              <p>Keep what worked, change what didn't, drop what doesn't matter.</p>
-            </div>
-            <div class="process-step">
-              <span class="process-num">05</span>
-              <h4>Ship</h4>
-              <p>Get the next version out of Figma/Git and into someone's hands.</p>
-            </div>
-          </div>
-          <p class="process-note">First chat to clickable prototype — usually days, not weeks.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ————————————————— CONTACT ————————————————— -->
-    <section id="contact" class="section--accent">
-      <div class="section-inner">
-        <span class="text-display">Get in touch</span>
-        <h2>Let's talk.</h2>
-        <p>Working on something and want a second brain? Looking to hire? Either way, drop me a line.</p>
-        <a class="button contact-cta" href="mailto:matt@matthewgrant.co">Send me an email</a>
-        <div class="contact-links">
-          <a href="https://www.linkedin.com/in/tnargttam/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <span aria-hidden="true">·</span>
-          <a href="https://github.com/Stoikyo" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <span aria-hidden="true">·</span>
-          <a href="tel:+61405387557">Call</a>
-          <span aria-hidden="true">·</span>
-          <a href="ai-overview.html">AI overview</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <span>© <span id="year"></span> Matt Grant</span>
-    <a href="#top">Back to top</a>
-  </footer>
-
-  <script src="assets/js/site-nav.js" defer></script>
+    <div class="hero-rule"></div>
+  </div>
+</header>
+<section class="sec" id="work"><div class="wrap">
+  <div class="sechead"><h2>Work</h2><a class="tlink" href="work/">All projects →</a></div>
+  <p class="grouplabel first">Ventures</p>
+  <a class="row" href="https://leaseplease.com.au" target="_blank" rel="noreferrer"><h3 class="rname">LeasePlease</h3><span class="rrole"><b>Solo venture</b>Designed, built and launched on my own in May 2026. 80+ leads on barely any advertising, partnerships signed.</span><span class="rstatus live">Live · 2026</span><span class="arrow">→</span></a>
+  <div class="row"><h3 class="rname">Hundi</h3><span class="rrole"><b>Co-founder</b>A finance function for Australian startups. Two of us; I own design, product and build.</span><span class="rstatus">In discovery · 2026</span><span class="arrow">→</span></div>
+  <a class="row" href="work/motoru/"><h3 class="rname">Motoru</h3><span class="rrole"><b>Co-founder · design and product</b>An EV discovery tool that matched cars to how people live. 2,000+ people used it.</span><span class="rstatus">Closed · 2025</span><span class="arrow">→</span></a>
+  <p class="grouplabel">Client work</p>
+  <a class="row" href="https://www.leaseofmind.com.au" target="_blank" rel="noreferrer"><h3 class="rname">Lease of Mind</h3><span class="rrole"><b>Full build</b>Content, code, imagery and SEO for a novated leasing consultancy. Live in under two weeks.</span><span class="rstatus">Shipped · 2026</span><span class="arrow">→</span></a>
+  <div class="row"><h3 class="rname">Farrell Rose</h3><span class="rrole"><b>Google Ads</b>Paid search for a Melbourne and Sydney immigration practice.</span><span class="rstatus">Shipped · 2026</span><span class="arrow">→</span></div>
+  <p class="grouplabel">Experiments</p>
+  <div class="exp"><a href="work/supplie/">Supplie</a><a href="work/evpicker/">EVPicker</a><a href="work/ai-auto-parts-fit-checker/">AI Auto Parts Fit Checker</a><a href="work/firebase-ev-tools/">Firebase EV Tools</a><a href="work/fun/">Fun</a></div>
+</div></section>
+<section class="sec about" id="about"><div class="wrap">
+  <div class="sechead"><h2>About</h2></div>
+  <div class="aboutgrid">
+    <p class="lead">I’m at my best when a rough idea becomes something you can click and hand to someone.</p>
+    <div>
+      <p>Most of what I build is my own. I co-founded Motoru, an EV discovery tool that 2,000+ people used before it wound up. LeasePlease came after — a novated leasing tool I designed, built and launched on my own in May 2026, from scratch.</p>
+      <p>I take on client work directly too. Most recently a full site build for a novated leasing consultancy — content, code, imagery and SEO, live in under two weeks. AI runs through all of it. I build with it daily and I know where it earns its place and where it just gets in the way.</p>
+      <p style="margin-top:26px"><a class="tlink" href="about/">More about how I work →</a></p>
+    </div>
+  </div>
+</div></section>
+<section class="contact" id="contact"><div class="wrap">
+  <p class="avail">Available for work</p>
+  <h2>Let's talk.</h2>
+  <p>Working on something and want a second brain? Looking to hire? Either way, drop me a line.</p>
+  <a class="btn solid" href="mailto:matt@matthewgrant.co">Send me an email</a>
+</div></section>
+<div class="wrap"><footer><span>Melbourne, Australia</span><a href="#top">Back to top</a></footer></div>
+<script>
+  const nav=document.querySelector('nav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('stuck',window.scrollY>4),{passive:true});
+  const root=document.documentElement;
+  const prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const portrait=document.querySelector('.portraitcol');
+  const ring=document.querySelector('.ring');
+  if(!prefersReduced){
+    let raf=0;
+    const tick=()=>{raf=0; const y=window.scrollY; if(y>900) return; const p=Math.min(y/900,1); portrait.style.transform=`translateY(${p*-12}px)`; ring.style.transform=`translateY(${p*-4}px) rotate(${p*18}deg)`;};
+    addEventListener('scroll',()=>{if(!raf) raf=requestAnimationFrame(tick)},{passive:true});
+    tick();
+  }
+  document.body.classList.add('on');
+</script>
 </body>
 </html>
