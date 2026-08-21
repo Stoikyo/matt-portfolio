@@ -67,7 +67,7 @@
   max-width: 560px;
 }
 
-.chrome-footer-eyebrow {
+.chrome-footer .chrome-footer-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2, 8px);
