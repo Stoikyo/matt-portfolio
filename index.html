@@ -43,9 +43,9 @@
     .tlink{font-weight:700;font-size:var(--text-base);text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:2px}
     .tlink:hover{color:var(--accent)}
     .hero{padding:var(--space-20) 0 0}
-    .heroin{max-width:var(--max);margin:0 auto;padding:0 var(--space-8);display:grid;grid-template-columns:minmax(0,6fr) minmax(320px,4fr);gap:0 var(--space-5);align-items:start}
-    .bigname{grid-column:1;grid-row:1;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(62px,12.4vw,178px);line-height:.84;letter-spacing:-.05em;margin:0;position:relative;z-index:3;text-transform:none}
-    .portraitcol{grid-column:2;grid-row:1 / span 2;justify-self:center;align-self:start;position:relative;width:clamp(240px,30vw,360px);margin-top:-8px}
+    .heroin{max-width:var(--max);margin:0 auto;padding:0 var(--space-8);display:grid;grid-template-columns:minmax(0,7fr) minmax(280px,4fr);gap:0 var(--space-5);align-items:start}
+    .bigname{grid-column:1 / -1;grid-row:1;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(62px,12.4vw,178px);line-height:.84;letter-spacing:-.05em;margin:0;position:relative;z-index:3;text-transform:none;white-space:nowrap}
+    .portraitcol{grid-column:2;grid-row:1 / span 2;justify-self:center;align-self:start;position:relative;width:clamp(240px,29vw,350px);margin-top:-8px;transform:translateX(-8%);z-index:2}
     .portraitcol img{border-radius:50%;position:relative;z-index:2}
     .ring{position:absolute;inset:-18px;border:2px solid var(--accent);border-radius:50%;z-index:1}
     .herotext{grid-column:1;grid-row:2;max-width:46ch;margin-top:var(--space-8);position:relative;z-index:4}
@@ -53,7 +53,7 @@
     .herotext p{margin:0 0 var(--space-8);color:#3b4553}
     .cta{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
     .hero-rule{grid-column:1 / -1;grid-row:3;border-top:1px solid var(--line);margin-top:var(--space-20)}
-    @media(max-width:820px){.heroin{grid-template-columns:1fr}.bigname,.herotext,.portraitcol,.hero-rule{grid-column:1}.portraitcol{grid-row:auto;justify-self:center;width:min(200px,58vw);margin:20px 0 0}.bigname{grid-row:auto}.herotext{grid-row:auto;margin-top:26px}.hero-rule{grid-row:auto;margin-top:56px}}
+    @media(max-width:820px){.heroin{grid-template-columns:1fr}.bigname,.herotext,.portraitcol,.hero-rule{grid-column:1}.bigname{font-size:clamp(48px,15vw,110px)}.portraitcol{grid-row:auto;justify-self:center;width:min(200px,58vw);margin:20px 0 0;transform:none}.herotext{grid-row:auto;margin-top:26px}.hero-rule{grid-row:auto;margin-top:56px}}
     .sec{padding:var(--space-24) 0}
     .sechead{display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-5);margin:0 0 var(--space-2);flex-wrap:wrap}
     .sechead h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(34px,5.4vw,60px);letter-spacing:-.045em;margin:0;line-height:1}
@@ -108,6 +108,7 @@
   <p class="grouplabel">Client work</p>
   <a class="row" href="work/lease-of-mind/"><h3 class="rname">Lease of Mind</h3><span class="rrole"><b>Full build</b>Content, code, imagery and SEO for a novated leasing consultancy. Live in under two weeks.</span><span class="rstatus">Shipped · 2026</span><span class="arrow">→</span></a>
   <a class="row" href="work/farrell-rose/"><h3 class="rname">Farrell Rose</h3><span class="rrole"><b>Google Ads</b>Paid search for a Melbourne and Sydney immigration practice.</span><span class="rstatus">Shipped · 2026</span><span class="arrow">→</span></a>
+  <a class="row" href="work/woodend-art-group/"><h3 class="rname">Woodend Art Group</h3><span class="rrole"><b>Pro bono full build</b>Volunteer website rebuild including content, code, imagery and SEO.</span><span class="rstatus">Shipped</span><span class="arrow">→</span></a>
   <p class="grouplabel">Experiments</p>
   <div class="exp"><a href="work/supplie/">Supplie</a><a href="work/evpicker/">EVPicker</a><a href="work/ai-auto-parts-fit-checker/">AI Auto Parts Fit Checker</a><a href="work/firebase-ev-tools/">Firebase EV Tools</a><a href="work/fun/">Fun</a></div>
 </div></section>
