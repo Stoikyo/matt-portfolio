@@ -57,12 +57,18 @@
 
 .about-glue {
   display: grid;
-  grid-template-columns: minmax(0, 0.7fr) 150px minmax(0, 1.3fr);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: var(--space-10);
   margin-top: var(--space-12);
   padding: var(--space-8);
   border-radius: var(--radius);
   background: var(--surface-alt);
+}
+
+.about-glue-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .about-glue-label {
@@ -86,6 +92,7 @@
 
 .about-glue-avatar {
   align-self: center;
+  margin-top: var(--space-8);
 }
 
 .about-glue-avatar img {
@@ -198,7 +205,7 @@
   }
 
   .about-glue-avatar {
-    order: -1;
+    align-self: flex-start;
   }
 
   .about-glue-avatar img {
