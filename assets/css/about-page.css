@@ -55,6 +55,35 @@
   margin: 0 0 var(--space-5);
 }
 
+.about-glue {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: var(--space-10);
+  margin-top: var(--space-12);
+  padding: var(--space-8);
+  border-radius: var(--radius);
+  background: var(--text);
+}
+
+.about-glue-label {
+  margin: 0 0 var(--space-4) !important;
+  color: var(--accent) !important;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about-glue h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: var(--text-h2);
+}
+
+.about-glue p:not(.about-glue-label) {
+  color: rgba(255, 255, 255, 0.82);
+}
+
 .about-page ul {
   display: grid;
   gap: var(--space-3);
@@ -145,6 +174,12 @@
   .about-columns {
     grid-template-columns: 1fr;
     gap: var(--space-8);
+  }
+
+  .about-glue {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding: var(--space-6);
   }
 
   .work-loop {
