@@ -105,6 +105,108 @@
   margin-top: var(--space-12);
 }
 
+/* Keep the older, content-rich studies on the same surface grammar. */
+.case-study-page main {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.case-study-page main > section {
+  padding: var(--space-8);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.case-study-page main > section.project-tabs {
+  padding: var(--space-6);
+}
+
+.case-study-page .project-header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.case-study-page .project-header h1 {
+  max-width: 18ch;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.case-study-page .project-hero-avatar {
+  width: 76px;
+  height: 76px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--surface-alt);
+}
+
+.case-study-page .project-hero-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.case-study-page .project-tabs__list {
+  margin-bottom: var(--space-6);
+}
+
+.case-study-page .content {
+  gap: var(--space-10);
+}
+
+.case-study-page .content section {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.case-study-page .content h2,
+.case-study-page .snapshots h2 {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.case-study-page .snapshot-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  box-shadow: none;
+}
+
+.case-study-page .bottom-nav {
+  gap: var(--space-6);
+}
+
+.case-study-placeholder main {
+  min-height: 54vh;
+  align-content: center;
+}
+
+.case-study-placeholder .case-study-hero {
+  align-items: start;
+}
+
+.case-study-placeholder .case-study-section {
+  padding-top: var(--space-8);
+}
+
+.case-study-placeholder .case-study-section h2 {
+  margin-bottom: var(--space-3);
+}
+
+.case-study-placeholder .case-study-note {
+  margin: 0;
+}
+
 @media (max-width: 760px) {
   .case-study-page main {
     padding: var(--space-12) var(--space-5) var(--space-20);
@@ -117,5 +219,18 @@
 
   .case-study-title {
     max-width: 10ch;
+  }
+
+  .case-study-page main > section {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .case-study-page .project-header {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-page .project-hero-avatar {
+    width: 64px;
+    height: 64px;
   }
 }

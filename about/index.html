@@ -1,15 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none';">
   <title>About | Matt Grant</title>
+  <meta name="description" content="About Matt Grant: product design, build and venture work from Melbourne, Australia.">
   <link rel="canonical" href="https://matthewgrant.co/about/">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
-<link rel="stylesheet" href="../assets/css/tokens.css"><link rel="stylesheet" href="../assets/css/base.css"><link rel="stylesheet" href="../assets/css/global-chrome.css">
-  <style>body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);margin:0}main{max-width:900px;margin:0 auto;padding:56px 24px}h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-.04em}.lead{font-size:clamp(24px,3vw,34px);line-height:1.25}.grid{display:grid;gap:24px;margin-top:28px}p{line-height:1.7;color:#475569}</style>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/global-chrome.css">
+  <link rel="stylesheet" href="../assets/css/about-page.css">
 </head>
-<body><header data-global-header></header><main><h1>About</h1><p class="lead">I’m at my best when a rough idea becomes something you can click and hand to someone.</p><div class="grid"><p>Most of what I build is my own. I co-founded Motoru, an EV discovery tool that 2,000+ people used before it wound up. LeasePlease came after - a novated leasing tool I designed, built and launched on my own in May 2026, from scratch.</p><p>I take on client work directly too. Most recently a full site build for a novated leasing consultancy - content, code, imagery and SEO, live in under two weeks. AI runs through all of it. I build with it daily and I know where it earns its place and where it just gets in the way.</p></div></main><footer data-global-footer></footer><script src="../assets/js/global-chrome.js"></script></body>
+<body class="about-page">
+  <header data-global-header></header>
+  <main>
+    <section class="about-hero">
+      <div>
+        <p class="about-kicker">About - How I work</p>
+        <h1>Make it real.</h1>
+      </div>
+      <p class="about-lead">I make things, mostly digital, always with real people in mind.</p>
+    </section>
+
+    <section class="about-intro">
+      <p>I'm at my best when a rough idea becomes something you can click and hand to someone. I turn fuzzy briefs into clear plans, useful interfaces and working first versions.</p>
+      <p>Most of what I build is my own, and I take on client work directly too. AI runs through all of it: I build with it daily and know where it earns its place and where it gets in the way.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>What I do</h2>
+      <div class="about-columns">
+        <div>
+          <h3>From rough idea to first version</h3>
+          <ul>
+            <li>Turn fuzzy briefs into a clear plan and a working first version.</li>
+            <li>Design the flow and interface, then build it far enough in code to feel real.</li>
+            <li>Ship whole products solo: design, build, content and SEO.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>With people in the loop</h3>
+          <ul>
+            <li>Work collaboratively and give straight feedback.</li>
+            <li>Put prototypes in front of actual humans early.</li>
+            <li>Keep what works, change what doesn’t and drop what doesn’t matter.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>Recent work</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <p class="timeline-year">2025 - Closed</p>
+          <h3>Motoru</h3>
+          <p>Co-founder, design and product for an EV discovery tool used by 2,000+ people. The venture wound up after a co-founder split.</p>
+        </article>
+        <article class="timeline-item">
+          <p class="timeline-year">May 2026 - Live</p>
+          <h3>LeasePlease</h3>
+          <p>An independent solo venture. I designed, built and launched a novated leasing tool for EVs, with 80+ leads on minimal advertising and partnerships in place.</p>
+        </article>
+        <article class="timeline-item">
+          <p class="timeline-year">2026 - In discovery</p>
+          <h3>Hundi</h3>
+          <p>A finance function for Australian startups. Two of us; I own design, product and build.</p>
+        </article>
+        <article class="timeline-item">
+          <p class="timeline-year">2026 - Shipped</p>
+          <h3>Lease of Mind</h3>
+          <p>Full site build for a novated leasing consultancy: content, code, imagery and SEO, live in under two weeks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>How I like to work</h2>
+      <div class="about-process">
+        <div class="process-step"><strong>01 - Understand</strong><span>Find the real problem and pick a clear starting point.</span></div>
+        <div class="process-step"><strong>02 - Design</strong><span>Map the flow and make the important decisions visible.</span></div>
+        <div class="process-step"><strong>03 - Build</strong><span>Make a small slice that is real enough to click and test.</span></div>
+        <div class="process-step"><strong>04 - Learn</strong><span>Use feedback to keep, change or remove what is not useful.</span></div>
+        <div class="process-step"><strong>05 - Ship</strong><span>Get the next version into someone's hands.</span></div>
+      </div>
+    </section>
+  </main>
+  <footer data-global-footer></footer>
+  <script src="../assets/js/global-chrome.js"></script>
+</body>
 </html>
