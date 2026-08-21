@@ -1,12 +1,25 @@
+@import url("./tokens.css");
+
 .case-study-page {
+  --max-width: var(--page-max-width) !important;
+  --space-1: 4px !important;
+  --space-2: 8px !important;
+  --space-3: 12px !important;
+  --space-4: 16px !important;
+  --space-5: 20px !important;
+  --space-6: 24px !important;
+  --space-7: 32px !important;
+  --space-8: 40px !important;
+  --space-9: 64px !important;
+  --space-10: 96px !important;
   background: var(--bg);
   color: var(--text);
 }
 
 .case-study-page main {
-  max-width: 1060px;
+  max-width: var(--page-max-width) !important;
   margin: 0 auto;
-  padding: var(--space-16) var(--space-8) var(--space-24);
+  padding: var(--space-16) var(--space-8) var(--space-24) !important;
 }
 
 .case-study-hero {
@@ -108,11 +121,11 @@
 /* Keep the older, content-rich studies on the same surface grammar. */
 .case-study-page main {
   display: grid;
-  gap: var(--space-8);
+  gap: var(--space-8) !important;
 }
 
 .case-study-page main > section {
-  padding: var(--space-8);
+  padding: var(--space-8) !important;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--card);
@@ -209,7 +222,7 @@
 
 @media (max-width: 760px) {
   .case-study-page main {
-    padding: var(--space-12) var(--space-5) var(--space-20);
+    padding: var(--space-12) var(--space-5) var(--space-20) !important;
   }
 
   .case-study-hero {
@@ -222,7 +235,7 @@
   }
 
   .case-study-page main > section {
-    padding: var(--space-6) var(--space-5);
+    padding: var(--space-6) var(--space-5) !important;
   }
 
   .case-study-page .project-header {

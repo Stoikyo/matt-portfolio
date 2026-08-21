@@ -41,5 +41,6 @@
   --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
   --shadow-hover: 0 12px 30px rgba(15, 23, 42, 0.10);
   --focus-ring: 0 0 0 3px rgba(233, 0, 103, 0.28);
+  --page-max-width: 1240px;
   --chrome-max-width: 1240px;
 }
