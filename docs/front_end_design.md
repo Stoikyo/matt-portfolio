@@ -11,7 +11,7 @@ first.
 
 > **Rewritten Aug 2026.** The previous version specified a blue accent
 > (`#0d6efd`) that the site has never used, named Fredoka as the heading font
-> (the site uses Bebas Neue), and described a single-page
+> (the site uses Bricolage Grotesque), and described a single-page
 > portfolio aimed only at design roles. Both were stale. The blue is the direct
 > cause of the off-brand focus rings found across the site.
 
@@ -71,7 +71,7 @@ with warmth in it, not a cold grey. The accent is a strong pink (`#e90067`) used
 sparingly and with intent — primary actions, key links, focus states. Greys
 carry structure, never emphasis.
 
-Headings use Bebas Neue: tall, condensed and confident, doing most of the visual
+Headings use Bricolage Grotesque: tall, condensed and confident, doing most of the visual
 work. Body uses Inter, quiet and readable.
 
 Cards are soft-radius with a light border and subtle shadow. Generous internal

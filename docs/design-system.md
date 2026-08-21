@@ -107,24 +107,23 @@ site and rounding all 49 instances blindly will shift layouts.
 
 ## Typography
 
-Headings: **Bebas Neue** (via Google Fonts). Body: **Inter** (400–700), system
-sans fallback.
+Headings: **Bricolage Grotesque** (via Google Fonts, opsz 12..96, weights
+400/600/800). Body: **Inter** (400–700), system sans fallback.
 
 ### Resolved font stack history
 
 The heading stack previously included an unloaded `Bloc` fallback in 23 places:
 
 ```css
-font-family: 'Bloc', 'Bebas Neue', system-ui, sans-serif;
+font-family: 'Bloc', 'Bricolage Grotesque', system-ui, sans-serif;
 ```
 
 **`Bloc` is never loaded.** There is no `@font-face` rule, no local font file in
 the repo, and it was absent from the Google Fonts request, which asked only for
-`Bebas+Neue` and `Inter`. Visitors silently fell back to Bebas Neue, except
-anyone with Bloc installed locally, who could see different rendering.
+`Bricolage Grotesque` and `Inter`. Visitors silently fell back to Bricolage
+Grotesque unless they had Bloc installed locally, which could change rendering.
 
-Resolved in commit `b8272f7`: `Bloc` was dropped and headings now standardise on
-`'Bebas Neue', system-ui, sans-serif`.
+Headings now standardise on `'Bricolage Grotesque', system-ui, sans-serif`.
 
 ### Static scale
 
